@@ -140,11 +140,11 @@ export default function Home() {
             <h2>天地之下，正在发生什么</h2>
           </div>
           <p>
-            首页只呈现少量重要事件。事实、古典解释与情景推演始终分层展示。
+            观其所变，也观其未定；沿时间与证据，看清事件如何发展。
           </p>
         </div>
 
-        <div className="event-pools" aria-label="每日事件候选池">
+        <div className="event-pools" aria-label="事件领域">
           {eventPools.map((pool, index) => (
             <div key={pool.name}>
               <span>0{index + 1}</span>
@@ -152,7 +152,6 @@ export default function Home() {
               <small>{pool.scope}</small>
             </div>
           ))}
-          <p>四类候选池 · 每日只选三件 · 不按古典契合度选题</p>
         </div>
 
         <div className="world-grid">
