@@ -1,0 +1,31 @@
+{
+  "schema_version": "0.1",
+  "passages": [
+    {
+      "passage_id": "PASS-SHU-HONGFAN-0001",
+      "work_id": "WORK-SHU-HONGFAN",
+      "chapter": "洪范",
+      "historical_layer": "theory_source",
+      "source_function": "theory",
+      "event_date": null,
+      "record_date": null,
+      "compilation_date": null,
+      "edition_date": null,
+      "dating_note": "该条为传世文本片段；形成、记录、编纂与当前底本日期均待版本学复核。",
+      "cultural_lineage": "local",
+      "source_text": "水曰润下，火曰炎上，木曰曲直，金曰从革，土爰稼穑。",
+      "modern_paraphrase": "旧版暂释为以特征与功能描述五行；新版尚未完成校勘和释义复核。",
+      "source_anchors": [
+        {"source_id": "SRC-CTP-SHU-HONGFAN", "anchor": "manual page reference pending"},
+        {"source_id": "SRC-WIKISOURCE-SHU-HONGFAN", "anchor": "revision and paragraph pending"}
+      ],
+      "allowed_use": ["internal_schema_test"],
+      "forbidden_inference": ["modern_event_probability", "permanent_country_element", "permanent_industry_element", "scientific_causation"],
+      "counterevidence": ["尚未补录异文、注疏差异与现代研究。"],
+      "review_status": "needs_revalidation",
+      "publishable": false,
+      "rule_eligible": false,
+      "provenance_note": "由旧版 RULE-SHU-0001 迁移为段落种子；不继承旧版规则资格。"
+    }
+  ]
+}

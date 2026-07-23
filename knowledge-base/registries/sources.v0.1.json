@@ -1,0 +1,27 @@
+{
+  "schema_version": "0.1",
+  "sources": [
+    {
+      "source_id": "SRC-CTP-SHU-HONGFAN",
+      "title": "中国哲学书电子化计划：尚书·洪范",
+      "source_type": "research_reference",
+      "canonical_url": "https://ctext.org/shang-shu/great-plan/zh",
+      "acquisition_mode": "manual_reference",
+      "license_review_status": "needs_revalidation",
+      "full_text_storage_allowed": false,
+      "commercial_use_status": "restricted",
+      "provenance_note": "从旧版知识库迁移；只保留来源线索，使用条款和页面版本须重新核验。"
+    },
+    {
+      "source_id": "SRC-WIKISOURCE-SHU-HONGFAN",
+      "title": "维基文库：尚书／洪范",
+      "source_type": "digital_transcription",
+      "canonical_url": "https://zh.wikisource.org/zh-hans/%E6%B4%AA%E7%AF%84",
+      "acquisition_mode": "manual_reference",
+      "license_review_status": "needs_revalidation",
+      "full_text_storage_allowed": null,
+      "commercial_use_status": "unknown",
+      "provenance_note": "从旧版知识库迁移；使用前须保存页面修订号并完成页面级版权复核。"
+    }
+  ]
+}

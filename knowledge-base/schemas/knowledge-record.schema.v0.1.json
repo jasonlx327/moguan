@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "moguan://knowledge-base/knowledge-record.schema.v0.1",
+  "title": "Moguan knowledge-base record contract",
+  "$defs": {
+    "historical_layer": {
+      "enum": ["theory_source", "institutional_synthesis", "observation_refinement", "modern_validation"]
+    },
+    "source_function": {
+      "enum": ["theory", "omen", "observation", "calendar", "instrument", "institution", "historical_example", "commentary", "modern_validation"]
+    },
+    "review_status": {
+      "enum": ["planned", "needs_revalidation", "pending_review", "reviewed", "public_citation", "rule_eligible", "disputed", "deprecated"]
+    }
+  },
+  "description": "Runtime validation is implemented by scripts/validate-knowledge-base.mjs. This file is the machine-readable enum authority."
+}

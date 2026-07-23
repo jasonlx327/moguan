@@ -1,0 +1,15 @@
+{
+  "schema_version": "0.1",
+  "works": [
+    {
+      "work_id": "WORK-SHU-HONGFAN",
+      "canonical_title": "尚书·洪范",
+      "historical_layer": "theory_source",
+      "formation_note": "文本形成与传承复杂；新版暂不设定单一成书年份。",
+      "compilation_date": null,
+      "source_ids": ["SRC-CTP-SHU-HONGFAN", "SRC-WIKISOURCE-SHU-HONGFAN"],
+      "text_state": "metadata_only",
+      "review_status": "needs_revalidation"
+    }
+  ]
+}
