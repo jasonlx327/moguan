@@ -32,6 +32,13 @@ const events = [
   },
 ];
 
+const eventPools = [
+  { name: "天地之变", scope: "气候与自然环境" },
+  { name: "生民之变", scope: "疫情与公共健康" },
+  { name: "天下之变", scope: "政治与社会秩序" },
+  { name: "流通之变", scope: "贸易、能源与科技" },
+];
+
 const skyPoints = [
   { label: "紫微垣", x: 50, y: 20, type: "region" },
   { label: "北斗", x: 37, y: 34, type: "asterism" },
@@ -135,6 +142,17 @@ export default function Home() {
           <p>
             首页只呈现少量重要事件。事实、古典解释与情景推演始终分层展示。
           </p>
+        </div>
+
+        <div className="event-pools" aria-label="每日事件候选池">
+          {eventPools.map((pool, index) => (
+            <div key={pool.name}>
+              <span>0{index + 1}</span>
+              <strong>{pool.name}</strong>
+              <small>{pool.scope}</small>
+            </div>
+          ))}
+          <p>四类候选池 · 每日只选三件 · 不按古典契合度选题</p>
         </div>
 
         <div className="world-grid">
