@@ -15,6 +15,12 @@ const localBindingConfig = {
   name: "moguan-public",
   main: "./worker/index.ts",
   compatibility_flags: ["nodejs_compat"],
+  routes: [
+    {
+      pattern: "moguan.idc-index.com",
+      custom_domain: true,
+    },
+  ],
   d1_databases: d1
     ? [
         {
