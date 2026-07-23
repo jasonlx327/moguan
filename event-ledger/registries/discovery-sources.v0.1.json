@@ -1,0 +1,45 @@
+{
+  "schema_version": "0.1",
+  "reviewed_at": "2026-07-23",
+  "sources": [
+    {
+      "publisher_id": "PUB-BLOOMBERG",
+      "publisher": "Bloomberg",
+      "homepage": "https://www.bloomberg.com/",
+      "role": "discovery_only",
+      "priority_pools": ["天下", "流通"],
+      "access_mode": "manual_or_licensed",
+      "automated_collection": "prohibited_without_permission",
+      "allowed_storage": ["publisher", "public_headline_or_manual_paraphrase", "published_at", "url", "accessed_at"],
+      "full_text_storage": false,
+      "terms_url": "https://www.bloomberg.com/tos",
+      "review_note": "不得把 Bloomberg 页面内容自动抓取后用于建库；P0 仅作人工发现线索。"
+    },
+    {
+      "publisher_id": "PUB-WSJ",
+      "publisher": "The Wall Street Journal",
+      "homepage": "https://www.wsj.com/",
+      "role": "discovery_only",
+      "priority_pools": ["天下", "流通"],
+      "access_mode": "manual_or_licensed",
+      "automated_collection": "prohibited_without_permission",
+      "allowed_storage": ["publisher", "public_headline_or_manual_paraphrase", "published_at", "url", "accessed_at"],
+      "full_text_storage": false,
+      "terms_url": "https://www.wsj.com/policy/terms-of-use",
+      "review_note": "P0 采取保守边界：不抓取、不保存付费内容，自动接入前重新核对 Dow Jones 授权。"
+    },
+    {
+      "publisher_id": "PUB-UN",
+      "publisher": "United Nations",
+      "homepage": "https://www.un.org/",
+      "role": "official_discovery_and_primary_claim",
+      "priority_pools": ["天地", "生民", "天下", "流通"],
+      "access_mode": "manual_or_approved_feed",
+      "automated_collection": "review_specific_feed_before_use",
+      "allowed_storage": ["publisher", "headline_or_manual_paraphrase", "document_id", "published_at", "url", "accessed_at"],
+      "full_text_storage": false,
+      "terms_url": "https://www.un.org/en/about-us/terms-of-use",
+      "review_note": "可确认联合国自身声明与行动，但不能同时充当独立媒体核验。商业使用前复核具体材料条款。"
+    }
+  ]
+}

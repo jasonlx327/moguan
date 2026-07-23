@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "moguan://event-ledger/daily-ledger.schema.v0.1",
+  "title": "Moguan daily candidate event ledger",
+  "$defs": {
+    "event_pool": {
+      "enum": ["天地", "生民", "天下", "流通"]
+    },
+    "ledger_status": {
+      "enum": ["collecting", "verifying", "review_ready", "published", "archived"]
+    },
+    "decision": {
+      "enum": ["pending", "selected", "rejected"]
+    },
+    "claim_status": {
+      "enum": ["unverified", "confirmed", "disputed", "retracted"]
+    },
+    "review_status": {
+      "enum": ["pending", "approved", "rejected", "revision_required"]
+    },
+    "data_status": {
+      "enum": ["live", "delayed", "snapshot", "demo", "missing"]
+    }
+  },
+  "score_contract": {
+    "scale": "Each dimension is an integer from 0 to 5.",
+    "weights": {
+      "public_impact": 30,
+      "change_intensity": 25,
+      "evidence_completeness": 25,
+      "continued_observation_value": 15,
+      "freshness": 5
+    },
+    "formula": "round(sum(dimension_score / 5 * weight))",
+    "forbidden_dimensions": ["classical_fit", "astrological_fit", "visual_impact", "social_heat"]
+  },
+  "description": "Runtime structural and publication-gate validation is implemented by scripts/validate-event-ledger.mjs."
+}

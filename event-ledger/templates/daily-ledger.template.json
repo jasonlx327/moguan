@@ -1,0 +1,21 @@
+{
+  "schema_version": "0.1",
+  "ledger_id": "LEDGER-YYYY-MM-DD",
+  "date": "YYYY-MM-DD",
+  "timezone": "Asia/Shanghai",
+  "cutoff_at": null,
+  "status": "collecting",
+  "data_status": "missing",
+  "collected_at": null,
+  "source_records": [],
+  "candidates": [],
+  "selection": {
+    "target_count": 3,
+    "selected_event_ids": [],
+    "reviewer": null,
+    "reviewed_at": null,
+    "publication_version": null,
+    "selection_note": null
+  },
+  "revision_note": "New daily ledger."
+}

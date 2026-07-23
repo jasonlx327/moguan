@@ -1,0 +1,21 @@
+{
+  "schema_version": "0.1",
+  "ledger_id": "LEDGER-2026-07-23",
+  "date": "2026-07-23",
+  "timezone": "Asia/Shanghai",
+  "cutoff_at": "2026-07-23T08:00:00+08:00",
+  "status": "collecting",
+  "data_status": "missing",
+  "collected_at": null,
+  "source_records": [],
+  "candidates": [],
+  "selection": {
+    "target_count": 3,
+    "selected_event_ids": [],
+    "reviewer": null,
+    "reviewed_at": null,
+    "publication_version": null,
+    "selection_note": null
+  },
+  "revision_note": "Ledger structure created; no event has been collected or verified."
+}
