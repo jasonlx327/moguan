@@ -184,7 +184,15 @@ export async function collectCnGovPolicy({
       data_type: Array.isArray(payload?.data) ? "array" : typeof payload?.data,
       data_keys: dataObject ? Object.keys(payload.data).slice(0, 20) : [],
     };
-    const searchVO = payload?.searchVO ?? payload?.data?.searchVO;
+    const searchVO = payload?.searchVO
+      ?? payload?.data?.searchVO
+      ?? (Array.isArray(payload?.data)
+        ? {
+          listVO: payload.data,
+          totalCount: payload.data.length,
+          totalpage: 1,
+        }
+        : null);
     if (!searchVO || typeof searchVO !== "object") {
       throw new ResponseShapeError(
         `China government policy response for "${term}" has no searchVO`,

@@ -90,6 +90,27 @@ test("collector accepts searchVO nested under data", async () => {
   assert.ok(snapshot.query.requests[0].response_bytes > 0);
 });
 
+test("collector accepts a direct data array when searchVO is null", async () => {
+  const snapshot = await collectCnGovPolicy({
+    from: "2026-06-29",
+    to: "2026-07-28",
+    terms: ["出口管制"],
+    fetchImpl: async () => new Response(JSON.stringify({
+      code: 200,
+      msg: "success",
+      data: [policyItem],
+      searchVO: null,
+      paramsVO: null,
+    }), {
+      status: 200,
+      headers: { "content-type": "application/json" },
+    }),
+  });
+
+  assert.equal(snapshot.candidate_count, 1);
+  assert.equal(snapshot.documents[0].document_number, "商务部公告2026年第30号");
+});
+
 test("collector reports safe response shape diagnostics without storing the body", async () => {
   const body = JSON.stringify({
     code: 200,
