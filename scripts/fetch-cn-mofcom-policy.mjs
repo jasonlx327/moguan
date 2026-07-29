@@ -33,6 +33,14 @@ function documentNumber(title) {
   return title.match(/商务部(?:\s*海关总署)?公告\d{4}年第\d+号/)?.[0] ?? null;
 }
 
+function datesInText(value) {
+  return new Set(
+    [...String(value).matchAll(/\d{4}(?:-|年)\d{1,2}(?:-|月)\d{1,2}日?/g)]
+      .map((match) => normalizeDate(match[0]))
+      .filter(Boolean),
+  );
+}
+
 export function buildMofcomAnnouncementUrl(to) {
   const year = String(to).slice(0, 4);
   if (!/^\d{4}$/.test(year)) throw new Error(`Invalid MOFCOM year: ${to}`);
@@ -144,6 +152,47 @@ export async function collectCnMofcomPolicy({
     );
   }
 
+  const detailRequests = [];
+  for (const document of documents) {
+    const detailResponse = await fetchImpl(document.official_url, {
+      headers: {
+        accept: "text/html,application/xhtml+xml",
+      },
+    });
+    if (!detailResponse.ok) {
+      throw new Error(
+        `MOFCOM official article request failed for ${document.record_id}: ${detailResponse.status}`,
+      );
+    }
+    const detailHtml = await detailResponse.text();
+    const detailText = stripMarkup(detailHtml);
+    const numberConfirmed = document.document_number
+      ? detailText.includes(document.document_number)
+      : false;
+    const dateConfirmed = datesInText(detailText).has(document.publication_date);
+    if (!numberConfirmed || !dateConfirmed) {
+      throw new Error(
+        `MOFCOM official article did not confirm number and date for ${document.record_id}`,
+      );
+    }
+
+    document.legal_verification_status = "official_article_confirmed";
+    document.detail_verification = {
+      status: "official_article_confirmed",
+      document_number_confirmed: true,
+      publication_date_confirmed: true,
+      verified_at: collectedAt.toISOString(),
+    };
+    detailRequests.push({
+      record_id: document.record_id,
+      url: document.official_url,
+      http_status: detailResponse.status,
+      content_type: detailResponse.headers.get("content-type"),
+      response_bytes: Buffer.byteLength(detailHtml),
+      response_sha256: createHash("sha256").update(detailHtml).digest("hex"),
+    });
+  }
+
   return {
     schema_version: "0.1",
     snapshot_id: `CN-MOFCOM-ANNOUNCEMENTS-${from}-${to}`,
@@ -172,7 +221,7 @@ export async function collectCnMofcomPolicy({
         response_sha256: createHash("sha256").update(html).digest("hex"),
         list_anchor_count: listAnchorCount,
         topic_anchor_count: topicAnchorCount,
-      }],
+      }, ...detailRequests],
     },
     data_status: "snapshot",
     candidate_count: documents.length,

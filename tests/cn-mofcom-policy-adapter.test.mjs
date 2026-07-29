@@ -83,6 +83,15 @@ test("MOFCOM collector produces a pending auditable snapshot", async () => {
   assert.equal(snapshot.candidate_count, 1);
   assert.ok(snapshot.query.requests[0].list_anchor_count >= 3);
   assert.equal(snapshot.query.requests[0].topic_anchor_count, 2);
+  assert.equal(snapshot.query.requests.length, 2);
+  assert.equal(
+    snapshot.documents[0].legal_verification_status,
+    "official_article_confirmed",
+  );
+  assert.equal(
+    snapshot.documents[0].detail_verification.publication_date_confirmed,
+    true,
+  );
   assert.match(snapshot.query.requests[0].response_sha256, /^[a-f0-9]{64}$/);
   assert.deepEqual(validateSnapshot(snapshot), []);
 });

@@ -133,7 +133,7 @@ test("remote probe falls back to the official MOFCOM announcement list", async (
     from: "2026-06-30",
     to: "2026-07-29",
     output,
-    fetchImpl: async (url) => String(url).includes("/zcfb/blgg/gg/")
+    fetchImpl: async (url) => String(url).includes("www.mofcom.gov.cn")
       ? new Response(mofcomHtml, {
         status: 200,
         headers: { "content-type": "text/html" },
