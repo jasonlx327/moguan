@@ -1012,11 +1012,11 @@ nav a.active {
 
 .impact-classics-gate > div {
   display: grid;
-  grid-template-columns: 1.25fr 1fr 1fr;
+  grid-template-columns: repeat(4, 1fr);
 }
 
 .impact-classics-gate article {
-  min-height: 134px;
+  min-height: 230px;
   padding: 22px 28px;
 }
 
@@ -1024,11 +1024,63 @@ nav a.active {
   border-left: 1px solid rgba(255,255,255,.08);
 }
 
-.impact-classics-gate p {
+.impact-classics-gate p,
+.impact-classics-gate ul {
   margin: 12px 0 0;
   color: rgba(255,255,255,.56);
   font-size: 11px;
   line-height: 1.75;
+}
+
+.impact-classics-gate ul {
+  padding-left: 16px;
+}
+
+.impact-classics-gate li + li {
+  margin-top: 7px;
+}
+
+.impact-classics-gate blockquote {
+  margin: 16px 0 0;
+  color: #ead9b4;
+  font-size: 16px;
+  line-height: 1.85;
+}
+
+.impact-classics-gate article > a {
+  display: inline-flex;
+  gap: 8px;
+  margin-top: 12px;
+  color: #a9905d;
+  font: 10px/1.5 "PingFang SC", sans-serif;
+  text-decoration: none;
+}
+
+.impact-classics-gate article > a i {
+  font-style: normal;
+}
+
+.impact-classics-gate article > b {
+  display: block;
+  margin-top: 13px;
+  color: rgba(255,255,255,.75);
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 1.7;
+}
+
+.impact-classics-gate .impact-reality-change {
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  gap: 18px;
+  align-items: start;
+  padding: 18px 28px;
+  border-bottom: 1px solid rgba(255,255,255,.08);
+  background: rgba(255,255,255,.025);
+}
+
+.impact-reality-change p {
+  margin: 0;
 }
 
 .earth-panel {
@@ -2482,6 +2534,10 @@ nav a.active {
   }
 
   .impact-classics-gate > div {
+    grid-template-columns: 1fr;
+  }
+
+  .impact-classics-gate .impact-reality-change {
     grid-template-columns: 1fr;
   }
 

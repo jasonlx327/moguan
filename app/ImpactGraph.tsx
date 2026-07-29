@@ -4,6 +4,10 @@ import { useEffect, useRef, useState } from "react";
 import impactGraph from "../chashi/graphs/EVENT-2026-07-29-01.json";
 import eventLedger from "../event-ledger/daily/2026-07-29.json";
 import eventMappings from "../knowledge-base/registries/event-mappings.2026-07-29.v0.1.json";
+import interpretations from "../knowledge-base/registries/interpretations.2026-07-29.v0.1.json";
+import passages from "../knowledge-base/registries/passages.v0.1.json";
+import classicalSources from "../knowledge-base/registries/sources.v0.1.json";
+import works from "../knowledge-base/registries/works.v0.1.json";
 
 type GraphNode = (typeof impactGraph.nodes)[number];
 type GraphEdge = (typeof impactGraph.edges)[number] & {
@@ -41,7 +45,17 @@ const relationLabels: Record<GraphEdge["relation_type"], string> = {
 const sourcesById = Object.fromEntries(
   eventLedger.source_records.map((source) => [source.source_record_id, source]),
 ) as Record<string, (typeof eventLedger.source_records)[number]>;
-const researchMapping = eventMappings.event_mappings[0];
+const eventMapping = eventMappings.event_mappings[0];
+const formalInterpretation = interpretations.interpretations[0];
+const publicPassage = passages.passages.find(
+  (passage) => passage.passage_id === eventMapping.public_passage_id,
+);
+const publicWork = works.works.find(
+  (work) => work.work_id === publicPassage?.work_id,
+);
+const publicSource = classicalSources.sources.find(
+  (source) => source.source_id === publicPassage?.source_anchors[0]?.source_id,
+);
 
 export default function ImpactGraph() {
   const graphScrollRef = useRef<HTMLDivElement>(null);
@@ -261,29 +275,45 @@ export default function ImpactGraph() {
         </aside>
       </div>
 
-      <section className="impact-classics-gate" aria-labelledby="impact-classics-title">
+      <section className="impact-classics-gate published" aria-labelledby="impact-classics-title">
         <header>
           <div>
-            <span>知典 · 待审</span>
-            <h4 id="impact-classics-title">{researchMapping.theme}</h4>
+            <span>知典 · 已审</span>
+            <h4 id="impact-classics-title">{eventMapping.theme}</h4>
           </div>
-          <strong>尚未进入古籍公开解释</strong>
+          <strong>古籍解释已公开 · 尚未进入未来推演</strong>
         </header>
+        <div className="impact-reality-change">
+          <small>现实变化</small>
+          <p>{formalInterpretation.reality_change}</p>
+        </div>
         <div>
           <article>
-            <small>候选角度</small>
-            <p>{researchMapping.interpretive_frame}</p>
+            <small>01 · 古典之言</small>
+            <blockquote>“{publicPassage?.source_text}”</blockquote>
+            {publicSource && (
+              <a href={publicSource.canonical_url} target="_blank" rel="noreferrer">
+                {publicWork?.canonical_title} · {publicPassage?.chapter}<i>↗</i>
+              </a>
+            )}
           </article>
           <article>
-            <small>当前进度</small>
-            <p>
-              已命中 {researchMapping.passage_ids.length} 条候选古籍；仍须完成事件入选、
-              引文复核与现实影响证据补充。
-            </p>
+            <small>02 · 古今之桥</small>
+            <p>{formalInterpretation.modern_bridge}</p>
           </article>
           <article>
-            <small>五行边界</small>
-            <p>{researchMapping.five_phase_position}</p>
+            <small>03 · 边界与异说</small>
+            <ul>
+              {formalInterpretation.limits_and_counterreadings.slice(0, 3).map((limit) => (
+                <li key={limit}>{limit}</li>
+              ))}
+            </ul>
+          </article>
+          <article>
+            <small>04 · 继续观察</small>
+            <b>{formalInterpretation.continued_observation.window}</b>
+            <p>{formalInterpretation.continued_observation.supporting_signals[0]}</p>
+            <p>{formalInterpretation.continued_observation.weakening_signals[0]}</p>
           </article>
         </div>
       </section>

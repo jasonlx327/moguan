@@ -51,7 +51,7 @@ test("modern validation records remain distinct from classical passages", () => 
   assert.ok(result.results.every((item) => item.source_function === "modern_validation"));
 });
 
-test("MOFCOM classical mapping remains a non-public research draft", () => {
+test("MOFCOM classical mapping is approved with one public passage", () => {
   const registry = JSON.parse(
     fs.readFileSync(
       path.join(
@@ -64,11 +64,33 @@ test("MOFCOM classical mapping remains a non-public research draft", () => {
   const mapping = registry.event_mappings[0];
 
   assert.equal(mapping.event_id, "EVENT-2026-07-29-01");
-  assert.equal(mapping.mapping_status, "research_draft");
-  assert.equal(mapping.ui_publishable, false);
-  assert.equal(mapping.public_passage_id, null);
+  assert.equal(mapping.mapping_status, "approved");
+  assert.equal(mapping.ui_publishable, true);
+  assert.equal(mapping.public_passage_id, "PASS-SHIJI-HUOZHI-0001");
   assert.match(mapping.five_phase_position, /不分配固定五行/);
   assert.ok(mapping.review_gate.forbidden_outputs.some((item) => item.includes("因果")));
+});
+
+test("MOFCOM interpretation matches the frozen event fact version", () => {
+  const interpretation = JSON.parse(
+    fs.readFileSync(
+      path.join(
+        root,
+        "knowledge-base/registries/interpretations.2026-07-29.v0.1.json",
+      ),
+      "utf8",
+    ),
+  ).interpretations[0];
+
+  assert.equal(interpretation.event_id, "EVENT-2026-07-29-01");
+  assert.equal(interpretation.fact_version, "2026-07-29-v0.1");
+  assert.equal(interpretation.review_status, "analysis_reviewed");
+  assert.match(interpretation.modern_bridge, /是否进一步形成供应链或财务影响，必须等待现代证据/);
+  assert.ok(
+    interpretation.limits_and_counterreadings.some((item) =>
+      item.includes("不能写成已证实因果"),
+    ),
+  );
 });
 
 test("knowledge validator resolves events across daily ledger files", () => {
@@ -79,5 +101,6 @@ test("knowledge validator resolves events across daily ledger files", () => {
   );
 
   assert.match(output, /"event_mappings": 4/);
+  assert.match(output, /"interpretations": 4/);
   assert.match(output, /knowledge base validation passed/);
 });

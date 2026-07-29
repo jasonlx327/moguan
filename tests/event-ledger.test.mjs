@@ -26,15 +26,23 @@ test("daily candidate ledger passes draft validation", () => {
   assert.deepEqual(validateLedger(dailyLedger), []);
 });
 
-test("verified MOFCOM policy remains a pending draft candidate", () => {
+test("verified MOFCOM policy is selected with a frozen fact version", () => {
   assert.deepEqual(validateLedger(mofcomCandidateLedger), []);
   assert.equal(mofcomCandidateLedger.candidates.length, 1);
-  assert.equal(mofcomCandidateLedger.candidates[0].decision, "pending");
+  assert.equal(mofcomCandidateLedger.status, "review_ready");
+  assert.equal(mofcomCandidateLedger.candidates[0].decision, "selected");
+  assert.equal(mofcomCandidateLedger.candidates[0].review_status, "approved");
   assert.equal(
     mofcomCandidateLedger.candidates[0].evidence_status,
     "fact_checked",
   );
-  assert.equal(mofcomCandidateLedger.selection.selected_event_ids.length, 0);
+  assert.deepEqual(mofcomCandidateLedger.selection.selected_event_ids, [
+    "EVENT-2026-07-29-01",
+  ]);
+  assert.equal(
+    mofcomCandidateLedger.selection.publication_version,
+    "2026-07-29-v0.1",
+  );
 });
 
 test("empty collecting ledger cannot pass publication gate", () => {

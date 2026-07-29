@@ -4,7 +4,7 @@
   "date": "2026-07-29",
   "timezone": "Asia/Shanghai",
   "cutoff_at": "2026-07-29T10:03:36+08:00",
-  "status": "verifying",
+  "status": "review_ready",
   "data_status": "snapshot",
   "collected_at": "2026-07-29T10:03:36+08:00",
   "source_records": [
@@ -56,7 +56,7 @@
       "timezone": "Asia/Shanghai",
       "data_status": "snapshot",
       "evidence_status": "fact_checked",
-      "review_status": "pending",
+      "review_status": "approved",
       "version": "0.1",
       "revision_note": "由商务部年度公告列表发现，并完成官方正文文号与发布日期核验。",
       "locations": [
@@ -142,17 +142,19 @@
         "freshness": 5,
         "total": 76
       },
-      "decision": "pending",
-      "decision_reason": "官方措施已经核验，但尚缺独立影响证据和产品负责人的人工准入决定。"
+      "decision": "selected",
+      "decision_reason": "产品负责人确认该事件正式入选并冻结事实版本；实际贸易和企业影响仍须由后续许可证、交付、合同或企业披露验证。"
     }
   ],
   "selection": {
     "target_count": 3,
-    "selected_event_ids": [],
-    "reviewer": null,
-    "reviewed_at": null,
-    "publication_version": null,
-    "selection_note": null
+    "selected_event_ids": [
+      "EVENT-2026-07-29-01"
+    ],
+    "reviewer": "产品负责人",
+    "reviewed_at": "2026-07-29T14:22:38+08:00",
+    "publication_version": "2026-07-29-v0.1",
+    "selection_note": "产品负责人确认商务部第30号公告事件正式入选并冻结事实版本；7月29日日度集合尚未凑齐三项事件，因此保持 review_ready，不标记为整日已发布。"
   },
-  "revision_note": "首条中国政策事件候选；只保存事实与后续观察点，尚未进入古籍检索、象理分析或情景推演。"
+  "revision_note": "首条中国政策事件已由产品负责人确认入选并冻结事实版本；允许进入古籍解释，尚未进入未来情景推演。"
 }
