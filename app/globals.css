@@ -1048,6 +1048,26 @@ nav a.active {
   font-style: normal;
 }
 
+.impact-stage-update > footer {
+  display: grid;
+  grid-template-columns: 180px 230px 1fr;
+  gap: 24px;
+  align-items: baseline;
+  padding: 16px 28px;
+  border-top: 1px solid rgba(255,255,255,.08);
+  background: rgba(255,255,255,.025);
+}
+
+.impact-stage-update > footer b {
+  color: #d9c28d;
+  font-size: 11px;
+  font-weight: 500;
+}
+
+.impact-stage-update > footer p {
+  margin: 0;
+}
+
 .impact-classics-gate {
   border-top: 1px solid rgba(217,194,141,.2);
   background:
@@ -2626,6 +2646,10 @@ nav a.active {
     border-left: 0;
   }
 
+  .impact-stage-update > footer {
+    grid-template-columns: 1fr;
+  }
+
   .impact-classics-gate .impact-reality-change {
     grid-template-columns: 1fr;
   }
@@ -2928,6 +2952,11 @@ nav a.active {
 
   .impact-stage-update article {
     padding: 20px;
+  }
+
+  .impact-stage-update > footer {
+    gap: 8px;
+    padding: 18px 20px;
   }
 
   .impact-classics-gate article {

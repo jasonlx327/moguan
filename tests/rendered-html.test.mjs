@@ -62,6 +62,10 @@ test("server-renders the Moguan P0 shell", async () => {
   assert.match(html, /局部受限，总体影响受控/);
   assert.match(html, /尚不能外推至全部实体/);
   assert.match(html, /事实版本 2026-07-29-v0.2/);
+  assert.match(html, /最新日度候验 · 2026 \/ 07 \/ 29/);
+  assert.match(html, /部分完成 · 不能判定“暂无新增”/);
+  assert.match(html, /VIGO公告索引已检查/);
+  assert.match(html, /商务部公开入口当前为/);
   assert.match(html, /知典 · 已审/);
   assert.match(html, /流通条件、禁限与后续应变/);
   assert.match(html, /古籍解释已公开 · 尚未进入未来推演/);

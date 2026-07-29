@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import impactGraph from "../chashi/graphs/EVENT-2026-07-29-01.json";
 import eventLedger from "../event-ledger/daily/2026-07-29.json";
+import eventWatch from "../event-watch/daily/2026-07-29.json";
 import eventMappings from "../knowledge-base/registries/event-mappings.2026-07-29.v0.2.json";
 import interpretations from "../knowledge-base/registries/interpretations.2026-07-29.v0.2.json";
 import passages from "../knowledge-base/registries/passages.v0.1.json";
@@ -51,6 +52,12 @@ const eventMapping = eventMappings.event_mappings[0];
 const formalInterpretation = interpretations.interpretations[0];
 const policyResponseSource = sourcesById["SRC-20260729-MOFCOM-30-QA"];
 const companyImpactSource = sourcesById["SRC-20260729-VIGO-35"];
+const mofcomWatch = eventWatch.source_checks.find(
+  (check) => check.source_record_id === "SRC-20260729-MOFCOM-30-QA",
+);
+const vigoWatch = eventWatch.source_checks.find(
+  (check) => check.source_record_id === "SRC-20260729-VIGO-35",
+);
 const publicPassage = passages.passages.find(
   (passage) => passage.passage_id === eventMapping.public_passage_id,
 );
@@ -310,6 +317,15 @@ export default function ImpactGraph() {
             <p>当前只有一家名单内企业披露影响；其余13家、许可证结果、实际交付和最终财务影响仍待确认。</p>
           </article>
         </div>
+        <footer>
+          <small>最新日度候验 · 2026 / 07 / 29</small>
+          <b>部分完成 · 不能判定“暂无新增”</b>
+          <p>
+            VIGO公告索引已检查，新增候选为 {vigoWatch?.discovery_candidate_count ?? 0}；
+            商务部公开入口当前为
+            {mofcomWatch?.index_status === "checked" ? "已检查" : "不可访问"}，因此不改变现有事实版本。
+          </p>
+        </footer>
       </section>
 
       <section className="impact-classics-gate published" aria-labelledby="impact-classics-title">
