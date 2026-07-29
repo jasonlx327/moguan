@@ -23,6 +23,14 @@ export class ResponseShapeError extends Error {
   }
 }
 
+export class ResponseQualityError extends Error {
+  constructor(message, details) {
+    super(message);
+    this.name = "ResponseQualityError";
+    this.details = details;
+  }
+}
+
 function isoDate(value) {
   const date = new Date(value);
   if (Number.isNaN(date.getTime())) throw new Error(`Invalid date: ${value}`);
@@ -234,6 +242,25 @@ export async function collectCnGovPolicy({
       if (existing) existing.terms.add(term);
       else matches.set(key, { item, terms: new Set([term]) });
     }
+  }
+
+  const allEmpty = requests.length > 1
+    && requests.every((request) => request.returned_count === 0);
+  const uniqueResponseHashes = new Set(
+    requests.map((request) => request.response_sha256),
+  );
+  if (allEmpty && uniqueResponseHashes.size === 1) {
+    throw new ResponseQualityError(
+      "Official policy searches returned one identical empty response for every term",
+      {
+        request_count: requests.length,
+        terms: requests.map((request) => request.term),
+        http_statuses: [...new Set(requests.map((request) => request.http_status))],
+        content_types: [...new Set(requests.map((request) => request.content_type))],
+        response_bytes: [...new Set(requests.map((request) => request.response_bytes))],
+        response_sha256: requests[0].response_sha256,
+      },
+    );
   }
 
   const documents = [...matches.values()]

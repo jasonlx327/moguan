@@ -140,6 +140,34 @@ test("collector reports safe response shape diagnostics without storing the body
   );
 });
 
+test("collector blocks identical empty responses across different terms", async () => {
+  const body = JSON.stringify({
+    code: 200,
+    data: [],
+    searchVO: null,
+  });
+
+  await assert.rejects(
+    collectCnGovPolicy({
+      from: "2026-06-29",
+      to: "2026-07-28",
+      terms: ["半导体", "出口管制"],
+      fetchImpl: async () => new Response(body, {
+        status: 200,
+        headers: { "content-type": "application/json" },
+      }),
+    }),
+    (error) => {
+      assert.equal(error.name, "ResponseQualityError");
+      assert.equal(error.details.request_count, 2);
+      assert.deepEqual(error.details.terms, ["半导体", "出口管制"]);
+      assert.deepEqual(error.details.http_statuses, [200]);
+      assert.match(error.details.response_sha256, /^[a-f0-9]{64}$/);
+      return true;
+    },
+  );
+});
+
 test("validator rejects unofficial links", async () => {
   const snapshot = await collectCnGovPolicy({
     from: "2026-06-29",
