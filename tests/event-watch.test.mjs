@@ -18,6 +18,22 @@ const vigoReportUrl =
   "https://vigophotonics.com/reports/analysis-of-the-impact-of-placing-vigo-photonics-on-the-chinese-dual-use-export-restriction-list/";
 const vigoIndexUrl =
   "https://vigophotonics.com/investor-relations/reports/current-reports/";
+const entityPages = {
+  "https://www.rheinmetall.com/en/company/about-rheinmetall":
+    "<html>Rheinmetall AG headquartered in Düsseldorf security and defence industry</html>",
+  "https://www.rheinmetall.com/en/media/news":
+    "<html><a href=\"/en/media/news/archive\">Company archive</a></html>",
+  "https://www.royalihc.com/about-us/global-presence/asia":
+    "<html>Royal IHC China The People’s Republic of China +86 22 24 99 88 06 sourcing activities in China</html>",
+  "https://www.royalihc.com/contact?page=4":
+    "<html>Royal IHC China The People’s Republic of China +86 22 24 99 88 06</html>",
+  "https://www.royalihc.com/news":
+    "<html><a href=\"/news/new-vessel\">New vessel delivered</a></html>",
+  "https://www.lafert.com/en/corporate/4":
+    "<html>Lafert S.p.A. Lafert Suzhou Sumitomo</html>",
+  "https://www.lafert.com/en/news":
+    "<html><a href=\"/en/news-list/2/company/update\">Company update</a></html>",
+};
 
 function response(html, status = 200) {
   return new Response(html, {
@@ -52,6 +68,7 @@ function completeFetch({ withNewVigoReport = false, failVigoIndex = false } = {}
         `<a href="${vigoReportUrl}">Analysis of the impact of placing VIGO on the Chinese dual-use export restriction list</a>${newReport}`,
       );
     }
+    if (entityPages[url]) return response(entityPages[url]);
     throw new Error(`unexpected URL: ${url}`);
   };
 }
@@ -82,6 +99,32 @@ test("link discovery keeps relevant same-host links and excludes known evidence"
   assert.deepEqual(records[0].matched_terms, ["export license"]);
 });
 
+test("entity registry adds three official company watches with public indexes", () => {
+  const registry = JSON.parse(
+    fs.readFileSync(
+      new URL("../event-watch/entities.v0.1.json", import.meta.url),
+      "utf8",
+    ),
+  );
+  const additions = registry.sources.filter((source) =>
+    source.source_record_id.startsWith("WATCHSRC-"),
+  );
+
+  assert.deepEqual(
+    additions.map((source) => source.official_list_name),
+    ["Rheinmetall AG", "IHC Merwede Holding B.V.", "Lafert S.p.A."],
+  );
+  for (const source of additions) {
+    assert.equal(
+      new URL(source.baseline_url).hostname,
+      new URL(source.index_url).hostname,
+    );
+    assert.ok(source.baseline_markers.length >= 3);
+    assert.ok(source.discovery_terms.includes("china"));
+    assert.ok(source.discovery_terms.includes("export license"));
+  }
+});
+
 test("daily watch writes an immutable no-new-evidence record", async (t) => {
   const output = temporaryOutput(t);
   const result = await runEventWatch({
@@ -93,6 +136,8 @@ test("daily watch writes an immutable no-new-evidence record", async (t) => {
 
   assert.equal(result.record.data_status, "snapshot");
   assert.equal(result.record.result_status, "no_new_evidence");
+  assert.equal(result.record.entity_registry.source_count, 5);
+  assert.equal(result.record.source_checks.length, 5);
   assert.equal(result.record.new_evidence_count, 0);
   assert.equal(result.record.conclusion.direction, "maintained");
   assert.match(result.sha256, /^[a-f0-9]{64}$/);
@@ -155,12 +200,40 @@ test("MOFCOM main site is used when the bureau subsite is unavailable", async (t
     checkedAt: new Date("2026-07-29T07:00:00Z"),
   });
 
-  const mofcomCheck = result.record.source_checks[0];
+  const mofcomCheck = result.record.source_checks.find(
+    (check) => check.entity_id === "MOFCOM",
+  );
   assert.equal(result.record.result_status, "no_new_evidence");
   assert.equal(mofcomCheck.baseline_request.fallback_used, true);
   assert.equal(mofcomCheck.index_request.fallback_used, true);
   assert.equal(mofcomCheck.baseline_request.used_url, mofcomFallbackQaUrl);
   assert.equal(mofcomCheck.index_request.used_url, mofcomFallbackIndexUrl);
+});
+
+test("Royal IHC official contact page is used when its Asia page rejects automation", async (t) => {
+  const output = temporaryOutput(t);
+  const standardFetch = completeFetch();
+  const result = await runEventWatch({
+    operationDate: "2026-07-29",
+    output,
+    fetchImpl: async (url) => {
+      if (url === "https://www.royalihc.com/about-us/global-presence/asia") {
+        return response("<html>forbidden</html>", 403);
+      }
+      return standardFetch(url);
+    },
+    checkedAt: new Date("2026-07-29T07:00:00Z"),
+  });
+
+  const check = result.record.source_checks.find(
+    (sourceCheck) => sourceCheck.entity_id === "ROYAL-IHC",
+  );
+  assert.equal(check.baseline_status, "confirmed");
+  assert.equal(check.baseline_request.fallback_used, true);
+  assert.equal(
+    check.baseline_request.used_url,
+    "https://www.royalihc.com/contact?page=4",
+  );
 });
 
 test("an inaccessible index cannot be reported as no new evidence", async (t) => {

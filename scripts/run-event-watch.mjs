@@ -7,27 +7,7 @@ import { fileURLToPath } from "node:url";
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const eventId = "EVENT-2026-07-29-01";
 const timezone = "Asia/Shanghai";
-
-const watchSources = [
-  {
-    sourceRecordId: "SRC-20260729-MOFCOM-30-QA",
-    publisher: "中华人民共和国商务部",
-    indexUrl: "https://aqygzj.mofcom.gov.cn/index.html",
-    fallbackBaselineUrls: [
-      "https://www.mofcom.gov.cn/xwfb/xwfyrth/art/2026/art_21b4467c09fc435d8d4aee6f310f9f8a.html",
-    ],
-    fallbackIndexUrls: ["https://www.mofcom.gov.cn/xwfb/"],
-    baselineMarkers: ["欧方正式发布第21轮对俄制裁措施", "针对欧方上述恶劣行径"],
-    discoveryTerms: ["14家欧盟实体", "第30号", "欧盟实体", "出口管制"],
-  },
-  {
-    sourceRecordId: "SRC-20260729-VIGO-35",
-    publisher: "VIGO Photonics",
-    indexUrl: "https://vigophotonics.com/investor-relations/reports/current-reports/",
-    baselineMarkers: ["Current Report No. 35/2026", "approximately 8.8%", "export licenses"],
-    discoveryTerms: ["china", "chinese", "dual-use", "export restriction", "export license", "export licence"],
-  },
-];
+const defaultRegistryPath = path.join(root, "event-watch/entities.v0.1.json");
 
 function argument(name) {
   const index = process.argv.indexOf(name);
@@ -162,6 +142,7 @@ export async function runEventWatch({
   fetchImpl = fetch,
   checkedAt = new Date(),
   ledgerPath = path.join(root, "event-ledger/daily/2026-07-29.json"),
+  registryPath = defaultRegistryPath,
 }) {
   if (!/^\d{4}-\d{2}-\d{2}$/.test(operationDate)) {
     throw new Error("operationDate must use YYYY-MM-DD");
@@ -172,6 +153,11 @@ export async function runEventWatch({
   }
 
   const ledger = JSON.parse(fs.readFileSync(ledgerPath, "utf8"));
+  const registry = JSON.parse(fs.readFileSync(registryPath, "utf8"));
+  if (registry.event_id !== eventId || !Array.isArray(registry.sources)) {
+    throw new Error("event watch registry does not match the configured event");
+  }
+  const watchSources = registry.sources;
   const event = ledger.candidates.find((candidate) => candidate.event_id === eventId);
   if (!event) throw new Error(`event not found: ${eventId}`);
   const sourceById = new Map(
@@ -179,38 +165,46 @@ export async function runEventWatch({
   );
   const knownUrls = [
     ...ledger.source_records.map((source) => source.url),
-    ...watchSources.flatMap((source) => source.fallbackBaselineUrls ?? []),
+    ...watchSources.flatMap((source) => [
+      source.baseline_url,
+      ...(source.fallback_baseline_urls ?? []),
+    ].filter(Boolean)),
   ];
   const sourceChecks = [];
   const newCandidates = [];
 
   for (const config of watchSources) {
-    const baseline = sourceById.get(config.sourceRecordId);
-    if (!baseline) throw new Error(`source not found: ${config.sourceRecordId}`);
+    const baseline = sourceById.get(config.source_record_id);
+    const baselineUrl = baseline?.url ?? config.baseline_url;
+    if (!baselineUrl) {
+      throw new Error(`baseline URL not found: ${config.source_record_id}`);
+    }
 
     const check = {
-      source_record_id: config.sourceRecordId,
+      entity_id: config.entity_id,
+      official_list_name: config.official_list_name,
+      source_record_id: config.source_record_id,
       publisher: config.publisher,
-      baseline_url: baseline.url,
-      index_url: config.indexUrl,
+      baseline_url: baselineUrl,
+      index_url: config.index_url,
       baseline_status: "not_checked",
       index_status: "not_checked",
     };
 
     try {
       const page = await fetchFirst(
-        [baseline.url, ...(config.fallbackBaselineUrls ?? [])],
+        [baselineUrl, ...(config.fallback_baseline_urls ?? [])],
         fetchImpl,
       );
       const text = stripMarkup(page.html);
-      const matchedMarkers = config.baselineMarkers.filter((marker) =>
+      const matchedMarkers = config.baseline_markers.filter((marker) =>
         text.includes(marker),
       );
-      check.baseline_status = matchedMarkers.length === config.baselineMarkers.length
+      check.baseline_status = matchedMarkers.length === config.baseline_markers.length
         ? "confirmed"
         : "marker_mismatch";
       check.baseline_markers = {
-        required: config.baselineMarkers,
+        required: config.baseline_markers,
         matched: matchedMarkers,
       };
       check.baseline_request = page.diagnostics;
@@ -229,14 +223,14 @@ export async function runEventWatch({
 
     try {
       const page = await fetchFirst(
-        [config.indexUrl, ...(config.fallbackIndexUrls ?? [])],
+        [config.index_url, ...(config.fallback_index_urls ?? [])],
         fetchImpl,
       );
       const candidates = discoverRelevantLinks({
         html: page.html,
         baseUrl: page.usedUrl,
         allowedHost: new URL(page.usedUrl).hostname,
-        terms: config.discoveryTerms,
+        terms: config.discovery_terms,
         knownUrls,
       }).map((candidate) => ({
         ...candidate,
@@ -286,13 +280,18 @@ export async function runEventWatch({
       : "blocked";
 
   const record = {
-    schema_version: "0.1",
+    schema_version: "0.2",
     watch_id: `WATCH-${eventId}-${operationDate}`,
     event_id: eventId,
     operation_date: operationDate,
     timezone,
     checked_at: checkedAt.toISOString(),
     base_fact_version: ledger.selection.publication_version,
+    entity_registry: {
+      schema_version: registry.schema_version,
+      source_count: watchSources.length,
+      selection_rule: registry.selection_rule,
+    },
     data_status: dataStatus,
     result_status: resultStatus,
     source_checks: sourceChecks,
@@ -304,7 +303,7 @@ export async function runEventWatch({
         direction === "requires_review"
           ? "发现新的相关链接，必须人工核验后才能改变事实版本。"
           : direction === "maintained"
-            ? "两个公开索引均已检查，未发现超出当前事实版本的新相关链接。"
+            ? "全部登记的公开索引均已检查，未发现超出当前事实版本的新相关链接。"
             : "至少一个公开索引未完成检查，不能得出暂无新增证据的结论。",
     },
     review_gate: {

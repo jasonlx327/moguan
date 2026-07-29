@@ -1,0 +1,118 @@
+{
+  "schema_version": "0.1",
+  "event_id": "EVENT-2026-07-29-01",
+  "selection_rule": "仅登记身份页、公开更新索引和中国业务关联均可由实体官网核验的对象；关键词命中只生成候选证据。",
+  "sources": [
+    {
+      "entity_id": "MOFCOM",
+      "official_list_name": "中华人民共和国商务部",
+      "source_record_id": "SRC-20260729-MOFCOM-30-QA",
+      "publisher": "中华人民共和国商务部",
+      "index_url": "https://aqygzj.mofcom.gov.cn/index.html",
+      "fallback_baseline_urls": [
+        "https://www.mofcom.gov.cn/xwfb/xwfyrth/art/2026/art_21b4467c09fc435d8d4aee6f310f9f8a.html"
+      ],
+      "fallback_index_urls": [
+        "https://www.mofcom.gov.cn/xwfb/"
+      ],
+      "baseline_markers": [
+        "欧方正式发布第21轮对俄制裁措施",
+        "针对欧方上述恶劣行径"
+      ],
+      "discovery_terms": [
+        "14家欧盟实体",
+        "第30号",
+        "欧盟实体",
+        "出口管制"
+      ]
+    },
+    {
+      "entity_id": "VIGO-PHOTONICS",
+      "official_list_name": "VIGO Photonics S.A.",
+      "source_record_id": "SRC-20260729-VIGO-35",
+      "publisher": "VIGO Photonics",
+      "index_url": "https://vigophotonics.com/investor-relations/reports/current-reports/",
+      "baseline_markers": [
+        "Current Report No. 35/2026",
+        "approximately 8.8%",
+        "export licenses"
+      ],
+      "discovery_terms": [
+        "china",
+        "chinese",
+        "dual-use",
+        "export restriction",
+        "export license",
+        "export licence"
+      ]
+    },
+    {
+      "entity_id": "RHEINMETALL",
+      "official_list_name": "Rheinmetall AG",
+      "source_record_id": "WATCHSRC-RHEINMETALL-IDENTITY",
+      "publisher": "Rheinmetall",
+      "baseline_url": "https://www.rheinmetall.com/en/company/about-rheinmetall",
+      "index_url": "https://www.rheinmetall.com/en/media/news",
+      "baseline_markers": [
+        "Rheinmetall AG",
+        "headquartered in Düsseldorf",
+        "security and defence industry"
+      ],
+      "discovery_terms": [
+        "china",
+        "chinese",
+        "export control",
+        "export license",
+        "export licence",
+        "supply chain"
+      ]
+    },
+    {
+      "entity_id": "ROYAL-IHC",
+      "official_list_name": "IHC Merwede Holding B.V.",
+      "source_record_id": "WATCHSRC-ROYAL-IHC-IDENTITY",
+      "publisher": "Royal IHC",
+      "baseline_url": "https://www.royalihc.com/about-us/global-presence/asia",
+      "fallback_baseline_urls": [
+        "https://www.royalihc.com/contact?page=4"
+      ],
+      "index_url": "https://www.royalihc.com/news",
+      "baseline_markers": [
+        "China",
+        "The People’s Republic of China",
+        "+86 22 24 99 88 06"
+      ],
+      "discovery_terms": [
+        "china",
+        "chinese",
+        "export control",
+        "export license",
+        "export licence",
+        "sourcing",
+        "supply chain"
+      ]
+    },
+    {
+      "entity_id": "LAFERT",
+      "official_list_name": "Lafert S.p.A.",
+      "source_record_id": "WATCHSRC-LAFERT-IDENTITY",
+      "publisher": "Lafert",
+      "baseline_url": "https://www.lafert.com/en/corporate/4",
+      "index_url": "https://www.lafert.com/en/news",
+      "baseline_markers": [
+        "Lafert S.p.A.",
+        "Lafert Suzhou",
+        "Sumitomo"
+      ],
+      "discovery_terms": [
+        "china",
+        "chinese",
+        "export control",
+        "export license",
+        "export licence",
+        "customs",
+        "supply chain"
+      ]
+    }
+  ]
+}
