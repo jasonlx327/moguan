@@ -11,6 +11,7 @@ import passagesRegistry from "../knowledge-base/registries/passages.v0.1.json";
 import worksRegistry from "../knowledge-base/registries/works.v0.1.json";
 import weatherSnapshot from "../weather-data/current.json";
 import CelestialChart from "./CelestialChart";
+import ImpactGraph from "./ImpactGraph";
 
 const hormuzLatest = hormuzSnapshot.latest_daily;
 const hormuzBaseline30 = hormuzSnapshot.baselines.baseline_30d;
@@ -417,6 +418,8 @@ export default function Home() {
             </div>
           ))}
         </div>
+
+        <ImpactGraph />
 
         <div className="world-grid">
           <div className="earth-panel">

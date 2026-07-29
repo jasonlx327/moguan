@@ -48,6 +48,16 @@ test("server-renders the Moguan P0 shell", async () => {
   assert.match(html, /NASA GIBS 来源与方法/);
   assert.match(html, /未发现可仅凭本图直接归因/);
   assert.match(html, /viirs-noaa20-truecolor\.2026-07-23\.jpg/);
+  assert.match(html, /事势星云/);
+  assert.match(html, /商务部第30号公告/);
+  assert.match(html, /事实网络，不作因果预设/);
+  assert.match(html, /实线 · 已有来源支持/);
+  assert.match(html, /灰线 · 相关不等于因果/);
+  assert.match(html, /虚线 · 等待现实验证/);
+  assert.match(html, /商务部将14家欧盟实体列入出口管制管控名单/);
+  assert.match(html, /欧盟第21轮对俄制裁/);
+  assert.match(html, /许可证、交付和合同执行变化/);
+  assert.doesNotMatch(html, /事件评分|筛选得分|总分 76/);
   assert.match(html, /3(?:<!-- -->)? 项已检查，暂无发布后新增正式证据/);
   assert.doesNotMatch(html, /全球天气视觉占位|当前为视觉占位/);
   assert.match(html, /知识库解释 · 结构类比/);
