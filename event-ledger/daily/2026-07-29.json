@@ -1,0 +1,128 @@
+{
+  "schema_version": "0.1",
+  "ledger_id": "LEDGER-2026-07-29",
+  "date": "2026-07-29",
+  "timezone": "Asia/Shanghai",
+  "cutoff_at": "2026-07-29T10:03:36+08:00",
+  "status": "verifying",
+  "data_status": "snapshot",
+  "collected_at": "2026-07-29T10:03:36+08:00",
+  "source_records": [
+    {
+      "source_record_id": "SRC-20260729-MOFCOM-30",
+      "publisher_id": "PUB-CN-MOFCOM",
+      "source_type": "official",
+      "primary_or_secondary": "primary",
+      "title_or_paraphrase": "商务部公告2026年第30号：将14家欧盟实体列入出口管制管控名单。",
+      "url": "https://www.mofcom.gov.cn/zcfb/blgg/gg/2026/art/2026/art_452eed7fd22c431fbd3d7a8b9fad6d93.html",
+      "published_at": "2026-07-24T16:00:00+08:00",
+      "accessed_at": "2026-07-29T10:03:36+08:00",
+      "language": "zh-CN",
+      "evidence_chain_id": "CHAIN-CN-MOFCOM-2026-30",
+      "license_note": "仅保存公告元数据和简要事实转述，不保存官方正文副本。",
+      "reliability_note": "商务部官方公告可确认措施内容；实际贸易和企业影响仍需独立证据验证。",
+      "document_id": "商务部公告2026年第30号",
+      "archived_copy": false
+    }
+  ],
+  "candidates": [
+    {
+      "event_id": "EVENT-2026-07-29-01",
+      "record_type": "event",
+      "event_pool": "流通",
+      "headline": "商务部将14家欧盟实体列入出口管制管控名单",
+      "summary": "商务部于2026年7月24日发布第30号公告，将14家欧盟实体列入出口管制管控名单，禁止向其出口两用物项，并禁止境外组织和个人转移或提供原产于中国的相关物项；公告自公布之日起实施。",
+      "observed_at": "2026-07-24T16:00:00+08:00",
+      "start_time": "2026-07-24T16:00:00+08:00",
+      "latest_change_time": "2026-07-24T16:00:00+08:00",
+      "collected_at": "2026-07-29T10:03:36+08:00",
+      "cutoff_at": "2026-07-29T10:03:36+08:00",
+      "timezone": "Asia/Shanghai",
+      "data_status": "snapshot",
+      "evidence_status": "fact_checked",
+      "review_status": "pending",
+      "version": "0.1",
+      "revision_note": "由商务部年度公告列表发现，并完成官方正文文号与发布日期核验。",
+      "locations": [
+        "中国",
+        "欧盟"
+      ],
+      "actors": [
+        "中华人民共和国商务部",
+        "公告列明的14家欧盟实体",
+        "中国出口经营者",
+        "涉及原产于中国两用物项转移的境外组织和个人"
+      ],
+      "claims": [
+        {
+          "claim_id": "CLAIM-MOFCOM-30-01",
+          "text": "商务部将公告附件列明的14家欧盟实体列入出口管制管控名单。",
+          "status": "confirmed",
+          "supporting_source_record_ids": [
+            "SRC-20260729-MOFCOM-30"
+          ],
+          "contradicting_source_record_ids": []
+        },
+        {
+          "claim_id": "CLAIM-MOFCOM-30-02",
+          "text": "公告禁止出口经营者向上述实体出口两用物项，并禁止境外组织和个人向其转移或提供原产于中国的两用物项；正在开展的相关活动应立即停止。",
+          "status": "confirmed",
+          "supporting_source_record_ids": [
+            "SRC-20260729-MOFCOM-30"
+          ],
+          "contradicting_source_record_ids": []
+        },
+        {
+          "claim_id": "CLAIM-MOFCOM-30-03",
+          "text": "公告自2026年7月24日公布之日起实施，特殊情况下确需出口的，出口经营者可以向商务部提出申请。",
+          "status": "confirmed",
+          "supporting_source_record_ids": [
+            "SRC-20260729-MOFCOM-30"
+          ],
+          "contradicting_source_record_ids": []
+        }
+      ],
+      "discovery_source_record_ids": [
+        "SRC-20260729-MOFCOM-30"
+      ],
+      "verification_source_record_ids": [
+        "SRC-20260729-MOFCOM-30"
+      ],
+      "unknowns": [
+        "14家实体涉及中国两用物项的实际采购、库存和合同规模",
+        "是否已经出现许可证申请、暂停交付或第三方转移安排变化",
+        "欧盟机构、成员国政府和相关实体的正式回应",
+        "该措施对半导体、光电、材料及其他具体产品链的实际影响范围"
+      ],
+      "next_signals": [
+        "商务部后续解释、许可信息或名单调整",
+        "欧盟委员会及相关成员国政府的正式回应",
+        "名单内实体发布的公告、供应链调整或财务披露",
+        "未来15日内可验证的交付暂停、许可证变化或贸易数据线索"
+      ],
+      "observation_window": {
+        "start": "2026-07-29",
+        "end": "2026-08-12"
+      },
+      "score": {
+        "public_impact": 4,
+        "change_intensity": 4,
+        "evidence_completeness": 3,
+        "continued_observation_value": 4,
+        "freshness": 5,
+        "total": 76
+      },
+      "decision": "pending",
+      "decision_reason": "官方措施已经核验，但尚缺独立影响证据和产品负责人的人工准入决定。"
+    }
+  ],
+  "selection": {
+    "target_count": 3,
+    "selected_event_ids": [],
+    "reviewer": null,
+    "reviewed_at": null,
+    "publication_version": null,
+    "selection_note": null
+  },
+  "revision_note": "首条中国政策事件候选；只保存事实与后续观察点，尚未进入古籍检索、象理分析或情景推演。"
+}

@@ -6,6 +6,9 @@ import { calculateTotal, validateLedger } from "../scripts/validate-event-ledger
 const dailyLedger = JSON.parse(
   fs.readFileSync(new URL("../event-ledger/daily/2026-07-23.json", import.meta.url), "utf8"),
 );
+const mofcomCandidateLedger = JSON.parse(
+  fs.readFileSync(new URL("../event-ledger/daily/2026-07-29.json", import.meta.url), "utf8"),
+);
 const ledger = {
   ...JSON.parse(
     fs.readFileSync(new URL("../event-ledger/templates/daily-ledger.template.json", import.meta.url), "utf8"),
@@ -21,6 +24,17 @@ test("empty collecting ledger passes draft validation", () => {
 
 test("daily candidate ledger passes draft validation", () => {
   assert.deepEqual(validateLedger(dailyLedger), []);
+});
+
+test("verified MOFCOM policy remains a pending draft candidate", () => {
+  assert.deepEqual(validateLedger(mofcomCandidateLedger), []);
+  assert.equal(mofcomCandidateLedger.candidates.length, 1);
+  assert.equal(mofcomCandidateLedger.candidates[0].decision, "pending");
+  assert.equal(
+    mofcomCandidateLedger.candidates[0].evidence_status,
+    "fact_checked",
+  );
+  assert.equal(mofcomCandidateLedger.selection.selected_event_ids.length, 0);
 });
 
 test("empty collecting ledger cannot pass publication gate", () => {
