@@ -91,6 +91,7 @@ export async function runRemoteProbe({
       access_issue: {
         error_type: error?.constructor?.name ?? "Error",
         message: String(error?.message ?? error).slice(0, 500),
+        response_diagnostics: error?.details ?? null,
       },
       review_gate: {
         status: "pending",

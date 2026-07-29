@@ -64,6 +64,61 @@ test("collector deduplicates policy documents and preserves matched terms", asyn
   assert.deepEqual(validateSnapshot(snapshot), []);
 });
 
+test("collector accepts searchVO nested under data", async () => {
+  const snapshot = await collectCnGovPolicy({
+    from: "2026-06-29",
+    to: "2026-07-28",
+    terms: ["出口管制"],
+    fetchImpl: async () => new Response(JSON.stringify({
+      code: 200,
+      data: {
+        searchVO: {
+          totalCount: 1,
+          totalpage: 1,
+          listVO: [policyItem],
+        },
+      },
+    }), {
+      status: 200,
+      headers: { "content-type": "application/json" },
+    }),
+  });
+
+  assert.equal(snapshot.candidate_count, 1);
+  assert.equal(snapshot.query.requests[0].http_status, 200);
+  assert.equal(snapshot.query.requests[0].content_type, "application/json");
+  assert.ok(snapshot.query.requests[0].response_bytes > 0);
+});
+
+test("collector reports safe response shape diagnostics without storing the body", async () => {
+  const body = JSON.stringify({
+    code: 200,
+    data: { message: "shape changed", secret_marker: "must-not-be-copied" },
+  });
+
+  await assert.rejects(
+    collectCnGovPolicy({
+      from: "2026-06-29",
+      to: "2026-07-28",
+      terms: ["半导体"],
+      fetchImpl: async () => new Response(body, {
+        status: 200,
+        headers: { "content-type": "application/json;charset=UTF-8" },
+      }),
+    }),
+    (error) => {
+      assert.equal(error.name, "ResponseShapeError");
+      assert.equal(error.details.http_status, 200);
+      assert.deepEqual(error.details.top_level_keys, ["code", "data"]);
+      assert.deepEqual(error.details.data_keys, ["message", "secret_marker"]);
+      assert.equal(error.details.response_bytes, Buffer.byteLength(body));
+      assert.match(error.details.response_sha256, /^[a-f0-9]{64}$/);
+      assert.doesNotMatch(JSON.stringify(error.details), /must-not-be-copied/);
+      return true;
+    },
+  );
+});
+
 test("validator rejects unofficial links", async () => {
   const snapshot = await collectCnGovPolicy({
     from: "2026-06-29",

@@ -15,6 +15,14 @@ export const defaultTerms = [
 ];
 export const resultLimit = 100;
 
+export class ResponseShapeError extends Error {
+  constructor(message, details) {
+    super(message);
+    this.name = "ResponseShapeError";
+    this.details = details;
+  }
+}
+
 function isoDate(value) {
   const date = new Date(value);
   if (Number.isNaN(date.getTime())) throw new Error(`Invalid date: ${value}`);
@@ -148,19 +156,47 @@ export async function collectCnGovPolicy({
     }
 
     const rawResponse = await response.text();
+    const responseSha256 = createHash("sha256").update(rawResponse).digest("hex");
+    const responseDetails = {
+      term,
+      http_status: response.status,
+      content_type: response.headers.get("content-type"),
+      response_bytes: Buffer.byteLength(rawResponse),
+      response_sha256: responseSha256,
+    };
     let payload;
     try {
       payload = JSON.parse(rawResponse);
     } catch {
-      throw new Error(`China government policy response for "${term}" is not valid JSON`);
+      throw new ResponseShapeError(
+        `China government policy response for "${term}" is not valid JSON`,
+        responseDetails,
+      );
     }
-    const searchVO = payload?.searchVO;
+    const payloadObject = payload && typeof payload === "object" && !Array.isArray(payload);
+    const dataObject = payloadObject
+      && payload.data
+      && typeof payload.data === "object"
+      && !Array.isArray(payload.data);
+    const shapeDetails = {
+      ...responseDetails,
+      top_level_keys: payloadObject ? Object.keys(payload).slice(0, 20) : [],
+      data_type: Array.isArray(payload?.data) ? "array" : typeof payload?.data,
+      data_keys: dataObject ? Object.keys(payload.data).slice(0, 20) : [],
+    };
+    const searchVO = payload?.searchVO ?? payload?.data?.searchVO;
     if (!searchVO || typeof searchVO !== "object") {
-      throw new Error(`China government policy response for "${term}" has no searchVO`);
+      throw new ResponseShapeError(
+        `China government policy response for "${term}" has no searchVO`,
+        shapeDetails,
+      );
     }
     const items = extractItems(searchVO);
     if (!Array.isArray(items)) {
-      throw new Error(`China government policy response for "${term}" has no result list`);
+      throw new ResponseShapeError(
+        `China government policy response for "${term}" has no result list`,
+        shapeDetails,
+      );
     }
     const totalCount = Number(searchVO.totalCount ?? items.length);
     const totalPages = Number(searchVO.totalpage ?? 1);
@@ -175,7 +211,10 @@ export async function collectCnGovPolicy({
       url,
       returned_count: items.length,
       total_count: totalCount,
-      response_sha256: createHash("sha256").update(rawResponse).digest("hex"),
+      http_status: response.status,
+      content_type: response.headers.get("content-type"),
+      response_bytes: Buffer.byteLength(rawResponse),
+      response_sha256: responseSha256,
     });
 
     for (const item of items) {
