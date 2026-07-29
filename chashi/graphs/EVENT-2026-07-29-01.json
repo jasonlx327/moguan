@@ -1,0 +1,267 @@
+{
+  "schema_version": "0.1",
+  "graph_id": "IMPACT-GRAPH-EVENT-2026-07-29-01",
+  "event_id": "EVENT-2026-07-29-01",
+  "title": "商务部第30号公告事势星云",
+  "cutoff_at": "2026-07-29T10:11:23+08:00",
+  "timezone": "Asia/Shanghai",
+  "status": "draft",
+  "source_ledger": "event-ledger/daily/2026-07-29.json",
+  "nodes": [
+    {
+      "node_id": "NODE-MOFCOM-30-EVENT",
+      "node_type": "event",
+      "label": "商务部将14家欧盟实体列入出口管制管控名单",
+      "ring": "center",
+      "state": "confirmed",
+      "source_record_ids": [
+        "SRC-20260729-MOFCOM-30"
+      ]
+    },
+    {
+      "node_id": "NODE-MOFCOM",
+      "node_type": "actor",
+      "label": "中华人民共和国商务部",
+      "ring": "direct",
+      "state": "confirmed",
+      "source_record_ids": [
+        "SRC-20260729-MOFCOM-30"
+      ]
+    },
+    {
+      "node_id": "NODE-EU-14-ENTITIES",
+      "node_type": "actor_group",
+      "label": "公告列明的14家欧盟实体",
+      "ring": "direct",
+      "state": "confirmed",
+      "source_record_ids": [
+        "SRC-20260729-MOFCOM-30"
+      ]
+    },
+    {
+      "node_id": "NODE-CN-DUAL-USE-FLOW",
+      "node_type": "trade_flow",
+      "label": "面向名单实体的中国两用物项出口与转移",
+      "ring": "direct",
+      "state": "confirmed",
+      "source_record_ids": [
+        "SRC-20260729-MOFCOM-30"
+      ]
+    },
+    {
+      "node_id": "NODE-MOFCOM-LICENSE",
+      "node_type": "policy_path",
+      "label": "特殊情形下向商务部申请出口",
+      "ring": "direct",
+      "state": "confirmed",
+      "source_record_ids": [
+        "SRC-20260729-MOFCOM-30"
+      ]
+    },
+    {
+      "node_id": "NODE-EU-21-PACKAGE",
+      "node_type": "event",
+      "label": "欧盟第21轮对俄制裁",
+      "ring": "context",
+      "state": "confirmed",
+      "source_record_ids": [
+        "SRC-20260729-EU-21-SANCTIONS"
+      ]
+    },
+    {
+      "node_id": "NODE-EU-CHINA-LISTINGS",
+      "node_type": "actor_group",
+      "label": "欧盟措施覆盖的部分在华实体",
+      "ring": "context",
+      "state": "confirmed",
+      "source_record_ids": [
+        "SRC-20260729-EU-21-SANCTIONS"
+      ]
+    },
+    {
+      "node_id": "NODE-EU-RESPONSE",
+      "node_type": "watch_signal",
+      "label": "欧盟机构与成员国正式回应",
+      "ring": "watch",
+      "state": "unverified",
+      "source_record_ids": []
+    },
+    {
+      "node_id": "NODE-DELIVERY-CHANGE",
+      "node_type": "watch_signal",
+      "label": "许可证、交付和合同执行变化",
+      "ring": "watch",
+      "state": "unverified",
+      "source_record_ids": []
+    },
+    {
+      "node_id": "NODE-COMPANY-DISCLOSURE",
+      "node_type": "watch_signal",
+      "label": "名单内实体的供应链或财务披露",
+      "ring": "watch",
+      "state": "unverified",
+      "source_record_ids": []
+    }
+  ],
+  "edges": [
+    {
+      "edge_id": "EDGE-MOFCOM-CONSTRAINS-ENTITIES",
+      "from": "NODE-MOFCOM-30-EVENT",
+      "to": "NODE-EU-14-ENTITIES",
+      "relation_type": "constrains",
+      "evidence_class": "fact",
+      "status": "confirmed",
+      "first_observed_at": "2026-07-24T16:00:00+08:00",
+      "last_updated_at": "2026-07-29T10:03:36+08:00",
+      "source_record_ids": [
+        "SRC-20260729-MOFCOM-30"
+      ],
+      "claim_ids": [
+        "CLAIM-MOFCOM-30-01"
+      ],
+      "created_by": "system",
+      "review_status": "pending"
+    },
+    {
+      "edge_id": "EDGE-MOFCOM-CONSTRAINS-FLOW",
+      "from": "NODE-MOFCOM-30-EVENT",
+      "to": "NODE-CN-DUAL-USE-FLOW",
+      "relation_type": "constrains",
+      "evidence_class": "fact",
+      "status": "confirmed",
+      "first_observed_at": "2026-07-24T16:00:00+08:00",
+      "last_updated_at": "2026-07-29T10:03:36+08:00",
+      "source_record_ids": [
+        "SRC-20260729-MOFCOM-30"
+      ],
+      "claim_ids": [
+        "CLAIM-MOFCOM-30-02"
+      ],
+      "created_by": "system",
+      "review_status": "pending"
+    },
+    {
+      "edge_id": "EDGE-FLOW-DEPENDS-LICENSE",
+      "from": "NODE-CN-DUAL-USE-FLOW",
+      "to": "NODE-MOFCOM-LICENSE",
+      "relation_type": "depends_on",
+      "evidence_class": "fact",
+      "status": "confirmed",
+      "first_observed_at": "2026-07-24T16:00:00+08:00",
+      "last_updated_at": "2026-07-29T10:03:36+08:00",
+      "source_record_ids": [
+        "SRC-20260729-MOFCOM-30"
+      ],
+      "claim_ids": [
+        "CLAIM-MOFCOM-30-03"
+      ],
+      "created_by": "system",
+      "review_status": "pending"
+    },
+    {
+      "edge_id": "EDGE-EU-PACKAGE-CONSTRAINS-CHINA",
+      "from": "NODE-EU-21-PACKAGE",
+      "to": "NODE-EU-CHINA-LISTINGS",
+      "relation_type": "constrains",
+      "evidence_class": "fact",
+      "status": "confirmed",
+      "first_observed_at": "2026-07-23",
+      "last_updated_at": "2026-07-29T10:11:23+08:00",
+      "source_record_ids": [
+        "SRC-20260729-EU-21-SANCTIONS"
+      ],
+      "claim_ids": [
+        "CLAIM-MOFCOM-30-04"
+      ],
+      "created_by": "system",
+      "review_status": "pending"
+    },
+    {
+      "edge_id": "EDGE-EU-PACKAGE-PRECEDES-MOFCOM",
+      "from": "NODE-EU-21-PACKAGE",
+      "to": "NODE-MOFCOM-30-EVENT",
+      "relation_type": "precedes",
+      "evidence_class": "fact",
+      "status": "confirmed",
+      "first_observed_at": "2026-07-24",
+      "last_updated_at": "2026-07-29T10:11:23+08:00",
+      "source_record_ids": [
+        "SRC-20260729-EU-21-SANCTIONS",
+        "SRC-20260729-MOFCOM-30"
+      ],
+      "claim_ids": [
+        "CLAIM-MOFCOM-30-01",
+        "CLAIM-MOFCOM-30-04"
+      ],
+      "created_by": "system",
+      "review_status": "pending"
+    },
+    {
+      "edge_id": "EDGE-EU-PACKAGE-CORRELATES-MOFCOM",
+      "from": "NODE-EU-21-PACKAGE",
+      "to": "NODE-MOFCOM-30-EVENT",
+      "relation_type": "correlates_with",
+      "evidence_class": "correlation",
+      "status": "unverified",
+      "first_observed_at": "2026-07-29T10:11:23+08:00",
+      "last_updated_at": "2026-07-29T10:11:23+08:00",
+      "source_record_ids": [
+        "SRC-20260729-EU-21-SANCTIONS",
+        "SRC-20260729-MOFCOM-30"
+      ],
+      "claim_ids": [],
+      "created_by": "system",
+      "review_status": "pending",
+      "boundary_note": "仅确认时间邻近和主题相关；没有一手来源证明直接因果关系。"
+    },
+    {
+      "edge_id": "EDGE-MOFCOM-MAY-LEAD-EU-RESPONSE",
+      "from": "NODE-MOFCOM-30-EVENT",
+      "to": "NODE-EU-RESPONSE",
+      "relation_type": "may_lead_to",
+      "evidence_class": "inference",
+      "status": "unverified",
+      "first_observed_at": "2026-07-29T10:11:23+08:00",
+      "last_updated_at": "2026-07-29T10:11:23+08:00",
+      "source_record_ids": [],
+      "claim_ids": [],
+      "created_by": "system",
+      "review_status": "pending",
+      "boundary_note": "观察方向，不是已经发生的事实。"
+    },
+    {
+      "edge_id": "EDGE-MOFCOM-MAY-LEAD-DELIVERY",
+      "from": "NODE-MOFCOM-30-EVENT",
+      "to": "NODE-DELIVERY-CHANGE",
+      "relation_type": "may_lead_to",
+      "evidence_class": "inference",
+      "status": "unverified",
+      "first_observed_at": "2026-07-29T10:11:23+08:00",
+      "last_updated_at": "2026-07-29T10:11:23+08:00",
+      "source_record_ids": [],
+      "claim_ids": [],
+      "created_by": "system",
+      "review_status": "pending",
+      "boundary_note": "尚无交付、许可证或合同变化证据。"
+    },
+    {
+      "edge_id": "EDGE-MOFCOM-MAY-LEAD-DISCLOSURE",
+      "from": "NODE-MOFCOM-30-EVENT",
+      "to": "NODE-COMPANY-DISCLOSURE",
+      "relation_type": "may_lead_to",
+      "evidence_class": "inference",
+      "status": "unverified",
+      "first_observed_at": "2026-07-29T10:11:23+08:00",
+      "last_updated_at": "2026-07-29T10:11:23+08:00",
+      "source_record_ids": [],
+      "claim_ids": [],
+      "created_by": "system",
+      "review_status": "pending",
+      "boundary_note": "等待名单内实体的正式披露。"
+    }
+  ],
+  "review_gate": {
+    "status": "pending",
+    "rule": "事实、相关性和推演关系必须分层显示；任何灰线或虚线不得自动升级为因果实线。"
+  }
+}
