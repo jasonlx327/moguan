@@ -47,12 +47,31 @@ export function parseMofcomAnnouncementList({
   terms = defaultMofcomTerms,
 }) {
   const records = new Map();
-  const anchorPattern = /<a\b[^>]*href=["']([^"']+)["'][^>]*>([\s\S]*?)<\/a>([\s\S]{0,200}?)(?=<a\b|$)/gi;
+  const anchorPattern = /<a\b[^>]*href=["']([^"']+)["'][^>]*>([\s\S]*?)<\/a>/gi;
 
   for (const match of html.matchAll(anchorPattern)) {
     const title = stripMarkup(match[2]);
-    const publicationDate = normalizeDate(match[3]);
-    if (!title || !publicationDate || publicationDate < from || publicationDate > to) continue;
+    if (!title) continue;
+    const matchedTerms = terms.filter((term) => title.includes(term));
+    if (matchedTerms.length === 0) continue;
+
+    const anchorStart = match.index;
+    const anchorEnd = anchorStart + match[0].length;
+    const contextStart = Math.max(0, anchorStart - 300);
+    const contextEnd = Math.min(html.length, anchorEnd + 300);
+    const context = html.slice(contextStart, contextEnd);
+    const dateMatches = [...context.matchAll(/\d{4}(?:-|年)\d{1,2}(?:-|月)\d{1,2}日?/g)]
+      .map((dateMatch) => ({
+        date: normalizeDate(dateMatch[0]),
+        distance: Math.abs(
+          contextStart + dateMatch.index + dateMatch[0].length / 2
+          - (anchorStart + anchorEnd) / 2,
+        ),
+      }))
+      .filter((candidate) => candidate.date)
+      .sort((a, b) => a.distance - b.distance);
+    const publicationDate = dateMatches[0]?.date ?? null;
+    if (!publicationDate || publicationDate < from || publicationDate > to) continue;
 
     let officialUrl;
     try {
@@ -62,9 +81,6 @@ export function parseMofcomAnnouncementList({
     }
     if (new URL(officialUrl).hostname !== "www.mofcom.gov.cn") continue;
     if (!/\/zcfb\/.*\/art\/\d{4}\//.test(new URL(officialUrl).pathname)) continue;
-
-    const matchedTerms = terms.filter((term) => title.includes(term));
-    if (matchedTerms.length === 0) continue;
 
     const number = documentNumber(title);
     records.set(number ?? officialUrl, {
@@ -115,8 +131,17 @@ export async function collectCnMofcomPolicy({
     terms,
   });
   const listAnchorCount = [...html.matchAll(/<a\b[^>]*href=/gi)].length;
+  const topicAnchorCount = [...html.matchAll(/<a\b[^>]*>([\s\S]*?)<\/a>/gi)]
+    .map((match) => stripMarkup(match[1]))
+    .filter((title) => terms.some((term) => title.includes(term)))
+    .length;
   if (listAnchorCount === 0) {
     throw new Error("MOFCOM announcement page contains no links");
+  }
+  if (topicAnchorCount > 0 && documents.length === 0) {
+    throw new Error(
+      `MOFCOM announcement page contains ${topicAnchorCount} topic links but none passed date and URL parsing`,
+    );
   }
 
   return {
@@ -146,6 +171,7 @@ export async function collectCnMofcomPolicy({
         response_bytes: Buffer.byteLength(html),
         response_sha256: createHash("sha256").update(html).digest("hex"),
         list_anchor_count: listAnchorCount,
+        topic_anchor_count: topicAnchorCount,
       }],
     },
     data_status: "snapshot",

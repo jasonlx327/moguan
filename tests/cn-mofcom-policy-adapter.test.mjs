@@ -49,6 +49,25 @@ test("MOFCOM parser keeps in-window topic matches and official links", () => {
   );
 });
 
+test("MOFCOM parser accepts dates placed before announcement links", () => {
+  const documents = parseMofcomAnnouncementList({
+    html: `
+      <li>
+        <span>2026-07-24</span>
+        <a href="/zcfb/zc/art/2026/art_before_date.html">
+          商务部公告2026年第30号 公布出口管制管控名单
+        </a>
+      </li>
+    `,
+    listUrl: buildMofcomAnnouncementUrl("2026-07-29"),
+    from: "2026-06-30",
+    to: "2026-07-29",
+  });
+
+  assert.equal(documents.length, 1);
+  assert.equal(documents[0].publication_date, "2026-07-24");
+});
+
 test("MOFCOM collector produces a pending auditable snapshot", async () => {
   const snapshot = await collectCnMofcomPolicy({
     from: "2026-06-30",
@@ -63,6 +82,7 @@ test("MOFCOM collector produces a pending auditable snapshot", async () => {
   assert.equal(snapshot.source.source_id, "cn_mofcom_announcements");
   assert.equal(snapshot.candidate_count, 1);
   assert.ok(snapshot.query.requests[0].list_anchor_count >= 3);
+  assert.equal(snapshot.query.requests[0].topic_anchor_count, 2);
   assert.match(snapshot.query.requests[0].response_sha256, /^[a-f0-9]{64}$/);
   assert.deepEqual(validateSnapshot(snapshot), []);
 });
