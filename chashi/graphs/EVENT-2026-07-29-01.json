@@ -3,7 +3,7 @@
   "graph_id": "IMPACT-GRAPH-EVENT-2026-07-29-01",
   "event_id": "EVENT-2026-07-29-01",
   "title": "商务部第30号公告事势星云",
-  "cutoff_at": "2026-07-29T10:11:23+08:00",
+  "cutoff_at": "2026-07-29T14:44:17+08:00",
   "timezone": "Asia/Shanghai",
   "status": "draft",
   "source_ledger": "event-ledger/daily/2026-07-29.json",
@@ -89,7 +89,7 @@
     {
       "node_id": "NODE-DELIVERY-CHANGE",
       "node_type": "watch_signal",
-      "label": "许可证、交付和合同执行变化",
+      "label": "VIGO许可申请与实际交付结果",
       "ring": "watch",
       "state": "unverified",
       "source_record_ids": []
@@ -97,10 +97,12 @@
     {
       "node_id": "NODE-COMPANY-DISCLOSURE",
       "node_type": "watch_signal",
-      "label": "名单内实体的供应链或财务披露",
+      "label": "VIGO披露局部材料约束、总体影响受控",
       "ring": "watch",
-      "state": "unverified",
-      "source_record_ids": []
+      "state": "confirmed",
+      "source_record_ids": [
+        "SRC-20260729-VIGO-35"
+      ]
     }
   ],
   "edges": [
@@ -197,22 +199,23 @@
       "review_status": "pending"
     },
     {
-      "edge_id": "EDGE-EU-PACKAGE-CORRELATES-MOFCOM",
+      "edge_id": "EDGE-MOFCOM-RESPONDS-TO-EU-PACKAGE",
       "from": "NODE-EU-21-PACKAGE",
       "to": "NODE-MOFCOM-30-EVENT",
-      "relation_type": "correlates_with",
-      "evidence_class": "correlation",
-      "status": "unverified",
-      "first_observed_at": "2026-07-29T10:11:23+08:00",
-      "last_updated_at": "2026-07-29T10:11:23+08:00",
+      "relation_type": "responds_to",
+      "evidence_class": "source_claim",
+      "status": "confirmed",
+      "first_observed_at": "2026-07-24T16:06:00+08:00",
+      "last_updated_at": "2026-07-29T14:44:17+08:00",
       "source_record_ids": [
-        "SRC-20260729-EU-21-SANCTIONS",
-        "SRC-20260729-MOFCOM-30"
+        "SRC-20260729-MOFCOM-30-QA"
       ],
-      "claim_ids": [],
+      "claim_ids": [
+        "CLAIM-MOFCOM-30-05"
+      ],
       "created_by": "system",
       "review_status": "pending",
-      "boundary_note": "仅确认时间邻近和主题相关；没有一手来源证明直接因果关系。"
+      "boundary_note": "商务部官方答记者问明确说明政策回应关系；这不等于已经证明具体企业损失或供应链后果。"
     },
     {
       "edge_id": "EDGE-MOFCOM-MAY-LEAD-EU-RESPONSE",
@@ -245,19 +248,23 @@
       "boundary_note": "尚无交付、许可证或合同变化证据。"
     },
     {
-      "edge_id": "EDGE-MOFCOM-MAY-LEAD-DISCLOSURE",
+      "edge_id": "EDGE-MOFCOM-HAS-VIGO-DISCLOSURE",
       "from": "NODE-MOFCOM-30-EVENT",
       "to": "NODE-COMPANY-DISCLOSURE",
-      "relation_type": "may_lead_to",
-      "evidence_class": "inference",
-      "status": "unverified",
-      "first_observed_at": "2026-07-29T10:11:23+08:00",
-      "last_updated_at": "2026-07-29T10:11:23+08:00",
-      "source_record_ids": [],
-      "claim_ids": [],
+      "relation_type": "reported_effect",
+      "evidence_class": "source_claim",
+      "status": "confirmed",
+      "first_observed_at": "2026-07-24",
+      "last_updated_at": "2026-07-29T14:44:17+08:00",
+      "source_record_ids": [
+        "SRC-20260729-VIGO-35"
+      ],
+      "claim_ids": [
+        "CLAIM-MOFCOM-30-06"
+      ],
       "created_by": "system",
       "review_status": "pending",
-      "boundary_note": "等待名单内实体的正式披露。"
+      "boundary_note": "仅代表VIGO Photonics的初步管理层评估，不能外推至其余13家实体，也不是最终财务结果。"
     }
   ],
   "review_gate": {

@@ -18,6 +18,8 @@ const validRelations = new Set([
   "constrains",
   "depends_on",
   "precedes",
+  "responds_to",
+  "reported_effect",
   "correlates_with",
   "claimed_by",
   "analogous_to",

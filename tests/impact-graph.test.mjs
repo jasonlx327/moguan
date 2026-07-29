@@ -20,20 +20,22 @@ test("MOFCOM impact graph keeps fact, correlation, and inference layers valid", 
   assert.deepEqual(validateImpactGraph(graph, ledger), []);
 });
 
-test("EU context is not represented as a cause of the MOFCOM announcement", () => {
-  const forbidden = graph.edges.find((edge) =>
-    edge.from === "NODE-EU-21-PACKAGE"
-    && edge.to === "NODE-MOFCOM-30-EVENT"
-    && edge.relation_type === "causes",
+test("official policy response is confirmed without claiming enterprise loss", () => {
+  const response = graph.edges.find(
+    (edge) => edge.edge_id === "EDGE-MOFCOM-RESPONDS-TO-EU-PACKAGE",
   );
-  assert.equal(forbidden, undefined);
+  assert.equal(response.evidence_class, "source_claim");
+  assert.equal(response.status, "confirmed");
+  assert.match(response.boundary_note, /不等于已经证明具体企业损失/);
+});
 
-  const correlation = graph.edges.find(
-    (edge) => edge.edge_id === "EDGE-EU-PACKAGE-CORRELATES-MOFCOM",
+test("VIGO disclosure is confirmed but bounded to one company", () => {
+  const disclosure = graph.edges.find(
+    (edge) => edge.edge_id === "EDGE-MOFCOM-HAS-VIGO-DISCLOSURE",
   );
-  assert.equal(correlation.evidence_class, "correlation");
-  assert.equal(correlation.status, "unverified");
-  assert.match(correlation.boundary_note, /没有一手来源证明直接因果关系/);
+  assert.equal(disclosure.evidence_class, "source_claim");
+  assert.equal(disclosure.status, "confirmed");
+  assert.match(disclosure.boundary_note, /不能外推至其余13家实体/);
 });
 
 test("future observation edges remain unverified inferences", () => {

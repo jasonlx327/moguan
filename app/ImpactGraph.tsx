@@ -3,8 +3,8 @@
 import { useEffect, useRef, useState } from "react";
 import impactGraph from "../chashi/graphs/EVENT-2026-07-29-01.json";
 import eventLedger from "../event-ledger/daily/2026-07-29.json";
-import eventMappings from "../knowledge-base/registries/event-mappings.2026-07-29.v0.1.json";
-import interpretations from "../knowledge-base/registries/interpretations.2026-07-29.v0.1.json";
+import eventMappings from "../knowledge-base/registries/event-mappings.2026-07-29.v0.2.json";
+import interpretations from "../knowledge-base/registries/interpretations.2026-07-29.v0.2.json";
 import passages from "../knowledge-base/registries/passages.v0.1.json";
 import classicalSources from "../knowledge-base/registries/sources.v0.1.json";
 import works from "../knowledge-base/registries/works.v0.1.json";
@@ -38,6 +38,8 @@ const relationLabels: Record<GraphEdge["relation_type"], string> = {
   constrains: "约束",
   depends_on: "取决于",
   precedes: "时间先于",
+  responds_to: "政策回应",
+  reported_effect: "企业披露影响",
   correlates_with: "主题相关",
   may_lead_to: "可能传导",
 };
@@ -47,6 +49,8 @@ const sourcesById = Object.fromEntries(
 ) as Record<string, (typeof eventLedger.source_records)[number]>;
 const eventMapping = eventMappings.event_mappings[0];
 const formalInterpretation = interpretations.interpretations[0];
+const policyResponseSource = sourcesById["SRC-20260729-MOFCOM-30-QA"];
+const companyImpactSource = sourcesById["SRC-20260729-VIGO-35"];
 const publicPassage = passages.passages.find(
   (passage) => passage.passage_id === eventMapping.public_passage_id,
 );
@@ -98,7 +102,7 @@ export default function ImpactGraph() {
         </div>
         <div className="impact-graph-meta">
           <strong>商务部第30号公告</strong>
-          <small>资料截止 2026 / 07 / 29 · 事实网络，不作因果预设</small>
+          <small>资料截止 2026 / 07 / 29 · 来源主张与现实结果分层</small>
         </div>
       </header>
 
@@ -274,6 +278,39 @@ export default function ImpactGraph() {
           </div>
         </aside>
       </div>
+
+      <section className="impact-stage-update" aria-labelledby="impact-stage-update-title">
+        <header>
+          <div>
+            <span>候验 · 阶段反馈</span>
+            <h4 id="impact-stage-update-title">现实证据已更新</h4>
+          </div>
+          <strong>事实版本 2026-07-29-v0.2</strong>
+        </header>
+        <div>
+          <article>
+            <small>01 · 政策关系</small>
+            <b>回应关系已经确认</b>
+            <p>商务部答记者问明确说明，第30号公告针对欧盟第21轮对俄制裁措施。</p>
+            <a href={policyResponseSource.url} target="_blank" rel="noreferrer">
+              商务部官方答记者问<i>↗</i>
+            </a>
+          </article>
+          <article>
+            <small>02 · 企业影响</small>
+            <b>局部受限，总体影响受控</b>
+            <p>VIGO称红外业务已有库存和替代供应；半导体材料业务可能受中国磷化铟衬底限制影响。</p>
+            <a href={companyImpactSource.url} target="_blank" rel="noreferrer">
+              VIGO第35/2026号报告<i>↗</i>
+            </a>
+          </article>
+          <article>
+            <small>03 · 证据边界</small>
+            <b>尚不能外推至全部实体</b>
+            <p>当前只有一家名单内企业披露影响；其余13家、许可证结果、实际交付和最终财务影响仍待确认。</p>
+          </article>
+        </div>
+      </section>
 
       <section className="impact-classics-gate published" aria-labelledby="impact-classics-title">
         <header>

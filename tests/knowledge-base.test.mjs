@@ -56,7 +56,7 @@ test("MOFCOM classical mapping is approved with one public passage", () => {
     fs.readFileSync(
       path.join(
         root,
-        "knowledge-base/registries/event-mappings.2026-07-29.v0.1.json",
+        "knowledge-base/registries/event-mappings.2026-07-29.v0.2.json",
       ),
       "utf8",
     ),
@@ -68,27 +68,27 @@ test("MOFCOM classical mapping is approved with one public passage", () => {
   assert.equal(mapping.ui_publishable, true);
   assert.equal(mapping.public_passage_id, "PASS-SHIJI-HUOZHI-0001");
   assert.match(mapping.five_phase_position, /不分配固定五行/);
-  assert.ok(mapping.review_gate.forbidden_outputs.some((item) => item.includes("因果")));
+  assert.ok(mapping.review_gate.forbidden_outputs.some((item) => item.includes("行业因果")));
 });
 
-test("MOFCOM interpretation matches the frozen event fact version", () => {
+test("MOFCOM interpretation matches the current versioned event facts", () => {
   const interpretation = JSON.parse(
     fs.readFileSync(
       path.join(
         root,
-        "knowledge-base/registries/interpretations.2026-07-29.v0.1.json",
+        "knowledge-base/registries/interpretations.2026-07-29.v0.2.json",
       ),
       "utf8",
     ),
   ).interpretations[0];
 
   assert.equal(interpretation.event_id, "EVENT-2026-07-29-01");
-  assert.equal(interpretation.fact_version, "2026-07-29-v0.1");
+  assert.equal(interpretation.fact_version, "2026-07-29-v0.2");
   assert.equal(interpretation.review_status, "analysis_reviewed");
-  assert.match(interpretation.modern_bridge, /是否进一步形成供应链或财务影响，必须等待现代证据/);
+  assert.match(interpretation.modern_bridge, /库存和替代供应可缓冲红外业务/);
   assert.ok(
     interpretation.limits_and_counterreadings.some((item) =>
-      item.includes("不能写成已证实因果"),
+      item.includes("不能直接证明任何企业已经发生经济损失"),
     ),
   );
 });

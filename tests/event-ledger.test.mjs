@@ -26,7 +26,7 @@ test("daily candidate ledger passes draft validation", () => {
   assert.deepEqual(validateLedger(dailyLedger), []);
 });
 
-test("verified MOFCOM policy is selected with a frozen fact version", () => {
+test("verified MOFCOM policy is selected with a versioned evidence update", () => {
   assert.deepEqual(validateLedger(mofcomCandidateLedger), []);
   assert.equal(mofcomCandidateLedger.candidates.length, 1);
   assert.equal(mofcomCandidateLedger.status, "review_ready");
@@ -41,7 +41,19 @@ test("verified MOFCOM policy is selected with a frozen fact version", () => {
   ]);
   assert.equal(
     mofcomCandidateLedger.selection.publication_version,
-    "2026-07-29-v0.1",
+    "2026-07-29-v0.2",
+  );
+  assert.ok(
+    mofcomCandidateLedger.candidates[0].claims.some(
+      (claim) => claim.claim_id === "CLAIM-MOFCOM-30-05"
+        && claim.status === "confirmed",
+    ),
+  );
+  assert.ok(
+    mofcomCandidateLedger.candidates[0].claims.some(
+      (claim) => claim.claim_id === "CLAIM-MOFCOM-30-06"
+        && claim.status === "confirmed",
+    ),
   );
 });
 
