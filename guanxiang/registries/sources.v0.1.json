@@ -1,0 +1,189 @@
+{
+  "schema_version": "0.1",
+  "reviewed_at": "2026-07-28",
+  "sources": [
+    {
+      "source_id": "us_federal_register_api",
+      "name": "FederalRegister.gov API",
+      "publisher": "Office of the Federal Register",
+      "jurisdiction": "United States",
+      "source_type": "government_document_discovery_api",
+      "official_status": "unofficial_xml_rendition_linking_to_official_govinfo_editions",
+      "open_level": "O0",
+      "homepage_url": "https://www.federalregister.gov/developers/documentation/api/v1",
+      "machine_access": {
+        "type": "api",
+        "endpoint": "https://www.federalregister.gov/api/v1/documents.json",
+        "authentication": "none"
+      },
+      "update_pattern": "daily_publication_cycle",
+      "timezone": "America/New_York",
+      "content_scope": "Federal Register document discovery and metadata",
+      "version_or_revision_support": "document_number_and_linked_govinfo_pdf",
+      "reuse_status": "review_pending",
+      "raw_snapshot_policy": "store_query_metadata_and_minimum_document_fields",
+      "last_verified_at": "2026-07-28T15:12:45.700Z",
+      "health_status": "active",
+      "fallback_source_ids": [
+        "us_govinfo_fr"
+      ]
+    },
+    {
+      "source_id": "us_govinfo_fr",
+      "name": "GovInfo Federal Register Collection",
+      "publisher": "United States Government Publishing Office",
+      "jurisdiction": "United States",
+      "source_type": "official_government_publication",
+      "official_status": "official_electronic_edition",
+      "open_level": "O1",
+      "homepage_url": "https://www.govinfo.gov/app/collection/FR",
+      "machine_access": {
+        "type": "api_and_bulk",
+        "endpoint": "https://api.govinfo.gov/",
+        "authentication": "free_api_data_gov_key_for_api; website_and_bulk_files_available_without_key"
+      },
+      "update_pattern": "daily_publication_cycle",
+      "timezone": "America/New_York",
+      "content_scope": "Official Federal Register PDF, XML, metadata, packages and granules",
+      "version_or_revision_support": "package_and_granule_identifiers",
+      "reuse_status": "review_pending",
+      "raw_snapshot_policy": "store_official_url_and_hash; archive only after reuse review",
+      "last_verified_at": "2026-07-28T15:12:45.700Z",
+      "health_status": "active",
+      "fallback_source_ids": []
+    },
+    {
+      "source_id": "eu_cellar_sparql",
+      "name": "EU Cellar SPARQL Endpoint",
+      "publisher": "Publications Office of the European Union",
+      "jurisdiction": "European Union",
+      "source_type": "official_government_metadata_knowledge_graph",
+      "official_status": "official_metadata_discovery_service",
+      "open_level": "O0",
+      "homepage_url": "https://op.europa.eu/en/web/cellar/cellar-data/metadata/knowledge-graph",
+      "machine_access": {
+        "type": "sparql",
+        "endpoint": "https://publications.europa.eu/webapi/rdf/sparql",
+        "authentication": "none"
+      },
+      "update_pattern": "continuous_publication",
+      "timezone": "Europe/Brussels",
+      "content_scope": "EU publications metadata, relationships and official identifiers",
+      "version_or_revision_support": "Cellar UUID with CELEX, ELI and other document identifiers where present",
+      "reuse_status": "review_pending",
+      "raw_snapshot_policy": "store query, minimum metadata and official identifiers; retrieve full text only after reuse review",
+      "last_verified_at": "2026-07-28T15:21:50.166Z",
+      "health_status": "active",
+      "fallback_source_ids": [
+        "eu_cellar_rest"
+      ]
+    },
+    {
+      "source_id": "eu_cellar_rest",
+      "name": "EU Cellar REST Resources",
+      "publisher": "Publications Office of the European Union",
+      "jurisdiction": "European Union",
+      "source_type": "official_government_document_repository",
+      "official_status": "official_document_resource_service",
+      "open_level": "O0",
+      "homepage_url": "https://op.europa.eu/en/web/cellar/cellar-data/metadata/knowledge-graph",
+      "machine_access": {
+        "type": "rest_and_content_negotiation",
+        "endpoint": "https://publications.europa.eu/resource/cellar/",
+        "authentication": "none"
+      },
+      "update_pattern": "continuous_publication",
+      "timezone": "Europe/Brussels",
+      "content_scope": "Official EU document manifestations and metadata resources",
+      "version_or_revision_support": "Cellar UUID and manifestation metadata",
+      "reuse_status": "review_pending",
+      "raw_snapshot_policy": "store official URL and hash; archive document body only after reuse review",
+      "last_verified_at": "2026-07-28T15:21:50.166Z",
+      "health_status": "active",
+      "fallback_source_ids": [
+        "eu_cellar_sparql"
+      ]
+    },
+    {
+      "source_id": "cn_state_council_policy_search",
+      "name": "中国政府网政策文件库检索",
+      "publisher": "中国政府网",
+      "jurisdiction": "China",
+      "source_type": "official_government_policy_discovery_interface",
+      "official_status": "official_domain_search_interface_with_undocumented_machine_contract",
+      "open_level": "O0",
+      "homepage_url": "https://sousuo.www.gov.cn/zcwjk/policyDocumentLibrary",
+      "machine_access": {
+        "type": "public_json_search_interface",
+        "endpoint": "https://sousuo.www.gov.cn/search-gov/data",
+        "authentication": "none"
+      },
+      "update_pattern": "continuous_publication",
+      "timezone": "Asia/Shanghai",
+      "content_scope": "State Council and central-department policy document discovery",
+      "version_or_revision_support": "document number, publication date and linked official source where present",
+      "reuse_status": "review_pending",
+      "raw_snapshot_policy": "store query and minimum metadata; verify and archive linked documents only after reuse review",
+      "last_verified_at": "2026-07-28T15:40:00.000Z",
+      "health_status": "blocked_from_current_runtime",
+      "fallback_source_ids": [
+        "cn_mofcom_announcements",
+        "cn_export_control_portal"
+      ]
+    },
+    {
+      "source_id": "cn_mofcom_announcements",
+      "name": "商务部政策发布与部令公告",
+      "publisher": "中华人民共和国商务部",
+      "jurisdiction": "China",
+      "source_type": "official_ministry_policy_publication",
+      "official_status": "official_primary_source",
+      "open_level": "O0",
+      "homepage_url": "https://www.mofcom.gov.cn/zcfb/",
+      "machine_access": {
+        "type": "html",
+        "endpoint": "https://www.mofcom.gov.cn/zcfb/index.html",
+        "authentication": "none"
+      },
+      "update_pattern": "continuous_publication",
+      "timezone": "Asia/Shanghai",
+      "content_scope": "MOFCOM orders, announcements, normative documents and policy releases",
+      "version_or_revision_support": "document number and publication page",
+      "reuse_status": "review_pending",
+      "raw_snapshot_policy": "store link and minimum metadata; archive page only after reuse review",
+      "last_verified_at": "2026-07-28T15:40:00.000Z",
+      "health_status": "blocked_from_current_runtime",
+      "fallback_source_ids": [
+        "cn_state_council_policy_search",
+        "cn_export_control_portal"
+      ]
+    },
+    {
+      "source_id": "cn_export_control_portal",
+      "name": "中国出口管制信息网",
+      "publisher": "中华人民共和国商务部",
+      "jurisdiction": "China",
+      "source_type": "official_export_control_topic_portal",
+      "official_status": "official_ministry_topic_source",
+      "open_level": "O0",
+      "homepage_url": "https://exportcontrol.mofcom.gov.cn/",
+      "machine_access": {
+        "type": "html",
+        "endpoint": "https://exportcontrol.mofcom.gov.cn/",
+        "authentication": "none"
+      },
+      "update_pattern": "continuous_publication",
+      "timezone": "Asia/Shanghai",
+      "content_scope": "Domestic and international export-control policy, official updates and compliance material",
+      "version_or_revision_support": "publication page and document number where present",
+      "reuse_status": "review_pending",
+      "raw_snapshot_policy": "store link and minimum metadata; distinguish original policy from reproduced commentary",
+      "last_verified_at": "2026-07-28T15:40:00.000Z",
+      "health_status": "blocked_from_current_runtime",
+      "fallback_source_ids": [
+        "cn_state_council_policy_search",
+        "cn_mofcom_announcements"
+      ]
+    }
+  ]
+}

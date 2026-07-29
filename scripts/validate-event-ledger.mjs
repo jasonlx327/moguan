@@ -81,8 +81,8 @@ export function validateLedger(ledger, { publish = false } = {}) {
     if (!validDecisions.has(candidate.decision)) errors.push(`${prefix}: invalid decision`);
     if (!validReviewStatuses.has(candidate.review_status)) errors.push(`${prefix}: invalid review_status`);
     if (!validDataStatuses.has(candidate.data_status)) errors.push(`${prefix}: invalid data_status`);
-    if (typeof candidate.confidence !== "number" || candidate.confidence < 0 || candidate.confidence > 1) {
-      errors.push(`${prefix}: confidence must be a number from 0 to 1`);
+    if (!["unreviewed", "source_reviewed", "fact_checked"].includes(candidate.evidence_status)) {
+      errors.push(`${prefix}: invalid evidence_status`);
     }
 
     for (const field of ["headline", "summary", "observed_at", "start_time", "latest_change_time", "collected_at", "cutoff_at", "timezone", "version", "locations", "actors", "claims", "unknowns", "next_signals", "observation_window", "decision_reason"]) {

@@ -1,0 +1,49 @@
+{
+  "schema_version": "0.1",
+  "snapshot_id": "WEATHER-VIIRS-NOAA20-2026-07-23",
+  "record_type": "weather",
+  "title": "全球卫星云况",
+  "variable": "satellite_true_color_cloud_scene",
+  "unit": "unitless_visible_reflectance_display",
+  "valid_time": "2026-07-23",
+  "run_time": null,
+  "collected_at": "2026-07-24T02:46:03.788Z",
+  "timezone": "UTC",
+  "data_kind": "observation_daily_composite",
+  "data_status": "snapshot",
+  "spatial_resolution": {
+    "native_layer": "250 m tile matrix set",
+    "display_export": "1024 × 512 global EPSG:4326",
+    "display_degrees_per_pixel": 0.3515625
+  },
+  "temporal_resolution": "P1D",
+  "coverage": "global daily composite",
+  "source_id": "NASA-GIBS-VIIRS-NOAA20-TRUECOLOR",
+  "source": {
+    "publisher": "NASA Earthdata Global Imagery Browse Services",
+    "instrument": "VIIRS",
+    "platform": "NOAA-20",
+    "layer": "VIIRS_NOAA20_CorrectedReflectance_TrueColor",
+    "service": "OGC WMS 1.1.1",
+    "request_url": "https://gibs.earthdata.nasa.gov/wms/epsg4326/best/wms.cgi?SERVICE=WMS&REQUEST=GetMap&VERSION=1.1.1&LAYERS=VIIRS_NOAA20_CorrectedReflectance_TrueColor&STYLES=&FORMAT=image%2Fjpeg&SRS=EPSG%3A4326&BBOX=-180%2C-90%2C180%2C90&WIDTH=1024&HEIGHT=512&TIME=2026-07-23",
+    "date_domain_url": "https://gibs.earthdata.nasa.gov/wmts/epsg4326/best/1.0.0/VIIRS_NOAA20_CorrectedReflectance_TrueColor/default/250m/all/2026-07-23--2026-07-23.xml",
+    "documentation_url": "https://nasa-gibs.github.io/gibs-api-docs/access-basics/",
+    "attribution": "NASA EOSDIS GIBS / Worldview; VIIRS aboard NOAA-20"
+  },
+  "image": {
+    "public_path": "/weather/viirs-noaa20-truecolor.2026-07-23.jpg",
+    "width": 1024,
+    "height": 512,
+    "format": "image/jpeg",
+    "sha256": "cc4cdfa3b6eb5ae30f52919da48629346be0d0d3d283547e0ab063477e72a059",
+    "bytes": 150878
+  },
+  "interpretation": {
+    "display_name": "卫星云况（真彩色观测）",
+    "meaning": "白色云系可用于直观看到当日全球云况与天气系统形态。",
+    "direct_event_impact": "未发现可仅凭本图直接归因于首页三项事件的天气影响。"
+  },
+  "quality_note": "这是白天可见光真彩色每日合成，不是定量云量产品；云、积雪与高反射地表可能混淆，轨道拼接和无日照区域可能存在缺口。",
+  "review_status": "source_reviewed",
+  "version": "0.1"
+}

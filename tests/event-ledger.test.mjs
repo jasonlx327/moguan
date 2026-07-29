@@ -3,12 +3,24 @@ import fs from "node:fs";
 import test from "node:test";
 import { calculateTotal, validateLedger } from "../scripts/validate-event-ledger.mjs";
 
-const ledger = JSON.parse(
+const dailyLedger = JSON.parse(
   fs.readFileSync(new URL("../event-ledger/daily/2026-07-23.json", import.meta.url), "utf8"),
 );
+const ledger = {
+  ...JSON.parse(
+    fs.readFileSync(new URL("../event-ledger/templates/daily-ledger.template.json", import.meta.url), "utf8"),
+  ),
+  ledger_id: "LEDGER-2026-07-23-EMPTY-TEST",
+  date: "2026-07-23",
+  cutoff_at: "2026-07-23T08:00:00+08:00",
+};
 
 test("empty collecting ledger passes draft validation", () => {
   assert.deepEqual(validateLedger(ledger), []);
+});
+
+test("daily candidate ledger passes draft validation", () => {
+  assert.deepEqual(validateLedger(dailyLedger), []);
 });
 
 test("empty collecting ledger cannot pass publication gate", () => {
@@ -62,7 +74,7 @@ test("a complete ledger passes the publication gate", () => {
       cutoff_at: "2026-07-23T08:00:00+08:00",
       timezone: "Asia/Shanghai",
       data_status: "snapshot",
-      confidence: 0.8,
+      evidence_status: "source_reviewed",
       version: "test-only",
       locations: ["Test location"],
       actors: ["Test actor"],

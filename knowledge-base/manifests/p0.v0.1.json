@@ -1,24 +1,26 @@
 {
   "schema_version": "0.1",
-  "status": "in_progress",
+  "status": "ready_for_p1",
   "target": {
     "verified_passages_min": 30,
     "verified_passages_max": 50,
     "required_layers": ["theory_source", "institutional_synthesis", "observation_refinement", "modern_validation"]
   },
   "actual": {
-    "works": 1,
-    "sources": 2,
-    "passages_total": 1,
-    "reviewed_passages": 0,
-    "public_citation_passages": 0,
+    "works": 17,
+    "sources": 21,
+    "passages_total": 40,
+    "reviewed_passages": 40,
+    "public_citation_passages": 3,
     "rule_eligible_passages": 0,
-    "rules": 0
+    "rules": 0,
+    "event_mappings": 3,
+    "interpretations": 3
   },
   "next_collection": [
-    {"layer": "theory_source", "candidate": "论衡中的因果反证材料"},
-    {"layer": "institutional_synthesis", "candidate": "开元占经或唐代历法材料"},
-    {"layer": "observation_refinement", "candidate": "新仪象法要或可追溯的宋代观测记录"},
-    {"layer": "modern_validation", "candidate": "现代星历、版本校勘或天文学史研究"}
+    {"layer": "theory_source", "candidate": "为高频引用片段补充第二文本见证与影印页"},
+    {"layer": "institutional_synthesis", "candidate": "补充《隋书·天文志》与唐代历法材料的异文校勘"},
+    {"layer": "observation_refinement", "candidate": "补充《新仪象法要》影印页与仪器史研究"},
+    {"layer": "modern_validation", "candidate": "持续固定星历、星表与传统星名映射版本"}
   ]
 }

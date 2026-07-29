@@ -1,0 +1,105 @@
+{
+  "schema_version": "0.1",
+  "validation_id": "VALIDATION-FORECAST-2026-07-23-04-CURRENT",
+  "forecast_id": "FORECAST-2026-07-23-04",
+  "forecast_version": "2026-07-23-analysis-v0.1",
+  "original_issued_at": "2026-07-23T15:30:00+08:00",
+  "original_conclusion": {
+    "supported_scenario_id": "SCENARIO-2026-07-23-04-B",
+    "label": "未来15日延续断续低位",
+    "immutable": true
+  },
+  "contract": {
+    "baseline_snapshot_id": "HORMUZ-PORTWATCH-2026-07-19",
+    "baseline_snapshot_path": "transit-monitor/snapshots/2026-07-23-30d.json",
+    "metric": "n_total",
+    "baseline_start": "2026-06-20",
+    "baseline_end": "2026-07-19",
+    "baseline_valid_days": 30,
+    "forecast_start": "2026-07-23",
+    "forecast_end": "2026-08-06",
+    "minimum_valid_days": 12,
+    "baseline_median": 18.5,
+    "recovery_median_min": 22,
+    "recovery_days_above_baseline_min": 9,
+    "low_day_max": 9,
+    "low_days_min": 5,
+    "original_supported_scenario_id": "SCENARIO-2026-07-23-04-B"
+  },
+  "updated_at": "2026-07-24T02:47:56.893Z",
+  "source_snapshot_id": "HORMUZ-PORTWATCH-2026-07-19",
+  "source_latest_available_date": "2026-07-19",
+  "progress": {
+    "valid_days": 0,
+    "minimum_valid_days": 12,
+    "forecast_days_total": 15,
+    "last_observed_date": null,
+    "observed_median": null,
+    "days_above_baseline": 0,
+    "low_days": 0
+  },
+  "current_support": "awaiting_data",
+  "support_reason": "PortWatch最新可用日早于推演窗口，尚无发布后数据可用于验证。",
+  "settlement_state": "watching",
+  "decision_feedback": {
+    "status": "awaiting_new_evidence",
+    "label": "尚无新证据",
+    "original_headline": "断续低位将延续",
+    "current_headline": "断续低位将延续",
+    "latest_change": "PortWatch最新可用日早于推演窗口，尚无发布后数据可用于验证。",
+    "conclusion_action": "maintain_original",
+    "checked_at": "2026-07-24T02:47:56.894Z",
+    "source_latest_available_date": "2026-07-19",
+    "source_cadence": "每日检查IMF PortWatch；安全事件按UKMTO/JMIC与NAVAREA IX通报更新。"
+  },
+  "stage_feedback": {
+    "facts": {
+      "label": "事实反馈",
+      "status": "通行明显走弱",
+      "statement": "过去30日中位数为18.5艘；最近7日中位数较最早7日变化-57.69%。",
+      "basis": "IMF PortWatch过去30个有效日及战前一年参照",
+      "evidence": [
+        "最早7日中位数26艘",
+        "最近7日中位数11艘",
+        "数据截至2026-07-19"
+      ]
+    },
+    "structure": {
+      "label": "结构反馈",
+      "status": "关键流通功能受阻",
+      "statement": "霍尔木兹仍有船舶通过，但其能源与货物流通能力显著低于战前常态，低位反复正在延长外溢影响。",
+      "basis": "知识库 ANALYSIS-2026-07-23-03：聚货、交易与流通",
+      "boundary": "这是对流通功能的判断，不等于海峡正式关闭，也不代表所有船舶均无法通过。"
+    },
+    "forecast": {
+      "label": "推演反馈",
+      "status": "倾向断续低位",
+      "statement": "基于发布时封存的过去30日状态，未来15日当前更支持“延续断续低位”，而不是“持续修复”。",
+      "basis": "ANALYSIS-2026-07-23-03 + HORMUZ-PORTWATCH-2026-07-19",
+      "window": "2026-07-23 至 2026-08-06",
+      "immutable_original": true
+    },
+    "validation": {
+      "label": "验证反馈",
+      "status": "等待首个验证日",
+      "statement": "PortWatch最新可用日早于推演窗口，尚无发布后数据可用于验证。",
+      "basis": "发布后PortWatch有效日及UKMTO/JMIC、NAVAREA IX事件复核",
+      "progress": "0/12个最低有效日"
+    }
+  },
+  "distance_to_conditions": {
+    "valid_days_remaining": 12,
+    "recovery_median_gap": null,
+    "recovery_days_above_baseline_remaining": 9,
+    "low_days_remaining": 5
+  },
+  "observations": [],
+  "official_incident_evidence": {
+    "status": "manual_review_required",
+    "accepted_sources": [
+      "UKMTO/JMIC",
+      "NAVAREA IX"
+    ]
+  },
+  "data_note": "PortWatch当前数据截至2026-07-19，观测延迟约5日。"
+}

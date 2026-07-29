@@ -1,0 +1,163 @@
+{
+  "schema_version": "0.1",
+  "review_id": "DAILY-REVIEW-2026-07-24",
+  "review_date": "2026-07-24",
+  "checked_at": "2026-07-24T10:47:52+08:00",
+  "timezone": "Asia/Shanghai",
+  "mode": "immutable_daily_snapshot",
+  "source_ledger": "forecast-ledger/forecasts/2026-07-23.json",
+  "source_ledger_sha256": "0b6982cb167ce992c974443e8f94427be8b4aa655bb1cbfd8a254010f0a5546c",
+  "policy": {
+    "original_forecasts_are_immutable": true,
+    "no_new_evidence_is_not_support": true,
+    "revised_direction_requires_new_version": true
+  },
+  "reviews": [
+    {
+      "forecast_id": "FORECAST-2026-07-23-01",
+      "event_id": "EVENT-2026-07-23-01",
+      "target": "刚果（金）本迪布焦型埃博拉疫情在未来两期WHO更新中的传播与响应变化",
+      "original_issued_at": "2026-07-23T15:30:00+08:00",
+      "original_conclusion": {
+        "supported_scenario_id": "SCENARIO-2026-07-23-01-B",
+        "label": "疫情压力仍向外扩张",
+        "immutable": true
+      },
+      "current_feedback": {
+        "status": "awaiting_new_evidence",
+        "label": "尚无新证据",
+        "headline": "疫情压力仍向外扩张",
+        "latest_change": "截至7月24日复核，WHO最新正式疫情通报仍为7月17日版本；推演发布后没有新增正式证据，原结论保留但尚未获得发布后事实支持。",
+        "conclusion_action": "maintain_original",
+        "source_latest_available_date": "2026-07-17"
+      },
+      "stage_feedback": {
+        "facts": {
+          "status": "无新增正式事实",
+          "statement": "截至7月24日复核，WHO最新正式疫情通报仍为7月17日版本；推演发布后没有新增正式证据，原结论保留但尚未获得发布后事实支持。"
+        },
+        "structure": {
+          "status": "保留原分析结构",
+          "statement": "当日复盘不自动改写知识库映射；如结构改变，必须发布新的分析版本。"
+        },
+        "forecast": {
+          "status": "疫情压力仍向外扩张",
+          "statement": "原始推演永久保留；当日复盘只记录支持、削弱或改版动作。"
+        },
+        "validation": {
+          "status": "尚无新证据",
+          "statement": "截至7月24日复核，WHO最新正式疫情通报仍为7月17日版本；推演发布后没有新增正式证据，原结论保留但尚未获得发布后事实支持。"
+        }
+      },
+      "review_outcome": "maintain_without_new_evidence",
+      "next_action": "继续按既定来源节奏检查；没有新证据时不得声称结论获得支持。",
+      "frozen_inputs": {
+        "current_validation_file": "forecast-ledger/validations/FORECAST-2026-07-23-01.current.json",
+        "current_validation_sha256": "019eb054a03503c1cfa6876b5abf59131943a2f8729775d482a20328fe4e4932"
+      }
+    },
+    {
+      "forecast_id": "FORECAST-2026-07-23-03",
+      "event_id": "EVENT-2026-07-23-04",
+      "target": "2026年7月至9月厄尔尼诺强度及区域影响是否按当前季节展望兑现",
+      "original_issued_at": "2026-07-23T15:30:00+08:00",
+      "original_conclusion": {
+        "supported_scenario_id": "SCENARIO-2026-07-23-03-A",
+        "label": "强事件增强，影响将呈区域分化",
+        "immutable": true
+      },
+      "current_feedback": {
+        "status": "awaiting_new_evidence",
+        "label": "尚无新证据",
+        "headline": "强事件增强，影响将呈区域分化",
+        "latest_change": "NOAA 7月20日周度材料补全了发布前基线，但早于7月23日推演发布；截至7月24日尚无发布后正式更新，原结论保留但未被新增事实验证。",
+        "conclusion_action": "maintain_original",
+        "source_latest_available_date": "2026-07-20"
+      },
+      "stage_feedback": {
+        "facts": {
+          "status": "无新增正式事实",
+          "statement": "NOAA 7月20日周度材料补全了发布前基线，但早于7月23日推演发布；截至7月24日尚无发布后正式更新，原结论保留但未被新增事实验证。"
+        },
+        "structure": {
+          "status": "保留原分析结构",
+          "statement": "当日复盘不自动改写知识库映射；如结构改变，必须发布新的分析版本。"
+        },
+        "forecast": {
+          "status": "强事件增强，影响将呈区域分化",
+          "statement": "原始推演永久保留；当日复盘只记录支持、削弱或改版动作。"
+        },
+        "validation": {
+          "status": "尚无新证据",
+          "statement": "NOAA 7月20日周度材料补全了发布前基线，但早于7月23日推演发布；截至7月24日尚无发布后正式更新，原结论保留但未被新增事实验证。"
+        }
+      },
+      "review_outcome": "maintain_without_new_evidence",
+      "next_action": "继续按既定来源节奏检查；没有新证据时不得声称结论获得支持。",
+      "frozen_inputs": {
+        "current_validation_file": "forecast-ledger/validations/FORECAST-2026-07-23-03.current.json",
+        "current_validation_sha256": "15141ea98653b095e476b290e578e208551bbffa2d224480165019e7f3a95f44"
+      }
+    },
+    {
+      "forecast_id": "FORECAST-2026-07-23-04",
+      "event_id": "EVENT-2026-07-23-03",
+      "target": "基于发布前过去30个有效日，推演霍尔木兹海峡未来15日通行将持续修复或延续断续低位",
+      "original_issued_at": "2026-07-23T15:30:00+08:00",
+      "original_conclusion": {
+        "supported_scenario_id": "SCENARIO-2026-07-23-04-B",
+        "label": "未来15日延续断续低位",
+        "immutable": true
+      },
+      "current_feedback": {
+        "status": "awaiting_new_evidence",
+        "label": "尚无新证据",
+        "headline": "断续低位将延续",
+        "latest_change": "PortWatch最新可用日早于推演窗口，尚无发布后数据可用于验证。",
+        "conclusion_action": "maintain_original",
+        "source_latest_available_date": "2026-07-19"
+      },
+      "stage_feedback": {
+        "facts": {
+          "label": "事实反馈",
+          "status": "通行明显走弱",
+          "statement": "过去30日中位数为18.5艘；最近7日中位数较最早7日变化-57.69%。",
+          "basis": "IMF PortWatch过去30个有效日及战前一年参照",
+          "evidence": [
+            "最早7日中位数26艘",
+            "最近7日中位数11艘",
+            "数据截至2026-07-19"
+          ]
+        },
+        "structure": {
+          "label": "结构反馈",
+          "status": "关键流通功能受阻",
+          "statement": "霍尔木兹仍有船舶通过，但其能源与货物流通能力显著低于战前常态，低位反复正在延长外溢影响。",
+          "basis": "知识库 ANALYSIS-2026-07-23-03：聚货、交易与流通",
+          "boundary": "这是对流通功能的判断，不等于海峡正式关闭，也不代表所有船舶均无法通过。"
+        },
+        "forecast": {
+          "label": "推演反馈",
+          "status": "倾向断续低位",
+          "statement": "基于发布时封存的过去30日状态，未来15日当前更支持“延续断续低位”，而不是“持续修复”。",
+          "basis": "ANALYSIS-2026-07-23-03 + HORMUZ-PORTWATCH-2026-07-19",
+          "window": "2026-07-23 至 2026-08-06",
+          "immutable_original": true
+        },
+        "validation": {
+          "label": "验证反馈",
+          "status": "等待首个验证日",
+          "statement": "PortWatch最新可用日早于推演窗口，尚无发布后数据可用于验证。",
+          "basis": "发布后PortWatch有效日及UKMTO/JMIC、NAVAREA IX事件复核",
+          "progress": "0/12个最低有效日"
+        }
+      },
+      "review_outcome": "maintain_without_new_evidence",
+      "next_action": "继续按既定来源节奏检查；没有新证据时不得声称结论获得支持。",
+      "frozen_inputs": {
+        "current_validation_file": "forecast-ledger/validations/FORECAST-2026-07-23-04.current.json",
+        "current_validation_sha256": "a3941c0a22632a1ec268bc7bd3b15d44b85f692950b2020623dc7713a54bab7f"
+      }
+    }
+  ]
+}

@@ -1,0 +1,188 @@
+{
+  "schema_version": "0.1",
+  "ledger_id": "FORECAST-LEDGER-2026-07-23",
+  "issued_at": "2026-07-23T15:30:00+08:00",
+  "timezone": "Asia/Shanghai",
+  "status": "active_partial",
+  "forecasts": [
+    {
+      "forecast_id": "FORECAST-2026-07-23-01",
+      "event_id": "EVENT-2026-07-23-01",
+      "fact_version": "2026-07-23-v0.1",
+      "analysis_version": "2026-07-23-analysis-v0.1",
+      "issued_at": "2026-07-23T15:30:00+08:00",
+      "valid_until": "2026-08-06T23:59:59+08:00",
+      "target": "刚果（金）本迪布焦型埃博拉疫情在未来两期WHO更新中的传播与响应变化",
+      "reasoning_basis": {
+        "knowledge_analysis_id": "ANALYSIS-2026-07-23-01",
+        "knowledge_passage_ids": ["PASS-HANSHU-PINGDIJI-0001", "PASS-ZHOULI-JIYI-0001"],
+        "modern_source_ids": ["SRC-20260723-WHO-EBOLA"],
+        "method": "以WHO事实为底，使用知识库中关于疾疫安置、医药与公共照护的制度结构形成两种传播和响应情景。",
+        "boundary": "知识库提供解释与情景组织方式，不替代流行病学模型；推演不是未来事实承诺或医疗建议。"
+      },
+      "current_direction": {
+        "as_of": "2026-07-23T08:00:00+08:00",
+        "headline": "疫情压力仍向外扩张",
+        "current_judgment": "截至当前资料，病例、传播范围与现场安全约束同时增加，响应能力尚未追上传播压力。",
+        "outlook": "未来两期WHO更新，墨观判断事件将沿“传播继续外扩”发展，新增传播地区或未识别传播链仍会出现。",
+        "supported_scenario_id": "SCENARIO-2026-07-23-01-B",
+        "change_condition": "若连续两期新增病例增速放缓、传播地区不再增加且接触者追踪改善，则改判为“响应逐步追上传播”。"
+      },
+      "settlement_readiness": "ready",
+      "settlement_source_ids": ["SRC-20260723-WHO-EBOLA"],
+      "status": "watching",
+      "ui_publishable": true,
+      "scenarios": [
+        {
+          "scenario_id": "SCENARIO-2026-07-23-01-A",
+          "name": "响应逐步追上传播",
+          "supporting_signals": ["连续两期新增病例增速放缓", "新增传播地区减少", "接触者追踪或现场响应改善"],
+          "trigger_conditions": ["截止日前两期WHO更新均未显示传播范围继续扩大，且至少一项响应指标改善"],
+          "invalidation_conditions": ["出现新的跨境传播", "新增卫生区持续增加", "医疗响应继续受到严重安全事件阻碍"],
+          "settlement_rule": "以截止日前最后两期WHO更新为准；同时满足传播范围未继续扩大和至少一项响应改善时记为触发，否则不触发。"
+        },
+        {
+          "scenario_id": "SCENARIO-2026-07-23-01-B",
+          "name": "传播继续外扩",
+          "supporting_signals": ["新增卫生区", "未知传播链增加", "医疗设施或响应人员安全事件增加"],
+          "trigger_conditions": ["截止日前WHO确认新的传播地区、跨境传播，或未识别传播链明显扩大"],
+          "invalidation_conditions": ["病例曲线和传播地区连续两期稳定下降，且追踪覆盖恢复"],
+          "settlement_rule": "以WHO在观察窗口内确认的传播地区和传播链变化为准；任一明确外扩条件成立时记为触发。"
+        }
+      ],
+      "blocking_issues": [],
+      "settlement": null,
+      "revision_history": []
+    },
+    {
+      "forecast_id": "FORECAST-2026-07-23-03",
+      "event_id": "EVENT-2026-07-23-04",
+      "fact_version": "2026-07-23-v0.1",
+      "analysis_version": "2026-07-23-analysis-v0.1",
+      "issued_at": "2026-07-23T15:30:00+08:00",
+      "valid_until": "2026-09-30T23:59:59+08:00",
+      "target": "2026年7月至9月厄尔尼诺强度及区域影响是否按当前季节展望兑现",
+      "reasoning_basis": {
+        "knowledge_analysis_id": "ANALYSIS-2026-07-23-04",
+        "knowledge_passage_ids": ["PASS-SHU-HONGFAN-0002", "PASS-LUNHENG-QIANGAO-0001", "PASS-ZHUZI-PANZISHAN-0001"],
+        "modern_source_ids": ["SRC-20260723-WMO-ENSO", "SRC-20260723-NOAA-ENSO"],
+        "method": "以WMO和NOAA展望为事实基础，使用知识库中的时序、过度与不足及反向解释组织区域分化和跨系统压力情景。",
+        "boundary": "古典知识不解释现代海气耦合机制；推演不是未来事实承诺、气象预报替代或决策建议。"
+      },
+      "current_direction": {
+        "as_of": "2026-07-23T08:00:00+08:00",
+        "headline": "强事件增强，影响将呈区域分化",
+        "current_judgment": "厄尔尼诺正在增强，其影响已从单一气候信号转向不同地区的水、能源、农业与交通准备。",
+        "outlook": "至2026年9月末，墨观判断事件将沿“强事件但区域分化”发展；各地异常方向不会一致，部分地区将出现跨系统压力。",
+        "supported_scenario_id": "SCENARIO-2026-07-23-03-A",
+        "change_condition": "若WMO与NOAA显著下调事件强度，且主要区域异常持续弱于当前展望，则撤回这一走向判断。"
+      },
+      "settlement_readiness": "ready",
+      "settlement_source_ids": ["SRC-20260723-WMO-ENSO", "SRC-20260723-NOAA-ENSO"],
+      "status": "watching",
+      "ui_publishable": true,
+      "scenarios": [
+        {
+          "scenario_id": "SCENARIO-2026-07-23-03-A",
+          "name": "强事件但区域分化",
+          "supporting_signals": ["Niño 3.4指数继续增强", "区域季节展望维持显著差异", "影响在不同地区表现为不同温度和降水异常"],
+          "trigger_conditions": ["截止日前官方更新继续确认强事件，同时区域影响方向未呈全球一致"],
+          "invalidation_conditions": ["官方显著下调事件强度", "多个主要区域出现高度一致且超出原展望的同向异常"],
+          "settlement_rule": "以截止日前WMO和NOAA最后一次正式更新为准；强度判断与区域差异两个条件同时成立时记为触发。"
+        },
+        {
+          "scenario_id": "SCENARIO-2026-07-23-03-B",
+          "name": "跨系统压力上升",
+          "supporting_signals": ["多个重点地区同时出现水、能源、交通或农业压力", "官方灾害准备升级"],
+          "trigger_conditions": ["至少两个重点地区由官方来源确认气候异常同时影响两个以上基础系统"],
+          "invalidation_conditions": ["官方展望下调强度，且主要区域异常持续弱于预报"],
+          "settlement_rule": "使用WMO、相关国家气象和灾害机构在观察窗口内的正式材料；满足多地区、多系统两个条件时记为触发。"
+        }
+      ],
+      "blocking_issues": [],
+      "settlement": null,
+      "revision_history": []
+    },
+    {
+      "forecast_id": "FORECAST-2026-07-23-04",
+      "event_id": "EVENT-2026-07-23-03",
+      "fact_version": "2026-07-23-v0.1",
+      "analysis_version": "2026-07-23-analysis-v0.1",
+      "issued_at": "2026-07-23T15:30:00+08:00",
+      "valid_until": "2026-08-06T23:59:59+08:00",
+      "target": "基于发布前过去30个有效日，推演霍尔木兹海峡未来15日通行将持续修复或延续断续低位",
+      "reasoning_basis": {
+        "knowledge_analysis_id": "ANALYSIS-2026-07-23-03",
+        "knowledge_passage_ids": ["PASS-SHIJI-HUOZHI-0001", "PASS-YIZHUAN-XICI-XIA-0001"],
+        "modern_source_ids": ["SRC-20260723-IMF-PORTWATCH-HORMUZ", "SRC-20260723-UKMTO-HORMUZ", "SRC-20260723-NAVAREA-IX-HORMUZ"],
+        "method": "以发布前30个有效日的航运事实为底，使用知识库中聚货、交易与流通的功能结构，推演未来15日将持续修复或延续断续低位。",
+        "boundary": "古典知识只组织流通结构的解释；通行事实由现代航运和官方安全来源决定。推演不是未来事实承诺、投资建议或行动指令。"
+      },
+      "current_direction": {
+        "as_of": "2026-07-23T08:00:00+08:00",
+        "headline": "断续低位将延续",
+        "current_judgment": "过去30日通行量显著低于战前常态，且最近7日较最早7日继续走弱，当前尚未形成持续修复。",
+        "outlook": "未来15日，墨观判断霍尔木兹海峡将沿“断续低位”发展，至8月6日前不会形成稳定恢复。",
+        "supported_scenario_id": "SCENARIO-2026-07-23-04-B",
+        "change_condition": "若未来窗口至少取得12个有效日、中位数达到22艘且至少9日高于发布时30日中位数，则改判为“持续修复”。"
+      },
+      "settlement_readiness": "ready",
+      "settlement_source_ids": [
+        "SRC-20260723-IMF-PORTWATCH-HORMUZ",
+        "SRC-20260723-UKMTO-HORMUZ",
+        "SRC-20260723-NAVAREA-IX-HORMUZ"
+      ],
+      "status": "watching",
+      "ui_publishable": true,
+      "evaluation_contract": {
+        "baseline_snapshot_id": "HORMUZ-PORTWATCH-2026-07-19",
+        "baseline_snapshot_path": "transit-monitor/snapshots/2026-07-23-30d.json",
+        "metric": "n_total",
+        "baseline_start": "2026-06-20",
+        "baseline_end": "2026-07-19",
+        "baseline_valid_days": 30,
+        "forecast_start": "2026-07-23",
+        "forecast_end": "2026-08-06",
+        "minimum_valid_days": 12,
+        "baseline_median": 18.5,
+        "recovery_median_min": 22,
+        "recovery_days_above_baseline_min": 9,
+        "low_day_max": 9,
+        "low_days_min": 5,
+        "original_supported_scenario_id": "SCENARIO-2026-07-23-04-B"
+      },
+      "scenarios": [
+        {
+          "scenario_id": "SCENARIO-2026-07-23-04-A",
+          "name": "未来15日出现持续修复",
+          "supporting_signals": ["未来窗口多数日期高于发布时30日中位数", "未来15日中位数较30日基线上升至少约20%", "官方限制和安全事件减少"],
+          "trigger_conditions": ["2026年7月23日至8月6日至少取得12个有效日；窗口中位数达到22艘及以上，且至少9日高于发布时30日中位数18.5艘"],
+          "invalidation_conditions": ["窗口中位数不高于18.5艘", "至少5日降至9艘及以下"],
+          "settlement_rule": "使用发布时封存的30日基线和IMF PortWatch chokepoint6未来15日n_total结算。每日新增数据只更新验证进度；原始阈值和结论不得回写。达到触发条件后记为触发，同时报告相对战前一年中位数88艘的比例。"
+        },
+        {
+          "scenario_id": "SCENARIO-2026-07-23-04-B",
+          "name": "未来15日延续断续低位",
+          "supporting_signals": ["未来窗口中位数不高于30日基线", "多个日期低于30日基线的一半", "官方安全事件或限制持续"],
+          "trigger_conditions": ["至少取得12个有效日，且窗口中位数不高于18.5艘；或至少5日降至9艘及以下并出现UKMTO/JMIC或NAVAREA IX确认的新安全事件或限制"],
+          "invalidation_conditions": ["窗口中位数达到22艘及以上，且至少9日高于18.5艘"],
+          "settlement_rule": "通行量使用IMF PortWatch chokepoint6；安全事件只接受UKMTO/JMIC或NAVAREA IX正式材料。每日验证可改变当前支持度，但不能修改2026年7月23日发布的原始推演；如需改变结论，必须新增带时间戳的修订版本。"
+        }
+      ],
+      "blocking_issues": [],
+      "settlement": null,
+      "revision_history": [
+        {
+          "revised_at": "2026-07-23T14:55:01+08:00",
+          "change": "取得IMF PortWatch霍尔木兹逐日过境数据与历史基线，并将安全辅助证据限定为UKMTO/JMIC和NAVAREA IX；状态由blocked转为watching。",
+          "reason": "原三项数据阻塞已通过公开、可重复查询的聚合数据和官方航行安全材料解除；不再要求连续商业保险数据作为P0结算前提。"
+        },
+        {
+          "revised_at": "2026-07-23T15:53:44+08:00",
+          "change": "将推演输入统一为发布前过去30个有效日，将未来观察窗口统一为15个自然日；每日新增数据改为验证进度和版本更新依据。",
+          "reason": "推演应在发布时基于已有历史形成，而不是等待未来数据积累后才产生；原始推演必须可复盘，后续证据只能验证或形成新版本。"
+        }
+      ]
+    }
+  ]
+}

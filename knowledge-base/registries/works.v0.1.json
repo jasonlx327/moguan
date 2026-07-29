@@ -5,11 +5,71 @@
       "work_id": "WORK-SHU-HONGFAN",
       "canonical_title": "尚书·洪范",
       "historical_layer": "theory_source",
-      "formation_note": "文本形成与传承复杂；新版暂不设定单一成书年份。",
+      "formation_note": "传世文本形成与传承复杂，不设定单一成书年份；本批只登记可逐字核对的段落。",
       "compilation_date": null,
       "source_ids": ["SRC-CTP-SHU-HONGFAN", "SRC-WIKISOURCE-SHU-HONGFAN"],
-      "text_state": "metadata_only",
-      "review_status": "needs_revalidation"
+      "text_state": "selected_passages",
+      "review_status": "reviewed"
+    },
+    {
+      "work_id": "WORK-ZHOULI-JIYI",
+      "canonical_title": "周礼·天官·疾医",
+      "historical_layer": "institutional_synthesis",
+      "formation_note": "《周礼》的形成与定型年代有争议；本批只使用“疾医掌养万民之疾病”这一制度性表述，不采用四时病因说。",
+      "compilation_date": null,
+      "source_ids": ["SRC-WIKISOURCE-ZHOULI-ZHENGYI-09"],
+      "text_state": "selected_passages",
+      "review_status": "reviewed"
+    },
+    {
+      "work_id": "WORK-HANSHU-PINGDIJI",
+      "canonical_title": "汉书·平帝纪",
+      "historical_layer": "institutional_synthesis",
+      "formation_note": "东汉班固等撰；该段记录元始二年灾疫与救济措施，事件年代与成书年代分开记录。",
+      "compilation_date": "1世纪",
+      "source_ids": ["SRC-WIKISOURCE-HANSHU-012", "SRC-QSTHEORY-HANSHU-EPIDEMIC"],
+      "text_state": "selected_passages",
+      "review_status": "reviewed"
+    },
+    {
+      "work_id": "WORK-YIZHUAN-XICI-XIA",
+      "canonical_title": "易传·系辞下",
+      "historical_layer": "theory_source",
+      "formation_note": "形成年代与作者问题复杂，通常置于战国至汉初的经传形成过程中；不归于单一作者。",
+      "compilation_date": null,
+      "source_ids": ["SRC-WIKISOURCE-YIZHUAN-XICI-XIA"],
+      "text_state": "selected_passages",
+      "review_status": "reviewed"
+    },
+    {
+      "work_id": "WORK-SHIJI-HUOZHI",
+      "canonical_title": "史记·货殖列传",
+      "historical_layer": "institutional_synthesis",
+      "formation_note": "西汉司马迁撰；本批只提取农、虞、工、商在物资形成与流通中的功能描述。",
+      "compilation_date": "约公元前1世纪",
+      "source_ids": ["SRC-WIKISOURCE-SHIJI-129", "SRC-CTP-SHIJI-HUOZHI"],
+      "text_state": "selected_passages",
+      "review_status": "reviewed"
+    },
+    {
+      "work_id": "WORK-LUNHENG-QIANGAO",
+      "canonical_title": "论衡·谴告",
+      "historical_layer": "theory_source",
+      "formation_note": "东汉王充撰；本批将其作为反对把自然现象直接解释为天意谴告的内部反证。",
+      "compilation_date": "约1世纪",
+      "source_ids": ["SRC-WIKISOURCE-LUNHENG-14"],
+      "text_state": "selected_passages",
+      "review_status": "reviewed"
+    },
+    {
+      "work_id": "WORK-ZHUZI-WENJI-PANZISHAN",
+      "canonical_title": "晦庵先生朱文公文集·答潘子善",
+      "historical_layer": "observation_refinement",
+      "formation_note": "南宋朱熹答书；原文并列庶征与五行的两套不同归属，用于证明相关映射并非古籍内部唯一共识。",
+      "compilation_date": "12世纪",
+      "source_ids": ["SRC-SHIDIAN-ZHUZI-PANZISHAN", "SRC-CTP-ZHUZI-WENJI"],
+      "text_state": "selected_passages",
+      "review_status": "reviewed"
     }
   ]
 }

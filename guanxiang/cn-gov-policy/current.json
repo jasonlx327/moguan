@@ -1,0 +1,35 @@
+{
+  "schema_version": "0.1",
+  "snapshot_id": "CN-GOV-MOFCOM-SEMICONDUCTOR-2026-06-29-2026-07-28",
+  "attempted_at": "2026-07-28T15:36:30.000Z",
+  "source": {
+    "source_id": "cn_state_council_policy_search",
+    "publisher": "中国政府网",
+    "endpoint": "https://sousuo.www.gov.cn/search-gov/data",
+    "open_level": "O0",
+    "authentication": "none",
+    "interface_status": "Public no-authentication search interface on an official government domain; machine contract is not formally documented."
+  },
+  "query": {
+    "department": "商务部",
+    "terms": [
+      "半导体",
+      "芯片",
+      "出口管制",
+      "先进计算",
+      "两用物项"
+    ],
+    "publication_date_from": "2026-06-29",
+    "publication_date_to": "2026-07-28",
+    "result_limit_per_term": 100,
+    "requests": []
+  },
+  "data_status": "blocked",
+  "candidate_count": 0,
+  "documents": [],
+  "access_issue": "On 2026-07-28, curl, Node fetch, the in-app browser and an isolated Crawl4AI 0.9.2 Chromium probe could not obtain a response from sousuo.www.gov.cn, www.mofcom.gov.cn or exportcontrol.mofcom.gov.cn. Crawl4AI successfully retrieved the control URL example.com, while all three government URLs failed with net::ERR_CONNECTION_CLOSED and zero HTML. No search-engine result or third-party mirror was substituted for an official-source snapshot.",
+  "review_gate": {
+    "status": "pending",
+    "rule": "No candidate may enter the event ledger until the official interface is directly retrieved and each linked document is manually reviewed."
+  }
+}

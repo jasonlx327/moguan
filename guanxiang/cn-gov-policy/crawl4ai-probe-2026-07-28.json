@@ -1,0 +1,55 @@
+{
+  "schema_version": "0.1",
+  "probe_id": "CN-GOV-CRAWL4AI-2026-07-28",
+  "attempted_at": "2026-07-28T15:36:30.000Z",
+  "purpose": "Determine whether a browser-based open-source crawler can reach the three official China policy entry points from the current runtime.",
+  "runtime": {
+    "crawl4ai_version": "0.9.2",
+    "python_version": "3.12.13",
+    "browser": "Playwright Chromium 149.0.7827.55",
+    "headless": true,
+    "cache_mode": "bypass",
+    "page_timeout_ms": 20000,
+    "llm_extraction": false,
+    "stealth_or_undetected_mode": false,
+    "proxy_override": false,
+    "cookies_or_login": false
+  },
+  "observations": [
+    {
+      "requested_url": "https://example.com/",
+      "success": true,
+      "status_code": 200,
+      "html_length": 559,
+      "error_code": null
+    },
+    {
+      "requested_url": "https://sousuo.www.gov.cn/zcwjk/policyDocumentLibrary",
+      "success": false,
+      "status_code": null,
+      "html_length": 0,
+      "error_code": "net::ERR_CONNECTION_CLOSED"
+    },
+    {
+      "requested_url": "https://www.mofcom.gov.cn/zcfb/index.html",
+      "success": false,
+      "status_code": null,
+      "html_length": 0,
+      "error_code": "net::ERR_CONNECTION_CLOSED"
+    },
+    {
+      "requested_url": "https://exportcontrol.mofcom.gov.cn/",
+      "success": false,
+      "status_code": null,
+      "html_length": 0,
+      "error_code": "net::ERR_CONNECTION_CLOSED"
+    }
+  ],
+  "conclusion": {
+    "status": "network_path_blocked",
+    "finding": "Crawl4AI and its Chromium runtime work, but the current runtime cannot establish a navigable connection to the three official government domains.",
+    "implication": "Changing the HTML parser or adding AI extraction cannot resolve this failure. No official document data was collected.",
+    "disallowed_next_step": "Do not enable stealth, proxy rotation or access-control evasion merely to force access.",
+    "safe_next_step": "Run the same no-login probe from a network that can normally reach the official domains, or execute a transparent scheduled collector that preserves direct official URLs and raw-response hashes."
+  }
+}

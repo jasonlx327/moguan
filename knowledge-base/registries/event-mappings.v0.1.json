@@ -1,0 +1,41 @@
+{
+  "schema_version": "0.1",
+  "event_mappings": [
+    {
+      "mapping_id": "MAP-EVENT-2026-07-23-01",
+      "event_id": "EVENT-2026-07-23-01",
+      "theme": "疫与群体治理",
+      "passage_ids": ["PASS-ZHOULI-JIYI-0001", "PASS-HANSHU-PINGDIJI-0001"],
+      "public_passage_id": "PASS-HANSHU-PINGDIJI-0001",
+      "interpretive_frame": "只讨论古代文本如何表达公共照护责任与灾疫救济，不把疫情解释为天谴，也不提供医疗建议。",
+      "modern_evidence_priority": ["WHO及国家卫生机构事实", "病例与传播链数据", "古典材料"],
+      "five_phase_position": "不分配固定五行",
+      "mapping_status": "approved",
+      "ui_publishable": true
+    },
+    {
+      "mapping_id": "MAP-EVENT-2026-07-23-04",
+      "event_id": "EVENT-2026-07-23-04",
+      "theme": "时序、气候与异常",
+      "passage_ids": ["PASS-SHU-HONGFAN-0002", "PASS-LUNHENG-QIANGAO-0001", "PASS-ZHUZI-PANZISHAN-0001"],
+      "public_passage_id": "PASS-SHU-HONGFAN-0002",
+      "interpretive_frame": "可用“时序、过度与不足”描述古人关注的气候秩序，同时必须并列自然主义反证与五行配属分歧；不得用古籍替代气候模型。",
+      "modern_evidence_priority": ["WMO及气象机构观测与模型", "区域天气和海温数据", "古典材料"],
+      "five_phase_position": "存在多套古代配属，禁止静默选择唯一答案",
+      "mapping_status": "approved",
+      "ui_publishable": true
+    },
+    {
+      "mapping_id": "MAP-EVENT-2026-07-23-03",
+      "event_id": "EVENT-2026-07-23-03",
+      "theme": "流通、阻滞与民生传导",
+      "passage_ids": ["PASS-YIZHUAN-XICI-XIA-0001", "PASS-SHIJI-HUOZHI-0001"],
+      "public_passage_id": "PASS-SHIJI-HUOZHI-0001",
+      "interpretive_frame": "只借古典材料说明货物聚集、交换与流通的价值；航运是否受阻仍完全由AIS、港口、承运人和新闻证据判断。",
+      "modern_evidence_priority": ["航运与港口事实数据", "承运人与政府公告", "古典材料"],
+      "five_phase_position": "不分配固定五行",
+      "mapping_status": "approved",
+      "ui_publishable": true
+    }
+  ]
+}

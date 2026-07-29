@@ -5,23 +5,122 @@
       "source_id": "SRC-CTP-SHU-HONGFAN",
       "title": "中国哲学书电子化计划：尚书·洪范",
       "source_type": "research_reference",
-      "canonical_url": "https://ctext.org/shang-shu/great-plan/zh",
+      "canonical_url": "https://ctext.org/shang-shu/great-plan/zhs",
       "acquisition_mode": "manual_reference",
-      "license_review_status": "needs_revalidation",
+      "license_review_status": "reference_only",
       "full_text_storage_allowed": false,
       "commercial_use_status": "restricted",
-      "provenance_note": "从旧版知识库迁移；只保留来源线索，使用条款和页面版本须重新核验。"
+      "provenance_note": "作为第二数字来源交叉核对；不从该站批量存储全文。"
     },
     {
       "source_id": "SRC-WIKISOURCE-SHU-HONGFAN",
       "title": "维基文库：尚书／洪范",
       "source_type": "digital_transcription",
-      "canonical_url": "https://zh.wikisource.org/zh-hans/%E6%B4%AA%E7%AF%84",
+      "canonical_url": "https://zh.wikisource.org/w/index.php?title=尚書/洪範&oldid=5801741",
       "acquisition_mode": "manual_reference",
-      "license_review_status": "needs_revalidation",
-      "full_text_storage_allowed": null,
+      "license_review_status": "reviewed",
+      "full_text_storage_allowed": true,
+      "commercial_use_status": "allowed_with_attribution_share_alike",
+      "provenance_note": "固定修订号；页面标注底层作品为公有领域，站点文字按 CC BY-SA 4.0 提供。"
+    },
+    {
+      "source_id": "SRC-WIKISOURCE-ZHOULI-ZHENGYI-09",
+      "title": "维基文库：周礼正义／卷九",
+      "source_type": "digital_transcription",
+      "canonical_url": "https://zh.wikisource.org/w/index.php?title=周禮正義/09&oldid=2395636",
+      "acquisition_mode": "manual_reference",
+      "license_review_status": "reviewed_with_text_quality_warning",
+      "full_text_storage_allowed": true,
+      "commercial_use_status": "allowed_with_attribution_share_alike",
+      "provenance_note": "固定修订号；页面自身标注为未充分校对，故仅采用并交叉核对经文短句，不采纳长篇疏文为现代医学依据。"
+    },
+    {
+      "source_id": "SRC-WIKISOURCE-HANSHU-012",
+      "title": "维基文库：汉书／卷十二",
+      "source_type": "digital_transcription",
+      "canonical_url": "https://zh.wikisource.org/w/index.php?title=漢書/卷012&oldid=7903647",
+      "acquisition_mode": "manual_reference",
+      "license_review_status": "reviewed",
+      "full_text_storage_allowed": true,
+      "commercial_use_status": "allowed_with_attribution_share_alike",
+      "provenance_note": "固定修订号；只截取元始二年灾疫救济段落。"
+    },
+    {
+      "source_id": "SRC-QSTHEORY-HANSHU-EPIDEMIC",
+      "title": "求是网转载《光明日报》：民疾疫者，舍空邸第，为置医药",
+      "source_type": "secondary_reference",
+      "canonical_url": "https://www.qstheory.cn/llwx/2020-06/03/c_1126067644.htm",
+      "acquisition_mode": "manual_reference",
+      "license_review_status": "reference_only",
+      "full_text_storage_allowed": false,
       "commercial_use_status": "unknown",
-      "provenance_note": "从旧版知识库迁移；使用前须保存页面修订号并完成页面级版权复核。"
+      "provenance_note": "用于核对引文、元始二年背景和当代释义争议；不继承其将该措施直接等同现代隔离制度的判断。"
+    },
+    {
+      "source_id": "SRC-WIKISOURCE-YIZHUAN-XICI-XIA",
+      "title": "维基文库：易传／系辞下",
+      "source_type": "digital_transcription",
+      "canonical_url": "https://zh.wikisource.org/w/index.php?title=易傳/繫辭下&oldid=2611136",
+      "acquisition_mode": "manual_reference",
+      "license_review_status": "reviewed",
+      "full_text_storage_allowed": true,
+      "commercial_use_status": "allowed_with_attribution_share_alike",
+      "provenance_note": "固定修订号；采用第二章关于市、民、货与交易的短段。"
+    },
+    {
+      "source_id": "SRC-WIKISOURCE-SHIJI-129",
+      "title": "维基文库：史记／卷一百二十九",
+      "source_type": "digital_transcription",
+      "canonical_url": "https://zh.wikisource.org/w/index.php?title=史記/卷129&oldid=7904128",
+      "acquisition_mode": "manual_reference",
+      "license_review_status": "reviewed",
+      "full_text_storage_allowed": true,
+      "commercial_use_status": "allowed_with_attribution_share_alike",
+      "provenance_note": "固定修订号；采用货殖列传序言中关于分工与流通的短句。"
+    },
+    {
+      "source_id": "SRC-CTP-SHIJI-HUOZHI",
+      "title": "中国哲学书电子化计划：史记·货殖列传",
+      "source_type": "research_reference",
+      "canonical_url": "https://ctext.org/wiki.pl?chapter=136056&if=gb",
+      "acquisition_mode": "manual_reference",
+      "license_review_status": "reference_only",
+      "full_text_storage_allowed": false,
+      "commercial_use_status": "restricted",
+      "provenance_note": "作为第二数字文本见证交叉核对“商而通之”段；不从该站批量存储全文。"
+    },
+    {
+      "source_id": "SRC-WIKISOURCE-LUNHENG-14",
+      "title": "维基文库：论衡（四库全书本）／卷十四",
+      "source_type": "digital_transcription",
+      "canonical_url": "https://zh.wikisource.org/w/index.php?title=論衡_(四庫全書本)/卷14&oldid=792722",
+      "acquisition_mode": "manual_reference",
+      "license_review_status": "reviewed",
+      "full_text_storage_allowed": true,
+      "commercial_use_status": "allowed_with_attribution_share_alike",
+      "provenance_note": "固定修订号；采用《谴告》篇关于天道自然的反证短句。"
+    },
+    {
+      "source_id": "SRC-SHIDIAN-ZHUZI-PANZISHAN",
+      "title": "识典古籍：朱熹文集·答潘子善",
+      "source_type": "digital_transcription",
+      "canonical_url": "https://www.shidianguji.com/zh/book/SBCK218/chapter/SBCK218_2732",
+      "acquisition_mode": "manual_reference",
+      "license_review_status": "reference_only",
+      "full_text_storage_allowed": false,
+      "commercial_use_status": "unknown",
+      "provenance_note": "用于定位与逐字核对；未确认站点文本再利用条款，不作为公开引文的唯一数字底本。"
+    },
+    {
+      "source_id": "SRC-CTP-ZHUZI-WENJI",
+      "title": "中国哲学书电子化计划：晦庵先生朱文公文集",
+      "source_type": "research_reference",
+      "canonical_url": "https://ctext.org/wiki.pl?if=gb&res=175551",
+      "acquisition_mode": "manual_reference",
+      "license_review_status": "reference_only",
+      "full_text_storage_allowed": false,
+      "commercial_use_status": "restricted",
+      "provenance_note": "作为作品与版本线索；公开引用前仍需补充可固定页码或影印页的底本。"
     }
   ]
 }

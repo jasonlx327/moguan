@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "moguan://forecast-ledger/forecast-ledger.schema.v0.1",
+  "title": "Moguan forecast ledger contract",
+  "$defs": {
+    "forecast_status": {
+      "enum": ["draft", "watching", "triggered", "invalidated", "settled", "blocked", "withdrawn"]
+    },
+    "settlement_readiness": {
+      "enum": ["ready", "blocked"]
+    },
+    "error_class": {
+      "enum": ["fact_error", "mapping_error", "forecast_error", "settlement_data_missing", "none"]
+    }
+  },
+  "description": "Runtime validation is implemented by scripts/validate-forecast-ledger.mjs."
+}

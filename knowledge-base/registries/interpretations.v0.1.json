@@ -1,0 +1,93 @@
+{
+  "schema_version": "0.1",
+  "interpretations": [
+    {
+      "analysis_id": "ANALYSIS-2026-07-23-01",
+      "event_id": "EVENT-2026-07-23-01",
+      "fact_version": "2026-07-23-v0.1",
+      "passage_ids": ["PASS-HANSHU-PINGDIJI-0001", "PASS-ZHOULI-JIYI-0001"],
+      "reality_change": "疫情的扩大不仅取决于病毒传播，也受到医疗响应安全、接触者追踪和群体照护能力的共同影响。",
+      "classical_lens": {
+        "concept": "疾疫中的安置、医药与群体照护",
+        "public_passage_id": "PASS-HANSHU-PINGDIJI-0001",
+        "historical_meaning": "《汉书》记录灾疫背景下为染疫者提供空置住所与医药，并对死亡家庭提供救助。"
+      },
+      "modern_bridge": "古今共享的不是具体医学机制，而是一个制度结构：当疾病超出个人承受范围，住宿、医药与公共组织会成为响应的一部分。",
+      "limits_and_counterreadings": [
+        "史书没有提供病例定义、覆盖率或疗效，不能证明该措施等同现代隔离制度。",
+        "古代材料不能解释本次埃博拉病毒的传播机制，也不能提供治疗建议。",
+        "当前疫情走势仍应由WHO通报、传播链和现场响应数据判断。"
+      ],
+      "continued_observation": {
+        "window": "未来两期WHO疫情更新",
+        "supporting_signals": ["接触者追踪改善", "新增传播地区减少", "医疗响应安全事件下降"],
+        "weakening_signals": ["未知传播链增加", "跨境传播扩大", "医疗设施持续受袭"]
+      },
+      "mapping_basis": {
+        "type": "structural_analogy",
+        "reason": "公共照护的关系结构清楚，但古今疾病机制、制度能力和证据标准差异很大。"
+      },
+      "review_status": "analysis_reviewed",
+      "published_version": "2026-07-23-analysis-v0.1"
+    },
+    {
+      "analysis_id": "ANALYSIS-2026-07-23-04",
+      "event_id": "EVENT-2026-07-23-04",
+      "fact_version": "2026-07-23-v0.1",
+      "passage_ids": ["PASS-SHU-HONGFAN-0002", "PASS-LUNHENG-QIANGAO-0001", "PASS-ZHUZI-PANZISHAN-0001"],
+      "reality_change": "厄尔尼诺增强意味着海温与大气环流持续偏离常态，但具体影响会因地区、季节和系统承受能力而不同。",
+      "classical_lens": {
+        "concept": "时序、过度与不足",
+        "public_passage_id": "PASS-SHU-HONGFAN-0002",
+        "historical_meaning": "《洪范》把雨、晴、热、寒、风是否按时序出现，以及某一项过度或缺失，与草木生长联系起来。"
+      },
+      "modern_bridge": "可类比之处是对“时序与失衡”的关注：环境系统并非只看某个变量是否存在，还要看它何时出现、持续多久、是否过强或不足。",
+      "limits_and_counterreadings": [
+        "《洪范》的政治感应部分不能作为现代气候因果。",
+        "《论衡·谴告》提供自然主义反证，提醒不能把自然异常直接解释为天意。",
+        "朱熹记录了天气与五行的不同配属，因此本事件不输出固定五行。",
+        "事件强度和区域后果必须由WMO、NOAA及观测模型判断。"
+      ],
+      "continued_observation": {
+        "window": "2026年7月至9月季节更新",
+        "supporting_signals": ["Niño 3.4指数继续增强", "区域异常与季节展望逐步兑现"],
+        "weakening_signals": ["官方展望下调事件强度", "主要区域异常持续弱于预报"]
+      },
+      "mapping_basis": {
+        "type": "disputed_mapping",
+        "reason": "时序与失衡的结构类比成立，但古代气候观、天人关系与现代海气耦合模型之间距离很大，且传统内部存在重要异说。"
+      },
+      "review_status": "analysis_reviewed",
+      "published_version": "2026-07-23-analysis-v0.1"
+    },
+    {
+      "analysis_id": "ANALYSIS-2026-07-23-03",
+      "event_id": "EVENT-2026-07-23-03",
+      "fact_version": "2026-07-23-v0.1",
+      "passage_ids": ["PASS-SHIJI-HUOZHI-0001", "PASS-YIZHUAN-XICI-XIA-0001"],
+      "reality_change": "霍尔木兹海峡的价值来自其作为关键流通节点的功能；局部通行受阻可能沿能源、运费、保险和供应链向外传导。",
+      "classical_lens": {
+        "concept": "聚货、交易与流通",
+        "public_passage_id": "PASS-SHIJI-HUOZHI-0001",
+        "historical_meaning": "《货殖列传》用“商而通之”概括商在不同生产与物资环节之间发挥流通作用。"
+      },
+      "modern_bridge": "古今共享的结构是“通”：物资价值不仅来自生产，也依赖节点、路径与交换。关键节点受阻时，后果可能超出节点本身。",
+      "limits_and_counterreadings": [
+        "古代分工描述不包含现代港口、船型、保险、制裁和能源市场机制。",
+        "“商而通之”不能证明任何现代自由贸易立场，也不能预测油价或运价。",
+        "当前是否恢复通行必须由船舶、港口、承运人和官方航行信息判断。"
+      ],
+      "continued_observation": {
+        "window": "基于过去30个有效日，推演未来15个自然日并每日验证",
+        "supporting_signals": ["每日过境船舶增加", "等待与改道减少", "战争险费率回落"],
+        "weakening_signals": ["通行再次中断", "改道扩大", "保险与运费持续上升"]
+      },
+      "mapping_basis": {
+        "type": "structural_analogy",
+        "reason": "流通与节点的功能结构较清楚，但现代航运机制远比古代分工复杂。"
+      },
+      "review_status": "analysis_reviewed",
+      "published_version": "2026-07-23-analysis-v0.1"
+    }
+  ]
+}

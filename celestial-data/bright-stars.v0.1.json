@@ -1,0 +1,2417 @@
+{
+  "schema_version": "0.1",
+  "catalog_id": "SIMBAD-BRIGHT-STARS-V5.2",
+  "coordinate_frame": "ICRS/J2000",
+  "magnitude_band": "V",
+  "magnitude_limit": 5.2,
+  "star_count": 400,
+  "source": {
+    "publisher": "CDS SIMBAD",
+    "endpoint": "https://simbad.cds.unistra.fr/simbad/sim-tap",
+    "query": "SELECT TOP 500 b.main_id, b.ra, b.dec, f.flux AS vmag FROM basic AS b JOIN flux AS f ON b.oid=f.oidref WHERE f.filter='V' AND f.flux < 5.2 AND b.main_id LIKE '*%' ORDER BY vmag ASC",
+    "accessed_at": "2026-07-23T15:22:23.199Z",
+    "data_note": "用于墨观夜空可视化的亮星快照；不替代完整星表或专业天体测量。"
+  },
+  "stars": [
+    {
+      "id": "* alf CMa",
+      "ra_degrees": 101.287155,
+      "dec_degrees": -16.716116,
+      "magnitude": -1.46
+    },
+    {
+      "id": "* alf Car",
+      "ra_degrees": 95.987958,
+      "dec_degrees": -52.695661,
+      "magnitude": -0.74
+    },
+    {
+      "id": "* alf Cen",
+      "ra_degrees": 219.902083,
+      "dec_degrees": -60.833972,
+      "magnitude": -0.1
+    },
+    {
+      "id": "* alf Boo",
+      "ra_degrees": 213.9153,
+      "dec_degrees": 19.182409,
+      "magnitude": -0.05
+    },
+    {
+      "id": "* alf Cen A",
+      "ra_degrees": 219.902058,
+      "dec_degrees": -60.833993,
+      "magnitude": 0.01
+    },
+    {
+      "id": "* alf Lyr",
+      "ra_degrees": 279.234735,
+      "dec_degrees": 38.783689,
+      "magnitude": 0.03
+    },
+    {
+      "id": "* alf Aur",
+      "ra_degrees": 79.172328,
+      "dec_degrees": 45.997991,
+      "magnitude": 0.08
+    },
+    {
+      "id": "* bet Ori",
+      "ra_degrees": 78.634467,
+      "dec_degrees": -8.201638,
+      "magnitude": 0.13
+    },
+    {
+      "id": "* alf CMi",
+      "ra_degrees": 114.825498,
+      "dec_degrees": 5.224988,
+      "magnitude": 0.37
+    },
+    {
+      "id": "* alf Ori",
+      "ra_degrees": 88.792939,
+      "dec_degrees": 7.407064,
+      "magnitude": 0.42
+    },
+    {
+      "id": "* alf Eri",
+      "ra_degrees": 24.428523,
+      "dec_degrees": -57.236753,
+      "magnitude": 0.46
+    },
+    {
+      "id": "* bet Cen",
+      "ra_degrees": 210.955856,
+      "dec_degrees": -60.373035,
+      "magnitude": 0.58
+    },
+    {
+      "id": "* alf Aql",
+      "ra_degrees": 297.695827,
+      "dec_degrees": 8.868321,
+      "magnitude": 0.76
+    },
+    {
+      "id": "* alf Tau",
+      "ra_degrees": 68.980163,
+      "dec_degrees": 16.509302,
+      "magnitude": 0.86
+    },
+    {
+      "id": "* alf Sco",
+      "ra_degrees": 247.351915,
+      "dec_degrees": -26.432003,
+      "magnitude": 0.91
+    },
+    {
+      "id": "* alf Vir",
+      "ra_degrees": 201.298247,
+      "dec_degrees": -11.161319,
+      "magnitude": 0.97
+    },
+    {
+      "id": "* bet Gem",
+      "ra_degrees": 116.328958,
+      "dec_degrees": 28.026199,
+      "magnitude": 1.14
+    },
+    {
+      "id": "* alf PsA",
+      "ra_degrees": 344.412693,
+      "dec_degrees": -29.622237,
+      "magnitude": 1.16
+    },
+    {
+      "id": "* bet Cru",
+      "ra_degrees": 191.930287,
+      "dec_degrees": -59.688772,
+      "magnitude": 1.25
+    },
+    {
+      "id": "* alf Cyg",
+      "ra_degrees": 310.35798,
+      "dec_degrees": 45.280339,
+      "magnitude": 1.25
+    },
+    {
+      "id": "* alf01 Cru",
+      "ra_degrees": 186.649567,
+      "dec_degrees": -63.099092,
+      "magnitude": 1.28
+    },
+    {
+      "id": "* alf Cen B",
+      "ra_degrees": 219.896096,
+      "dec_degrees": -60.837528,
+      "magnitude": 1.33
+    },
+    {
+      "id": "* alf Leo",
+      "ra_degrees": 152.092962,
+      "dec_degrees": 11.967209,
+      "magnitude": 1.4
+    },
+    {
+      "id": "* eps CMa",
+      "ra_degrees": 104.656453,
+      "dec_degrees": -28.972086,
+      "magnitude": 1.5
+    },
+    {
+      "id": "* alf Gem",
+      "ra_degrees": 113.649472,
+      "dec_degrees": 31.888282,
+      "magnitude": 1.58
+    },
+    {
+      "id": "* alf02 Cru",
+      "ra_degrees": 186.651842,
+      "dec_degrees": -63.099522,
+      "magnitude": 1.58
+    },
+    {
+      "id": "* lam Sco",
+      "ra_degrees": 263.402167,
+      "dec_degrees": -37.103824,
+      "magnitude": 1.63
+    },
+    {
+      "id": "* gam Cru",
+      "ra_degrees": 187.791498,
+      "dec_degrees": -57.113213,
+      "magnitude": 1.64
+    },
+    {
+      "id": "* gam Ori",
+      "ra_degrees": 81.282764,
+      "dec_degrees": 6.349703,
+      "magnitude": 1.64
+    },
+    {
+      "id": "* bet Tau",
+      "ra_degrees": 81.572971,
+      "dec_degrees": 28.607452,
+      "magnitude": 1.65
+    },
+    {
+      "id": "* eps Ori",
+      "ra_degrees": 84.053389,
+      "dec_degrees": -1.201919,
+      "magnitude": 1.69
+    },
+    {
+      "id": "* bet Car",
+      "ra_degrees": 138.299906,
+      "dec_degrees": -69.717208,
+      "magnitude": 1.69
+    },
+    {
+      "id": "* alf Gru",
+      "ra_degrees": 332.05827,
+      "dec_degrees": -46.960974,
+      "magnitude": 1.71
+    },
+    {
+      "id": "* eps UMa",
+      "ra_degrees": 193.50729,
+      "dec_degrees": 55.959823,
+      "magnitude": 1.77
+    },
+    {
+      "id": "* zet Ori",
+      "ra_degrees": 85.189694,
+      "dec_degrees": -1.942574,
+      "magnitude": 1.77
+    },
+    {
+      "id": "* alf Per",
+      "ra_degrees": 51.080709,
+      "dec_degrees": 49.861179,
+      "magnitude": 1.79
+    },
+    {
+      "id": "* alf UMa",
+      "ra_degrees": 165.931965,
+      "dec_degrees": 61.751035,
+      "magnitude": 1.79
+    },
+    {
+      "id": "* eps Sgr",
+      "ra_degrees": 276.042993,
+      "dec_degrees": -34.384616,
+      "magnitude": 1.81
+    },
+    {
+      "id": "* gam02 Vel",
+      "ra_degrees": 122.383126,
+      "dec_degrees": -47.336586,
+      "magnitude": 1.83
+    },
+    {
+      "id": "* del CMa",
+      "ra_degrees": 107.09785,
+      "dec_degrees": -26.3932,
+      "magnitude": 1.84
+    },
+    {
+      "id": "* tet Sco",
+      "ra_degrees": 264.329708,
+      "dec_degrees": -42.997828,
+      "magnitude": 1.85
+    },
+    {
+      "id": "* eta UMa",
+      "ra_degrees": 206.885157,
+      "dec_degrees": 49.313267,
+      "magnitude": 1.86
+    },
+    {
+      "id": "* eps Car",
+      "ra_degrees": 125.62848,
+      "dec_degrees": -59.509484,
+      "magnitude": 1.86
+    },
+    {
+      "id": "* alf UMa A",
+      "ra_degrees": 165.931953,
+      "dec_degrees": 61.751033,
+      "magnitude": 1.87
+    },
+    {
+      "id": "* alf TrA",
+      "ra_degrees": 252.16623,
+      "dec_degrees": -69.027712,
+      "magnitude": 1.88
+    },
+    {
+      "id": "* alf Gem A",
+      "ra_degrees": 113.649428,
+      "dec_degrees": 31.888276,
+      "magnitude": 1.9
+    },
+    {
+      "id": "* bet Aur",
+      "ra_degrees": 89.882179,
+      "dec_degrees": 44.947433,
+      "magnitude": 1.9
+    },
+    {
+      "id": "* zet Ori A",
+      "ra_degrees": 85.189696,
+      "dec_degrees": -1.942572,
+      "magnitude": 1.9
+    },
+    {
+      "id": "* alf Pav",
+      "ra_degrees": 306.411904,
+      "dec_degrees": -56.73509,
+      "magnitude": 1.918
+    },
+    {
+      "id": "* gam Gem",
+      "ra_degrees": 99.42796,
+      "dec_degrees": 16.39928,
+      "magnitude": 1.92
+    },
+    {
+      "id": "* alf Hya",
+      "ra_degrees": 141.896845,
+      "dec_degrees": -8.6586,
+      "magnitude": 1.97
+    },
+    {
+      "id": "* bet CMa",
+      "ra_degrees": 95.674939,
+      "dec_degrees": -17.955919,
+      "magnitude": 1.97
+    },
+    {
+      "id": "* alf Ari",
+      "ra_degrees": 31.793357,
+      "dec_degrees": 23.462418,
+      "magnitude": 2.01
+    },
+    {
+      "id": "* eps Car A",
+      "ra_degrees": 125.628474,
+      "dec_degrees": -59.509481,
+      "magnitude": 2.01
+    },
+    {
+      "id": "* bet Cet",
+      "ra_degrees": 10.897379,
+      "dec_degrees": -17.986606,
+      "magnitude": 2.01
+    },
+    {
+      "id": "* alf UMi",
+      "ra_degrees": 37.954561,
+      "dec_degrees": 89.264109,
+      "magnitude": 2.02
+    },
+    {
+      "id": "* bet And",
+      "ra_degrees": 17.433016,
+      "dec_degrees": 35.620558,
+      "magnitude": 2.05
+    },
+    {
+      "id": "* tet Cen",
+      "ra_degrees": 211.670615,
+      "dec_degrees": -36.369955,
+      "magnitude": 2.05
+    },
+    {
+      "id": "* alf And",
+      "ra_degrees": 2.096916,
+      "dec_degrees": 29.090431,
+      "magnitude": 2.06
+    },
+    {
+      "id": "* kap Ori",
+      "ra_degrees": 86.93912,
+      "dec_degrees": -9.669605,
+      "magnitude": 2.06
+    },
+    {
+      "id": "* sig Sgr",
+      "ra_degrees": 283.81636,
+      "dec_degrees": -26.296724,
+      "magnitude": 2.067
+    },
+    {
+      "id": "* alf Oph",
+      "ra_degrees": 263.733623,
+      "dec_degrees": 12.560037,
+      "magnitude": 2.07
+    },
+    {
+      "id": "* bet UMi",
+      "ra_degrees": 222.676357,
+      "dec_degrees": 74.155504,
+      "magnitude": 2.08
+    },
+    {
+      "id": "* gam01 And",
+      "ra_degrees": 30.974801,
+      "dec_degrees": 42.329728,
+      "magnitude": 2.1
+    },
+    {
+      "id": "* bet Gru",
+      "ra_degrees": 340.666876,
+      "dec_degrees": -46.884576,
+      "magnitude": 2.11
+    },
+    {
+      "id": "* bet Per",
+      "ra_degrees": 47.042219,
+      "dec_degrees": 40.955647,
+      "magnitude": 2.12
+    },
+    {
+      "id": "* bet Leo",
+      "ra_degrees": 177.26491,
+      "dec_degrees": 14.572058,
+      "magnitude": 2.13
+    },
+    {
+      "id": "* gam Cen",
+      "ra_degrees": 190.379334,
+      "dec_degrees": -48.959872,
+      "magnitude": 2.17
+    },
+    {
+      "id": "* lam Vel",
+      "ra_degrees": 136.998991,
+      "dec_degrees": -43.432591,
+      "magnitude": 2.21
+    },
+    {
+      "id": "* zet01 UMa",
+      "ra_degrees": 200.981426,
+      "dec_degrees": 54.92536,
+      "magnitude": 2.22
+    },
+    {
+      "id": "* alf Cas",
+      "ra_degrees": 10.126846,
+      "dec_degrees": 56.537329,
+      "magnitude": 2.23
+    },
+    {
+      "id": "* gam01 Leo",
+      "ra_degrees": 154.993144,
+      "dec_degrees": 19.841489,
+      "magnitude": 2.23
+    },
+    {
+      "id": "* gam Dra",
+      "ra_degrees": 269.151541,
+      "dec_degrees": 51.488896,
+      "magnitude": 2.23
+    },
+    {
+      "id": "* gam Cyg",
+      "ra_degrees": 305.557091,
+      "dec_degrees": 40.256679,
+      "magnitude": 2.23
+    },
+    {
+      "id": "* alf CrB",
+      "ra_degrees": 233.671952,
+      "dec_degrees": 26.714685,
+      "magnitude": 2.24
+    },
+    {
+      "id": "* zet Pup",
+      "ra_degrees": 120.896031,
+      "dec_degrees": -40.003148,
+      "magnitude": 2.25
+    },
+    {
+      "id": "* iot Car",
+      "ra_degrees": 139.272529,
+      "dec_degrees": -59.275232,
+      "magnitude": 2.26
+    },
+    {
+      "id": "* bet Cas",
+      "ra_degrees": 2.294522,
+      "dec_degrees": 59.149781,
+      "magnitude": 2.27
+    },
+    {
+      "id": "* alf Lup",
+      "ra_degrees": 220.482316,
+      "dec_degrees": -47.388199,
+      "magnitude": 2.286
+    },
+    {
+      "id": "* eps Sco",
+      "ra_degrees": 252.540878,
+      "dec_degrees": -34.293232,
+      "magnitude": 2.29
+    },
+    {
+      "id": "* eps Cen",
+      "ra_degrees": 204.971907,
+      "dec_degrees": -53.466391,
+      "magnitude": 2.3
+    },
+    {
+      "id": "* eta Cen",
+      "ra_degrees": 218.876767,
+      "dec_degrees": -42.157825,
+      "magnitude": 2.31
+    },
+    {
+      "id": "* del Sco",
+      "ra_degrees": 240.083355,
+      "dec_degrees": -22.621706,
+      "magnitude": 2.32
+    },
+    {
+      "id": "* bet UMa",
+      "ra_degrees": 165.460332,
+      "dec_degrees": 56.382434,
+      "magnitude": 2.37
+    },
+    {
+      "id": "* alf Phe",
+      "ra_degrees": 6.571048,
+      "dec_degrees": -42.305987,
+      "magnitude": 2.38
+    },
+    {
+      "id": "* kap Sco",
+      "ra_degrees": 265.62198,
+      "dec_degrees": -39.029983,
+      "magnitude": 2.386
+    },
+    {
+      "id": "* eps Peg",
+      "ra_degrees": 326.046484,
+      "dec_degrees": 9.875009,
+      "magnitude": 2.39
+    },
+    {
+      "id": "* gam Cas",
+      "ra_degrees": 14.177213,
+      "dec_degrees": 60.71674,
+      "magnitude": 2.39
+    },
+    {
+      "id": "* del Ori",
+      "ra_degrees": 83.001667,
+      "dec_degrees": -0.299095,
+      "magnitude": 2.41
+    },
+    {
+      "id": "* bet Peg",
+      "ra_degrees": 345.943573,
+      "dec_degrees": 28.082787,
+      "magnitude": 2.42
+    },
+    {
+      "id": "* eta Oph",
+      "ra_degrees": 257.594529,
+      "dec_degrees": -15.724907,
+      "magnitude": 2.42
+    },
+    {
+      "id": "* gam UMa",
+      "ra_degrees": 178.457697,
+      "dec_degrees": 53.69476,
+      "magnitude": 2.44
+    },
+    {
+      "id": "* eps Boo",
+      "ra_degrees": 221.24674,
+      "dec_degrees": 27.074222,
+      "magnitude": 2.45
+    },
+    {
+      "id": "* eta CMa",
+      "ra_degrees": 111.02376,
+      "dec_degrees": -29.303106,
+      "magnitude": 2.45
+    },
+    {
+      "id": "* alf Cep",
+      "ra_degrees": 319.644885,
+      "dec_degrees": 62.585574,
+      "magnitude": 2.46
+    },
+    {
+      "id": "* eta Oph A",
+      "ra_degrees": 257.594434,
+      "dec_degrees": -15.725143,
+      "magnitude": 2.463
+    },
+    {
+      "id": "* kap Vel",
+      "ra_degrees": 140.528407,
+      "dec_degrees": -55.010667,
+      "magnitude": 2.473
+    },
+    {
+      "id": "* alf Peg",
+      "ra_degrees": 346.190223,
+      "dec_degrees": 15.205267,
+      "magnitude": 2.48
+    },
+    {
+      "id": "* eps Cyg",
+      "ra_degrees": 311.552801,
+      "dec_degrees": 33.970328,
+      "magnitude": 2.48
+    },
+    {
+      "id": "* bet Sco",
+      "ra_degrees": 241.359292,
+      "dec_degrees": -19.805389,
+      "magnitude": 2.5
+    },
+    {
+      "id": "* del Cen",
+      "ra_degrees": 182.089573,
+      "dec_degrees": -50.722427,
+      "magnitude": 2.52
+    },
+    {
+      "id": "* del Leo",
+      "ra_degrees": 168.527089,
+      "dec_degrees": 20.523718,
+      "magnitude": 2.53
+    },
+    {
+      "id": "* alf Cet",
+      "ra_degrees": 45.569888,
+      "dec_degrees": 4.089739,
+      "magnitude": 2.53
+    },
+    {
+      "id": "* zet Cen",
+      "ra_degrees": 208.88494,
+      "dec_degrees": -47.288375,
+      "magnitude": 2.55
+    },
+    {
+      "id": "* zet Oph",
+      "ra_degrees": 249.28975,
+      "dec_degrees": -10.567086,
+      "magnitude": 2.56
+    },
+    {
+      "id": "* alf Lep",
+      "ra_degrees": 83.182567,
+      "dec_degrees": -17.822289,
+      "magnitude": 2.57
+    },
+    {
+      "id": "* gam Crv",
+      "ra_degrees": 183.951545,
+      "dec_degrees": -17.54193,
+      "magnitude": 2.58
+    },
+    {
+      "id": "* zet Sgr",
+      "ra_degrees": 285.653043,
+      "dec_degrees": -29.880063,
+      "magnitude": 2.59
+    },
+    {
+      "id": "* bet01 Sco",
+      "ra_degrees": 241.3593,
+      "dec_degrees": -19.805453,
+      "magnitude": 2.62
+    },
+    {
+      "id": "* tet Aur",
+      "ra_degrees": 89.930292,
+      "dec_degrees": 37.212585,
+      "magnitude": 2.62
+    },
+    {
+      "id": "* bet Lib",
+      "ra_degrees": 229.251724,
+      "dec_degrees": -9.382914,
+      "magnitude": 2.62
+    },
+    {
+      "id": "* alf Ser",
+      "ra_degrees": 236.066975,
+      "dec_degrees": 6.42563,
+      "magnitude": 2.63
+    },
+    {
+      "id": "* bet Crv",
+      "ra_degrees": 188.596812,
+      "dec_degrees": -23.39676,
+      "magnitude": 2.64
+    },
+    {
+      "id": "* alf Mus",
+      "ra_degrees": 189.295908,
+      "dec_degrees": -69.135565,
+      "magnitude": 2.649
+    },
+    {
+      "id": "* alf Col",
+      "ra_degrees": 84.912254,
+      "dec_degrees": -34.07411,
+      "magnitude": 2.65
+    },
+    {
+      "id": "* bet Ari",
+      "ra_degrees": 28.660046,
+      "dec_degrees": 20.808031,
+      "magnitude": 2.65
+    },
+    {
+      "id": "* ups Sco",
+      "ra_degrees": 262.690988,
+      "dec_degrees": -37.295813,
+      "magnitude": 2.65
+    },
+    {
+      "id": "* del Sgr",
+      "ra_degrees": 275.248512,
+      "dec_degrees": -29.828102,
+      "magnitude": 2.668
+    },
+    {
+      "id": "* bet Lup",
+      "ra_degrees": 224.633022,
+      "dec_degrees": -43.133964,
+      "magnitude": 2.68
+    },
+    {
+      "id": "* del Cas",
+      "ra_degrees": 21.453964,
+      "dec_degrees": 60.235284,
+      "magnitude": 2.68
+    },
+    {
+      "id": "* eta Boo",
+      "ra_degrees": 208.671162,
+      "dec_degrees": 18.397721,
+      "magnitude": 2.68
+    },
+    {
+      "id": "* iot Aur",
+      "ra_degrees": 74.248417,
+      "dec_degrees": 33.166094,
+      "magnitude": 2.69
+    },
+    {
+      "id": "* mu. Vel",
+      "ra_degrees": 161.692396,
+      "dec_degrees": -49.42026,
+      "magnitude": 2.69
+    },
+    {
+      "id": "* pi. Pup",
+      "ra_degrees": 109.285659,
+      "dec_degrees": -37.097473,
+      "magnitude": 2.7
+    },
+    {
+      "id": "* gam Aql",
+      "ra_degrees": 296.564912,
+      "dec_degrees": 10.613259,
+      "magnitude": 2.72
+    },
+    {
+      "id": "* iot Cen",
+      "ra_degrees": 200.14922,
+      "dec_degrees": -36.712305,
+      "magnitude": 2.73
+    },
+    {
+      "id": "* eta Dra",
+      "ra_degrees": 245.99786,
+      "dec_degrees": 61.51421,
+      "magnitude": 2.74
+    },
+    {
+      "id": "* gam Vir",
+      "ra_degrees": 190.415118,
+      "dec_degrees": -1.449404,
+      "magnitude": 2.74
+    },
+    {
+      "id": "* alf02 Lib",
+      "ra_degrees": 222.719638,
+      "dec_degrees": -16.041777,
+      "magnitude": 2.75
+    },
+    {
+      "id": "* bet Oph",
+      "ra_degrees": 265.868133,
+      "dec_degrees": 4.567304,
+      "magnitude": 2.75
+    },
+    {
+      "id": "* del Oph",
+      "ra_degrees": 243.586413,
+      "dec_degrees": -3.694326,
+      "magnitude": 2.75
+    },
+    {
+      "id": "* del Cru",
+      "ra_degrees": 183.786327,
+      "dec_degrees": -58.748924,
+      "magnitude": 2.752
+    },
+    {
+      "id": "* tet Car",
+      "ra_degrees": 160.739175,
+      "dec_degrees": -64.39445,
+      "magnitude": 2.76
+    },
+    {
+      "id": "* gam Lup",
+      "ra_degrees": 233.785201,
+      "dec_degrees": -41.166757,
+      "magnitude": 2.765
+    },
+    {
+      "id": "* bet Her",
+      "ra_degrees": 247.555001,
+      "dec_degrees": 21.489611,
+      "magnitude": 2.77
+    },
+    {
+      "id": "* iot Ori",
+      "ra_degrees": 83.858276,
+      "dec_degrees": -5.909889,
+      "magnitude": 2.77
+    },
+    {
+      "id": "* eps Vir",
+      "ra_degrees": 195.544154,
+      "dec_degrees": 10.959149,
+      "magnitude": 2.79
+    },
+    {
+      "id": "* bet Eri",
+      "ra_degrees": 76.962395,
+      "dec_degrees": -5.086497,
+      "magnitude": 2.79
+    },
+    {
+      "id": "* bet Hyi",
+      "ra_degrees": 6.437793,
+      "dec_degrees": -77.254246,
+      "magnitude": 2.79
+    },
+    {
+      "id": "* zet Her",
+      "ra_degrees": 250.321504,
+      "dec_degrees": 31.602719,
+      "magnitude": 2.8
+    },
+    {
+      "id": "* rho Pup",
+      "ra_degrees": 121.886037,
+      "dec_degrees": -24.304324,
+      "magnitude": 2.81
+    },
+    {
+      "id": "* bet Dra",
+      "ra_degrees": 262.608174,
+      "dec_degrees": 52.301389,
+      "magnitude": 2.81
+    },
+    {
+      "id": "* tau Sco",
+      "ra_degrees": 248.970637,
+      "dec_degrees": -28.216017,
+      "magnitude": 2.81
+    },
+    {
+      "id": "* lam Sgr",
+      "ra_degrees": 276.99267,
+      "dec_degrees": -25.421698,
+      "magnitude": 2.81
+    },
+    {
+      "id": "* gam Cen A",
+      "ra_degrees": 190.379307,
+      "dec_degrees": -48.959912,
+      "magnitude": 2.82
+    },
+    {
+      "id": "* alf Tuc",
+      "ra_degrees": 334.625468,
+      "dec_degrees": -60.25963,
+      "magnitude": 2.82
+    },
+    {
+      "id": "* del Cap",
+      "ra_degrees": 326.760184,
+      "dec_degrees": -16.127287,
+      "magnitude": 2.83
+    },
+    {
+      "id": "* bet Lep",
+      "ra_degrees": 82.061345,
+      "dec_degrees": -20.759444,
+      "magnitude": 2.84
+    },
+    {
+      "id": "* alf Hyi",
+      "ra_degrees": 29.692244,
+      "dec_degrees": -61.569822,
+      "magnitude": 2.84
+    },
+    {
+      "id": "* gam Peg",
+      "ra_degrees": 3.308968,
+      "dec_degrees": 15.183598,
+      "magnitude": 2.84
+    },
+    {
+      "id": "* bet Ara",
+      "ra_degrees": 261.324949,
+      "dec_degrees": -55.529882,
+      "magnitude": 2.85
+    },
+    {
+      "id": "* zet Per",
+      "ra_degrees": 58.53301,
+      "dec_degrees": 31.883634,
+      "magnitude": 2.85
+    },
+    {
+      "id": "* bet TrA",
+      "ra_degrees": 238.785675,
+      "dec_degrees": -63.430727,
+      "magnitude": 2.85
+    },
+    {
+      "id": "* del Cyg",
+      "ra_degrees": 296.243654,
+      "dec_degrees": 45.130815,
+      "magnitude": 2.87
+    },
+    {
+      "id": "* eta Tau",
+      "ra_degrees": 56.871152,
+      "dec_degrees": 24.105136,
+      "magnitude": 2.87
+    },
+    {
+      "id": "* mu. Gem",
+      "ra_degrees": 95.740112,
+      "dec_degrees": 22.513583,
+      "magnitude": 2.87
+    },
+    {
+      "id": "* zet Her A",
+      "ra_degrees": 250.319198,
+      "dec_degrees": 31.604584,
+      "magnitude": 2.88
+    },
+    {
+      "id": "* gam Cen B",
+      "ra_degrees": 190.379231,
+      "dec_degrees": -48.959577,
+      "magnitude": 2.88
+    },
+    {
+      "id": "* pi. Sgr",
+      "ra_degrees": 287.440971,
+      "dec_degrees": -21.023614,
+      "magnitude": 2.88
+    },
+    {
+      "id": "* alf02 CVn",
+      "ra_degrees": 194.00694,
+      "dec_degrees": 38.318376,
+      "magnitude": 2.88
+    },
+    {
+      "id": "* gam TrA",
+      "ra_degrees": 229.727422,
+      "dec_degrees": -68.679547,
+      "magnitude": 2.89
+    },
+    {
+      "id": "* bet Aqr",
+      "ra_degrees": 322.889717,
+      "dec_degrees": -5.571175,
+      "magnitude": 2.89
+    },
+    {
+      "id": "* eps Per",
+      "ra_degrees": 59.463497,
+      "dec_degrees": 40.0102,
+      "magnitude": 2.89
+    },
+    {
+      "id": "* bet CMi",
+      "ra_degrees": 111.787674,
+      "dec_degrees": 8.289316,
+      "magnitude": 2.89
+    },
+    {
+      "id": "* sig Sco",
+      "ra_degrees": 245.297149,
+      "dec_degrees": -25.592792,
+      "magnitude": 2.89
+    },
+    {
+      "id": "* pi. Sco",
+      "ra_degrees": 239.712972,
+      "dec_degrees": -26.114108,
+      "magnitude": 2.91
+    },
+    {
+      "id": "* tau Pup",
+      "ra_degrees": 102.484038,
+      "dec_degrees": -50.614539,
+      "magnitude": 2.93
+    },
+    {
+      "id": "* gam Per",
+      "ra_degrees": 46.19925,
+      "dec_degrees": 53.506462,
+      "magnitude": 2.93
+    },
+    {
+      "id": "* del Crv",
+      "ra_degrees": 187.466063,
+      "dec_degrees": -16.515431,
+      "magnitude": 2.94
+    },
+    {
+      "id": "* alf Aqr",
+      "ra_degrees": 331.445981,
+      "dec_degrees": -0.319851,
+      "magnitude": 2.94
+    },
+    {
+      "id": "* gam Eri",
+      "ra_degrees": 59.507358,
+      "dec_degrees": -13.508515,
+      "magnitude": 2.94
+    },
+    {
+      "id": "* eta Peg",
+      "ra_degrees": 340.750537,
+      "dec_degrees": 30.221215,
+      "magnitude": 2.95
+    },
+    {
+      "id": "* alf Ara",
+      "ra_degrees": 262.960381,
+      "dec_degrees": -49.876145,
+      "magnitude": 2.95
+    },
+    {
+      "id": "* eps Gem",
+      "ra_degrees": 100.98303,
+      "dec_degrees": 25.131127,
+      "magnitude": 2.98
+    },
+    {
+      "id": "* eps Leo",
+      "ra_degrees": 146.462807,
+      "dec_degrees": 23.774254,
+      "magnitude": 2.98
+    },
+    {
+      "id": "* eps Crv",
+      "ra_degrees": 182.531169,
+      "dec_degrees": -22.619767,
+      "magnitude": 2.98
+    },
+    {
+      "id": "* mu.01 Sco",
+      "ra_degrees": 252.967618,
+      "dec_degrees": -38.047399,
+      "magnitude": 2.98
+    },
+    {
+      "id": "* ups Car",
+      "ra_degrees": 146.775507,
+      "dec_degrees": -65.072007,
+      "magnitude": 2.99
+    },
+    {
+      "id": "* gam02 Sgr",
+      "ra_degrees": 271.452034,
+      "dec_degrees": -30.42409,
+      "magnitude": 2.99
+    },
+    {
+      "id": "* zet Aql",
+      "ra_degrees": 286.352533,
+      "dec_degrees": 13.863477,
+      "magnitude": 2.99
+    },
+    {
+      "id": "* zet CMa",
+      "ra_degrees": 95.0783,
+      "dec_degrees": -30.063367,
+      "magnitude": 2.99
+    },
+    {
+      "id": "* eps Aur",
+      "ra_degrees": 75.492227,
+      "dec_degrees": 43.82331,
+      "magnitude": 2.99
+    },
+    {
+      "id": "* iot01 Sco",
+      "ra_degrees": 266.896164,
+      "dec_degrees": -40.126997,
+      "magnitude": 2.992
+    },
+    {
+      "id": "* alf Gem B",
+      "ra_degrees": 113.650419,
+      "dec_degrees": 31.888492,
+      "magnitude": 3
+    },
+    {
+      "id": "* gam Hya",
+      "ra_degrees": 199.730407,
+      "dec_degrees": -23.171514,
+      "magnitude": 3
+    },
+    {
+      "id": "* bet Tri",
+      "ra_degrees": 32.385946,
+      "dec_degrees": 34.987297,
+      "magnitude": 3
+    },
+    {
+      "id": "* gam UMi",
+      "ra_degrees": 230.182098,
+      "dec_degrees": 71.834025,
+      "magnitude": 3.002
+    },
+    {
+      "id": "* psi UMa",
+      "ra_degrees": 167.415868,
+      "dec_degrees": 44.498488,
+      "magnitude": 3.01
+    },
+    {
+      "id": "* del Per",
+      "ra_degrees": 55.73122,
+      "dec_degrees": 47.787497,
+      "magnitude": 3.01
+    },
+    {
+      "id": "* gam Gru",
+      "ra_degrees": 328.482151,
+      "dec_degrees": -37.364872,
+      "magnitude": 3.01
+    },
+    {
+      "id": "* omi02 CMa",
+      "ra_degrees": 105.756131,
+      "dec_degrees": -23.833294,
+      "magnitude": 3.02
+    },
+    {
+      "id": "* gam Boo",
+      "ra_degrees": 218.019465,
+      "dec_degrees": 38.308248,
+      "magnitude": 3.02
+    },
+    {
+      "id": "* zet Tau",
+      "ra_degrees": 84.411189,
+      "dec_degrees": 21.142544,
+      "magnitude": 3.03
+    },
+    {
+      "id": "* mu. UMa",
+      "ra_degrees": 155.582199,
+      "dec_degrees": 41.499538,
+      "magnitude": 3.05
+    },
+    {
+      "id": "* del Dra",
+      "ra_degrees": 288.138756,
+      "dec_degrees": 67.661539,
+      "magnitude": 3.07
+    },
+    {
+      "id": "* zet Ara",
+      "ra_degrees": 254.655052,
+      "dec_degrees": -55.990139,
+      "magnitude": 3.076
+    },
+    {
+      "id": "* bet01 Cap",
+      "ra_degrees": 305.252777,
+      "dec_degrees": -14.781408,
+      "magnitude": 3.08
+    },
+    {
+      "id": "* bet01 Cyg",
+      "ra_degrees": 292.680315,
+      "dec_degrees": 27.959674,
+      "magnitude": 3.08
+    },
+    {
+      "id": "* zet Hya",
+      "ra_degrees": 133.848442,
+      "dec_degrees": 5.945565,
+      "magnitude": 3.1
+    },
+    {
+      "id": "* alf Ind",
+      "ra_degrees": 309.391801,
+      "dec_degrees": -47.291501,
+      "magnitude": 3.11
+    },
+    {
+      "id": "* nu. Hya",
+      "ra_degrees": 162.406201,
+      "dec_degrees": -16.193647,
+      "magnitude": 3.11
+    },
+    {
+      "id": "* kap Cen",
+      "ra_degrees": 224.790354,
+      "dec_degrees": -42.104196,
+      "magnitude": 3.11
+    },
+    {
+      "id": "* eta Sgr",
+      "ra_degrees": 274.406822,
+      "dec_degrees": -36.76169,
+      "magnitude": 3.11
+    },
+    {
+      "id": "* bet Col",
+      "ra_degrees": 87.739968,
+      "dec_degrees": -35.76831,
+      "magnitude": 3.12
+    },
+    {
+      "id": "* iot UMa A",
+      "ra_degrees": 134.801888,
+      "dec_degrees": 48.041823,
+      "magnitude": 3.13
+    },
+    {
+      "id": "* del Her",
+      "ra_degrees": 258.757961,
+      "dec_degrees": 24.839207,
+      "magnitude": 3.13
+    },
+    {
+      "id": "* N Vel",
+      "ra_degrees": 142.805492,
+      "dec_degrees": -57.034376,
+      "magnitude": 3.139
+    },
+    {
+      "id": "* alf Lyn",
+      "ra_degrees": 140.263751,
+      "dec_degrees": 34.392559,
+      "magnitude": 3.14
+    },
+    {
+      "id": "* iot UMa",
+      "ra_degrees": 134.80189,
+      "dec_degrees": 48.041826,
+      "magnitude": 3.14
+    },
+    {
+      "id": "* lam Cen",
+      "ra_degrees": 173.945325,
+      "dec_degrees": -63.019835,
+      "magnitude": 3.14
+    },
+    {
+      "id": "* phi Sgr",
+      "ra_degrees": 281.414123,
+      "dec_degrees": -26.990783,
+      "magnitude": 3.14
+    },
+    {
+      "id": "* nu. Pup",
+      "ra_degrees": 99.440303,
+      "dec_degrees": -43.195936,
+      "magnitude": 3.17
+    },
+    {
+      "id": "* zet Dra",
+      "ra_degrees": 257.196616,
+      "dec_degrees": 65.714645,
+      "magnitude": 3.17
+    },
+    {
+      "id": "* tet01 Eri",
+      "ra_degrees": 44.565318,
+      "dec_degrees": -40.304678,
+      "magnitude": 3.18
+    },
+    {
+      "id": "* eta Aur",
+      "ra_degrees": 76.628726,
+      "dec_degrees": 41.234476,
+      "magnitude": 3.18
+    },
+    {
+      "id": "* eps Lep",
+      "ra_degrees": 76.365268,
+      "dec_degrees": -22.371034,
+      "magnitude": 3.18
+    },
+    {
+      "id": "* pi. Her",
+      "ra_degrees": 258.761809,
+      "dec_degrees": 36.809162,
+      "magnitude": 3.18
+    },
+    {
+      "id": "* tet UMa",
+      "ra_degrees": 143.214296,
+      "dec_degrees": 51.677315,
+      "magnitude": 3.18
+    },
+    {
+      "id": "* alf Cir",
+      "ra_degrees": 220.626753,
+      "dec_degrees": -64.975133,
+      "magnitude": 3.19
+    },
+    {
+      "id": "* del Lup",
+      "ra_degrees": 230.342974,
+      "dec_degrees": -40.64753,
+      "magnitude": 3.19
+    },
+    {
+      "id": "* pi.03 Ori",
+      "ra_degrees": 72.460047,
+      "dec_degrees": 6.961278,
+      "magnitude": 3.19
+    },
+    {
+      "id": "* kap Oph",
+      "ra_degrees": 254.417073,
+      "dec_degrees": 9.375029,
+      "magnitude": 3.2
+    },
+    {
+      "id": "* bet01 Cyg A",
+      "ra_degrees": 292.680351,
+      "dec_degrees": 27.959693,
+      "magnitude": 3.2
+    },
+    {
+      "id": "* sig Lib",
+      "ra_degrees": 226.017562,
+      "dec_degrees": -25.28197,
+      "magnitude": 3.21
+    },
+    {
+      "id": "* zet Cyg",
+      "ra_degrees": 318.234108,
+      "dec_degrees": 30.226899,
+      "magnitude": 3.21
+    },
+    {
+      "id": "* G Sco",
+      "ra_degrees": 267.464504,
+      "dec_degrees": -37.043276,
+      "magnitude": 3.21
+    },
+    {
+      "id": "* tet Aql",
+      "ra_degrees": 302.826195,
+      "dec_degrees": -0.821464,
+      "magnitude": 3.22
+    },
+    {
+      "id": "* bet Cep",
+      "ra_degrees": 322.164987,
+      "dec_degrees": 70.560715,
+      "magnitude": 3.23
+    },
+    {
+      "id": "* alf Pic",
+      "ra_degrees": 102.04773,
+      "dec_degrees": -61.941389,
+      "magnitude": 3.23
+    },
+    {
+      "id": "* eps Oph",
+      "ra_degrees": 244.580376,
+      "dec_degrees": -4.692513,
+      "magnitude": 3.23
+    },
+    {
+      "id": "* gam Lyr",
+      "ra_degrees": 284.735927,
+      "dec_degrees": 32.689556,
+      "magnitude": 3.25
+    },
+    {
+      "id": "* eta Ser",
+      "ra_degrees": 275.327502,
+      "dec_degrees": -2.898828,
+      "magnitude": 3.25
+    },
+    {
+      "id": "* sig Pup",
+      "ra_degrees": 112.307636,
+      "dec_degrees": -43.301435,
+      "magnitude": 3.25
+    },
+    {
+      "id": "* gam Hyi",
+      "ra_degrees": 56.809753,
+      "dec_degrees": -74.238963,
+      "magnitude": 3.26
+    },
+    {
+      "id": "* eta Oph B",
+      "ra_degrees": 257.59432,
+      "dec_degrees": -15.725182,
+      "magnitude": 3.26
+    },
+    {
+      "id": "* tet Oph",
+      "ra_degrees": 260.502414,
+      "dec_degrees": -24.999546,
+      "magnitude": 3.26
+    },
+    {
+      "id": "* p Car",
+      "ra_degrees": 158.006105,
+      "dec_degrees": -61.685332,
+      "magnitude": 3.27
+    },
+    {
+      "id": "* del Aqr",
+      "ra_degrees": 343.662526,
+      "dec_degrees": -15.82082,
+      "magnitude": 3.28
+    },
+    {
+      "id": "* del And",
+      "ra_degrees": 9.83168,
+      "dec_degrees": 30.860984,
+      "magnitude": 3.28
+    },
+    {
+      "id": "* eta Gem",
+      "ra_degrees": 93.719355,
+      "dec_degrees": 22.506787,
+      "magnitude": 3.28
+    },
+    {
+      "id": "* pi. Hya",
+      "ra_degrees": 211.592908,
+      "dec_degrees": -26.682362,
+      "magnitude": 3.28
+    },
+    {
+      "id": "* alf Dor",
+      "ra_degrees": 68.499072,
+      "dec_degrees": -55.044979,
+      "magnitude": 3.28
+    },
+    {
+      "id": "* mu. Lep",
+      "ra_degrees": 78.232929,
+      "dec_degrees": -16.205463,
+      "magnitude": 3.29
+    },
+    {
+      "id": "* iot Dra",
+      "ra_degrees": 231.232391,
+      "dec_degrees": 58.966066,
+      "magnitude": 3.29
+    },
+    {
+      "id": "* ksi Pup",
+      "ra_degrees": 117.323556,
+      "dec_degrees": -24.859784,
+      "magnitude": 3.3
+    },
+    {
+      "id": "* bet Phe",
+      "ra_degrees": 16.520998,
+      "dec_degrees": -46.718411,
+      "magnitude": 3.3
+    },
+    {
+      "id": "* tau Sgr",
+      "ra_degrees": 286.735013,
+      "dec_degrees": -27.670416,
+      "magnitude": 3.31
+    },
+    {
+      "id": "* del UMa",
+      "ra_degrees": 183.856499,
+      "dec_degrees": 57.032617,
+      "magnitude": 3.32
+    },
+    {
+      "id": "* ome Car",
+      "ra_degrees": 153.434252,
+      "dec_degrees": -70.037906,
+      "magnitude": 3.33
+    },
+    {
+      "id": "* alf Her A",
+      "ra_degrees": 258.661886,
+      "dec_degrees": 14.390371,
+      "magnitude": 3.33
+    },
+    {
+      "id": "* eta Sco",
+      "ra_degrees": 258.038309,
+      "dec_degrees": -43.23919,
+      "magnitude": 3.33
+    },
+    {
+      "id": "* nu. Oph",
+      "ra_degrees": 269.756634,
+      "dec_degrees": -9.773634,
+      "magnitude": 3.34
+    },
+    {
+      "id": "* gam Ara",
+      "ra_degrees": 261.34858,
+      "dec_degrees": -56.377726,
+      "magnitude": 3.34
+    },
+    {
+      "id": "* q Car",
+      "ra_degrees": 154.270731,
+      "dec_degrees": -61.332305,
+      "magnitude": 3.35
+    },
+    {
+      "id": "* zet Cep",
+      "ra_degrees": 332.713657,
+      "dec_degrees": 58.201262,
+      "magnitude": 3.35
+    },
+    {
+      "id": "* eta Ori",
+      "ra_degrees": 81.119236,
+      "dec_degrees": -2.397148,
+      "magnitude": 3.35
+    },
+    {
+      "id": "* tet Leo",
+      "ra_degrees": 168.560024,
+      "dec_degrees": 15.429571,
+      "magnitude": 3.35
+    },
+    {
+      "id": "* del Aql",
+      "ra_degrees": 291.374589,
+      "dec_degrees": 3.114779,
+      "magnitude": 3.36
+    },
+    {
+      "id": "* ksi Gem",
+      "ra_degrees": 101.322352,
+      "dec_degrees": 12.895595,
+      "magnitude": 3.36
+    },
+    {
+      "id": "* alf Ret",
+      "ra_degrees": 63.606125,
+      "dec_degrees": -62.473803,
+      "magnitude": 3.36
+    },
+    {
+      "id": "* eps Lup",
+      "ra_degrees": 230.670284,
+      "dec_degrees": -44.689615,
+      "magnitude": 3.366
+    },
+    {
+      "id": "* eps Cas",
+      "ra_degrees": 28.598892,
+      "dec_degrees": 63.6701,
+      "magnitude": 3.37
+    },
+    {
+      "id": "* zet Vir",
+      "ra_degrees": 203.673297,
+      "dec_degrees": -0.595816,
+      "magnitude": 3.38
+    },
+    {
+      "id": "* eps Hya",
+      "ra_degrees": 131.693801,
+      "dec_degrees": 6.418802,
+      "magnitude": 3.38
+    },
+    {
+      "id": "* del Vir",
+      "ra_degrees": 193.900869,
+      "dec_degrees": 3.397469,
+      "magnitude": 3.38
+    },
+    {
+      "id": "* nu. Cen",
+      "ra_degrees": 207.376152,
+      "dec_degrees": -41.687709,
+      "magnitude": 3.386
+    },
+    {
+      "id": "* rho Per",
+      "ra_degrees": 46.294141,
+      "dec_degrees": 38.840276,
+      "magnitude": 3.39
+    },
+    {
+      "id": "* a Car",
+      "ra_degrees": 137.742022,
+      "dec_degrees": -58.966901,
+      "magnitude": 3.4
+    },
+    {
+      "id": "* bet Pav",
+      "ra_degrees": 311.239557,
+      "dec_degrees": -66.203212,
+      "magnitude": 3.408
+    },
+    {
+      "id": "* eta Cep",
+      "ra_degrees": 311.322397,
+      "dec_degrees": 61.838782,
+      "magnitude": 3.41
+    },
+    {
+      "id": "* eta Lup",
+      "ra_degrees": 240.030533,
+      "dec_degrees": -38.396705,
+      "magnitude": 3.41
+    },
+    {
+      "id": "* eta Leo",
+      "ra_degrees": 151.833135,
+      "dec_degrees": 16.762663,
+      "magnitude": 3.41
+    },
+    {
+      "id": "*  42 Peg",
+      "ra_degrees": 340.365503,
+      "dec_degrees": 10.831363,
+      "magnitude": 3.41
+    },
+    {
+      "id": "* lam Tau",
+      "ra_degrees": 60.17007,
+      "dec_degrees": 12.490344,
+      "magnitude": 3.41
+    },
+    {
+      "id": "* zet Lup",
+      "ra_degrees": 228.071231,
+      "dec_degrees": -52.099249,
+      "magnitude": 3.41
+    },
+    {
+      "id": "* tet02 Tau",
+      "ra_degrees": 67.16559,
+      "dec_degrees": 15.870875,
+      "magnitude": 3.41
+    },
+    {
+      "id": "* zet Leo",
+      "ra_degrees": 154.172563,
+      "dec_degrees": 23.417317,
+      "magnitude": 3.41
+    },
+    {
+      "id": "* omi UMa",
+      "ra_degrees": 127.566126,
+      "dec_degrees": 60.718168,
+      "magnitude": 3.42
+    },
+    {
+      "id": "* mu.01 Her",
+      "ra_degrees": 266.61478,
+      "dec_degrees": 27.720711,
+      "magnitude": 3.42
+    },
+    {
+      "id": "* alf Tri",
+      "ra_degrees": 28.270439,
+      "dec_degrees": 29.578819,
+      "magnitude": 3.42
+    },
+    {
+      "id": "* gam Phe",
+      "ra_degrees": 22.09137,
+      "dec_degrees": -43.318235,
+      "magnitude": 3.42
+    },
+    {
+      "id": "* bet Lyr",
+      "ra_degrees": 282.51998,
+      "dec_degrees": 33.362667,
+      "magnitude": 3.42
+    },
+    {
+      "id": "* mu. Cen",
+      "ra_degrees": 207.40412,
+      "dec_degrees": -42.473733,
+      "magnitude": 3.43
+    },
+    {
+      "id": "* lam Aql",
+      "ra_degrees": 286.562244,
+      "dec_degrees": -4.882563,
+      "magnitude": 3.43
+    },
+    {
+      "id": "* chi Car",
+      "ra_degrees": 119.194667,
+      "dec_degrees": -52.982345,
+      "magnitude": 3.431
+    },
+    {
+      "id": "* eta Cas",
+      "ra_degrees": 12.276227,
+      "dec_degrees": 57.815177,
+      "magnitude": 3.44
+    },
+    {
+      "id": "* phi Vel",
+      "ra_degrees": 149.215587,
+      "dec_degrees": -54.567788,
+      "magnitude": 3.45
+    },
+    {
+      "id": "* eta Cet",
+      "ra_degrees": 17.147464,
+      "dec_degrees": -10.182264,
+      "magnitude": 3.45
+    },
+    {
+      "id": "* lam UMa",
+      "ra_degrees": 154.27408,
+      "dec_degrees": 42.914414,
+      "magnitude": 3.45
+    },
+    {
+      "id": "* alf Tel",
+      "ra_degrees": 276.743402,
+      "dec_degrees": -45.968458,
+      "magnitude": 3.463
+    },
+    {
+      "id": "* eps Gru",
+      "ra_degrees": 342.138742,
+      "dec_degrees": -51.316865,
+      "magnitude": 3.466
+    },
+    {
+      "id": "* gam Cet",
+      "ra_degrees": 40.825163,
+      "dec_degrees": 3.235816,
+      "magnitude": 3.47
+    },
+    {
+      "id": "* lam Ori A",
+      "ra_degrees": 83.784484,
+      "dec_degrees": 9.934164,
+      "magnitude": 3.47
+    },
+    {
+      "id": "* sig CMa",
+      "ra_degrees": 105.429784,
+      "dec_degrees": -27.93483,
+      "magnitude": 3.47
+    },
+    {
+      "id": "* gam Sge",
+      "ra_degrees": 299.689284,
+      "dec_degrees": 19.492146,
+      "magnitude": 3.47
+    },
+    {
+      "id": "* gam Lup A",
+      "ra_degrees": 233.785162,
+      "dec_degrees": -41.166792,
+      "magnitude": 3.48
+    },
+    {
+      "id": "* mu. Peg",
+      "ra_degrees": 342.500804,
+      "dec_degrees": 24.601581,
+      "magnitude": 3.48
+    },
+    {
+      "id": "* nu. UMa",
+      "ra_degrees": 169.619738,
+      "dec_degrees": 33.094306,
+      "magnitude": 3.49
+    },
+    {
+      "id": "* del Boo",
+      "ra_degrees": 228.875678,
+      "dec_degrees": 33.314831,
+      "magnitude": 3.49
+    },
+    {
+      "id": "* gam Vir B",
+      "ra_degrees": 190.414761,
+      "dec_degrees": -1.449402,
+      "magnitude": 3.49
+    },
+    {
+      "id": "* eta Her",
+      "ra_degrees": 250.724021,
+      "dec_degrees": 38.922255,
+      "magnitude": 3.5
+    },
+    {
+      "id": "* tau Cet",
+      "ra_degrees": 26.017013,
+      "dec_degrees": -15.93748,
+      "magnitude": 3.5
+    },
+    {
+      "id": "* gam Lup B",
+      "ra_degrees": 233.78491,
+      "dec_degrees": -41.166768,
+      "magnitude": 3.51
+    },
+    {
+      "id": "* ksi02 Sgr",
+      "ra_degrees": 284.432501,
+      "dec_degrees": -21.106658,
+      "magnitude": 3.51
+    },
+    {
+      "id": "* ksi Ser",
+      "ra_degrees": 264.396666,
+      "dec_degrees": -15.398556,
+      "magnitude": 3.519
+    },
+    {
+      "id": "* bet Boo",
+      "ra_degrees": 225.48651,
+      "dec_degrees": 40.390569,
+      "magnitude": 3.52
+    },
+    {
+      "id": "* bet Cnc",
+      "ra_degrees": 124.128837,
+      "dec_degrees": 9.185544,
+      "magnitude": 3.52
+    },
+    {
+      "id": "* omi Leo",
+      "ra_degrees": 145.287634,
+      "dec_degrees": 9.892308,
+      "magnitude": 3.52
+    },
+    {
+      "id": "* zet Lep",
+      "ra_degrees": 86.738922,
+      "dec_degrees": -14.82195,
+      "magnitude": 3.525
+    },
+    {
+      "id": "* iot Lup",
+      "ra_degrees": 214.850922,
+      "dec_degrees": -46.058094,
+      "magnitude": 3.529
+    },
+    {
+      "id": "* del Gem",
+      "ra_degrees": 110.030727,
+      "dec_degrees": 21.982304,
+      "magnitude": 3.53
+    },
+    {
+      "id": "* eps Tau",
+      "ra_degrees": 67.154168,
+      "dec_degrees": 19.180434,
+      "magnitude": 3.53
+    },
+    {
+      "id": "* mu. Ser",
+      "ra_degrees": 237.405029,
+      "dec_degrees": -3.430204,
+      "magnitude": 3.53
+    },
+    {
+      "id": "* iot Cep",
+      "ra_degrees": 342.420073,
+      "dec_degrees": 66.200405,
+      "magnitude": 3.54
+    },
+    {
+      "id": "* gam Cet A",
+      "ra_degrees": 40.825172,
+      "dec_degrees": 3.235824,
+      "magnitude": 3.54
+    },
+    {
+      "id": "* ksi Hya",
+      "ra_degrees": 173.250479,
+      "dec_degrees": -31.857624,
+      "magnitude": 3.54
+    },
+    {
+      "id": "* del Eri",
+      "ra_degrees": 55.812086,
+      "dec_degrees": -9.763392,
+      "magnitude": 3.54
+    },
+    {
+      "id": "* mu.02 Sco",
+      "ra_degrees": 253.083939,
+      "dec_degrees": -38.017535,
+      "magnitude": 3.542
+    },
+    {
+      "id": "* phi01 Lup",
+      "ra_degrees": 230.45154,
+      "dec_degrees": -36.261373,
+      "magnitude": 3.546
+    },
+    {
+      "id": "* bet Mus A",
+      "ra_degrees": 191.569996,
+      "dec_degrees": -68.1081,
+      "magnitude": 3.55
+    },
+    {
+      "id": "* iot Cet",
+      "ra_degrees": 4.856977,
+      "dec_degrees": -8.823919,
+      "magnitude": 3.55
+    },
+    {
+      "id": "* tet Peg",
+      "ra_degrees": 332.549953,
+      "dec_degrees": 6.197922,
+      "magnitude": 3.55
+    },
+    {
+      "id": "* kap UMa",
+      "ra_degrees": 135.906365,
+      "dec_degrees": 47.156525,
+      "magnitude": 3.55
+    },
+    {
+      "id": "* lam Gem",
+      "ra_degrees": 109.523245,
+      "dec_degrees": 16.540386,
+      "magnitude": 3.559
+    },
+    {
+      "id": "* del Crt",
+      "ra_degrees": 169.835197,
+      "dec_degrees": -14.77854,
+      "magnitude": 3.56
+    },
+    {
+      "id": "* ups04 Eri",
+      "ra_degrees": 64.473593,
+      "dec_degrees": -33.798348,
+      "magnitude": 3.56
+    },
+    {
+      "id": "* del Pav",
+      "ra_degrees": 302.181704,
+      "dec_degrees": -66.182067,
+      "magnitude": 3.56
+    },
+    {
+      "id": "* kap Gem",
+      "ra_degrees": 116.111849,
+      "dec_degrees": 24.397996,
+      "magnitude": 3.57
+    },
+    {
+      "id": "* eps Cru",
+      "ra_degrees": 185.340034,
+      "dec_degrees": -60.401148,
+      "magnitude": 3.57
+    },
+    {
+      "id": "* ups Per",
+      "ra_degrees": 24.498158,
+      "dec_degrees": 48.628212,
+      "magnitude": 3.57
+    },
+    {
+      "id": "* phi Eri",
+      "ra_degrees": 34.127442,
+      "dec_degrees": -51.512165,
+      "magnitude": 3.57
+    },
+    {
+      "id": "* alf02 Cap",
+      "ra_degrees": 304.513565,
+      "dec_degrees": -12.544852,
+      "magnitude": 3.58
+    },
+    {
+      "id": "* chi Dra",
+      "ra_degrees": 275.264094,
+      "dec_degrees": 72.732848,
+      "magnitude": 3.58
+    },
+    {
+      "id": "* eta Pav",
+      "ra_degrees": 266.433282,
+      "dec_degrees": -64.723871,
+      "magnitude": 3.581
+    },
+    {
+      "id": "* ups Lib",
+      "ra_degrees": 234.256037,
+      "dec_degrees": -28.13511,
+      "magnitude": 3.589
+    },
+    {
+      "id": "* eta Ori A",
+      "ra_degrees": 81.119239,
+      "dec_degrees": -2.397147,
+      "magnitude": 3.59
+    },
+    {
+      "id": "* tet Cet",
+      "ra_degrees": 21.005847,
+      "dec_degrees": -8.183261,
+      "magnitude": 3.59
+    },
+    {
+      "id": "* tau Ori",
+      "ra_degrees": 79.401626,
+      "dec_degrees": -6.844407,
+      "magnitude": 3.59
+    },
+    {
+      "id": "* rho Boo",
+      "ra_degrees": 217.957456,
+      "dec_degrees": 30.371437,
+      "magnitude": 3.59
+    },
+    {
+      "id": "*  41 Ari",
+      "ra_degrees": 42.495972,
+      "dec_degrees": 27.260507,
+      "magnitude": 3.594
+    },
+    {
+      "id": "* gam Lep",
+      "ra_degrees": 86.115794,
+      "dec_degrees": -22.448385,
+      "magnitude": 3.6
+    },
+    {
+      "id": "* psi Vel",
+      "ra_degrees": 142.674998,
+      "dec_degrees": -40.466739,
+      "magnitude": 3.6
+    },
+    {
+      "id": "* omi Tau",
+      "ra_degrees": 51.203326,
+      "dec_degrees": 9.02887,
+      "magnitude": 3.6
+    },
+    {
+      "id": "* bet Vir",
+      "ra_degrees": 177.673827,
+      "dec_degrees": 1.764723,
+      "magnitude": 3.6
+    },
+    {
+      "id": "* tet Gem",
+      "ra_degrees": 103.197245,
+      "dec_degrees": 33.961257,
+      "magnitude": 3.6
+    },
+    {
+      "id": "* del Mus",
+      "ra_degrees": 195.567736,
+      "dec_degrees": -71.548859,
+      "magnitude": 3.61
+    },
+    {
+      "id": "* c Pup",
+      "ra_degrees": 116.313734,
+      "dec_degrees": -37.968585,
+      "magnitude": 3.61
+    },
+    {
+      "id": "* lam Hya",
+      "ra_degrees": 152.647036,
+      "dec_degrees": -12.354127,
+      "magnitude": 3.61
+    },
+    {
+      "id": "* del Ara",
+      "ra_degrees": 262.77464,
+      "dec_degrees": -60.683845,
+      "magnitude": 3.62
+    },
+    {
+      "id": "* zet02 Sco",
+      "ra_degrees": 253.645854,
+      "dec_degrees": -42.361316,
+      "magnitude": 3.62
+    },
+    {
+      "id": "* eta Psc",
+      "ra_degrees": 22.870867,
+      "dec_degrees": 15.345832,
+      "magnitude": 3.62
+    },
+    {
+      "id": "* omi And",
+      "ra_degrees": 345.480271,
+      "dec_degrees": 42.326016,
+      "magnitude": 3.62
+    },
+    {
+      "id": "* bet Del",
+      "ra_degrees": 309.387255,
+      "dec_degrees": 14.595089,
+      "magnitude": 3.63
+    },
+    {
+      "id": "*  27 Tau",
+      "ra_degrees": 57.290596,
+      "dec_degrees": 24.053417,
+      "magnitude": 3.63
+    },
+    {
+      "id": "* omi Vel",
+      "ra_degrees": 130.073331,
+      "dec_degrees": -52.92191,
+      "magnitude": 3.63
+    },
+    {
+      "id": "* c02 Aqr",
+      "ra_degrees": 347.36165,
+      "dec_degrees": -21.172415,
+      "magnitude": 3.64
+    },
+    {
+      "id": "* tau Lib",
+      "ra_degrees": 234.66404,
+      "dec_degrees": -29.777749,
+      "magnitude": 3.642
+    },
+    {
+      "id": "* bet Ind",
+      "ra_degrees": 313.702492,
+      "dec_degrees": -58.454145,
+      "magnitude": 3.65
+    },
+    {
+      "id": "* gam Tau",
+      "ra_degrees": 64.94835,
+      "dec_degrees": 15.627642,
+      "magnitude": 3.65
+    },
+    {
+      "id": "* lam Mus",
+      "ra_degrees": 176.401728,
+      "dec_degrees": -66.728758,
+      "magnitude": 3.65
+    },
+    {
+      "id": "* zet Aqr",
+      "ra_degrees": 337.207945,
+      "dec_degrees": -0.019943,
+      "magnitude": 3.65
+    },
+    {
+      "id": "* tet Ara",
+      "ra_degrees": 271.657784,
+      "dec_degrees": -50.09148,
+      "magnitude": 3.66
+    },
+    {
+      "id": "* zet Cas",
+      "ra_degrees": 9.242852,
+      "dec_degrees": 53.89691,
+      "magnitude": 3.66
+    },
+    {
+      "id": "* lam Ori",
+      "ra_degrees": 83.78449,
+      "dec_degrees": 9.934156,
+      "magnitude": 3.66
+    },
+    {
+      "id": "* gam Cap",
+      "ra_degrees": 325.022689,
+      "dec_degrees": -16.662371,
+      "magnitude": 3.67
+    },
+    {
+      "id": "* bet Ser",
+      "ra_degrees": 236.546897,
+      "dec_degrees": 15.421819,
+      "magnitude": 3.67
+    },
+    {
+      "id": "* h UMa",
+      "ra_degrees": 142.882117,
+      "dec_degrees": 63.06186,
+      "magnitude": 3.67
+    },
+    {
+      "id": "* alf Dra",
+      "ra_degrees": 211.097323,
+      "dec_degrees": 64.37587,
+      "magnitude": 3.68
+    },
+    {
+      "id": "* alf Pyx",
+      "ra_degrees": 130.898073,
+      "dec_degrees": -33.186383,
+      "magnitude": 3.68
+    },
+    {
+      "id": "* bet CrB",
+      "ra_degrees": 231.957309,
+      "dec_degrees": 29.105693,
+      "magnitude": 3.68
+    },
+    {
+      "id": "* pi.04 Ori",
+      "ra_degrees": 72.801524,
+      "dec_degrees": 5.605104,
+      "magnitude": 3.68
+    },
+    {
+      "id": "* eps Ser",
+      "ra_degrees": 237.704022,
+      "dec_degrees": 4.477731,
+      "magnitude": 3.693
+    },
+    {
+      "id": "* a Pup",
+      "ra_degrees": 118.054299,
+      "dec_degrees": -40.575782,
+      "magnitude": 3.696
+    },
+    {
+      "id": "* gam Psc",
+      "ra_degrees": 349.291405,
+      "dec_degrees": 3.28229,
+      "magnitude": 3.7
+    },
+    {
+      "id": "* tau04 Eri",
+      "ra_degrees": 49.879169,
+      "dec_degrees": -21.757865,
+      "magnitude": 3.7
+    },
+    {
+      "id": "* kap Lup",
+      "ra_degrees": 227.983639,
+      "dec_degrees": -48.737825,
+      "magnitude": 3.7
+    },
+    {
+      "id": "*  17 Tau",
+      "ra_degrees": 56.218905,
+      "dec_degrees": 24.113338,
+      "magnitude": 3.7
+    },
+    {
+      "id": "* ksi Her",
+      "ra_degrees": 269.44119,
+      "dec_degrees": 29.247879,
+      "magnitude": 3.7
+    },
+    {
+      "id": "* bet Aql",
+      "ra_degrees": 298.828304,
+      "dec_degrees": 6.406764,
+      "magnitude": 3.71
+    },
+    {
+      "id": "* chi Eri",
+      "ra_degrees": 28.989416,
+      "dec_degrees": -51.608878,
+      "magnitude": 3.71
+    },
+    {
+      "id": "* del Aur",
+      "ra_degrees": 89.881743,
+      "dec_degrees": 54.284738,
+      "magnitude": 3.72
+    },
+    {
+      "id": "* chi UMa",
+      "ra_degrees": 176.512559,
+      "dec_degrees": 47.779404,
+      "magnitude": 3.72
+    },
+    {
+      "id": "* zet Cet",
+      "ra_degrees": 27.865131,
+      "dec_degrees": -10.335031,
+      "magnitude": 3.72
+    },
+    {
+      "id": "* eta Lep",
+      "ra_degrees": 89.101223,
+      "dec_degrees": -14.1677,
+      "magnitude": 3.72
+    },
+    {
+      "id": "* nu. Oct",
+      "ra_degrees": 325.368925,
+      "dec_degrees": -77.390009,
+      "magnitude": 3.728
+    },
+    {
+      "id": "*  72 Oph",
+      "ra_degrees": 271.837437,
+      "dec_degrees": 9.563847,
+      "magnitude": 3.73
+    },
+    {
+      "id": "* 109 Vir",
+      "ra_degrees": 221.562181,
+      "dec_degrees": 1.892884,
+      "magnitude": 3.73
+    },
+    {
+      "id": "* eps Eri",
+      "ra_degrees": 53.232685,
+      "dec_degrees": -9.458261,
+      "magnitude": 3.73
+    },
+    {
+      "id": "* pi.05 Ori",
+      "ra_degrees": 73.562904,
+      "dec_degrees": 2.440672,
+      "magnitude": 3.73
+    },
+    {
+      "id": "* ksi Cyg",
+      "ra_degrees": 316.23275,
+      "dec_degrees": 43.927853,
+      "magnitude": 3.73
+    },
+    {
+      "id": "* zet Ori B",
+      "ra_degrees": 85.18988,
+      "dec_degrees": -1.943219,
+      "magnitude": 3.73
+    },
+    {
+      "id": "* tau Cyg",
+      "ra_degrees": 318.697886,
+      "dec_degrees": 38.045318,
+      "magnitude": 3.73
+    },
+    {
+      "id": "* zet Cap",
+      "ra_degrees": 321.666794,
+      "dec_degrees": -22.41132,
+      "magnitude": 3.74
+    },
+    {
+      "id": "* bet Mon",
+      "ra_degrees": 97.204457,
+      "dec_degrees": -7.033058,
+      "magnitude": 3.74
+    },
+    {
+      "id": "* eta Ara",
+      "ra_degrees": 252.446485,
+      "dec_degrees": -59.041379,
+      "magnitude": 3.744
+    },
+    {
+      "id": "* gam02 Vol",
+      "ra_degrees": 107.18694,
+      "dec_degrees": -70.49893,
+      "magnitude": 3.746
+    },
+    {
+      "id": "* c Vel",
+      "ra_degrees": 136.038665,
+      "dec_degrees": -47.097735,
+      "magnitude": 3.75
+    },
+    {
+      "id": "* gam Oph",
+      "ra_degrees": 266.973169,
+      "dec_degrees": 2.707279,
+      "magnitude": 3.75
+    },
+    {
+      "id": "* zet Aur",
+      "ra_degrees": 75.619514,
+      "dec_degrees": 41.075832,
+      "magnitude": 3.75
+    },
+    {
+      "id": "* l Car",
+      "ra_degrees": 146.311715,
+      "dec_degrees": -62.507903,
+      "magnitude": 3.75
+    }
+  ]
+}

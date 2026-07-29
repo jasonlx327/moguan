@@ -1,0 +1,387 @@
+{
+  "schema_version": "0.1",
+  "snapshot_id": "HORMUZ-PORTWATCH-2026-07-19",
+  "collected_at": "2026-07-23T07:50:13.910Z",
+  "source": {
+    "source_id": "SRC-20260723-IMF-PORTWATCH-HORMUZ",
+    "publisher": "IMF PortWatch",
+    "port_id": "chokepoint6",
+    "endpoint": "https://services9.arcgis.com/weJ1QsnbMYJlCHdG/arcgis/rest/services/Daily_Chokepoints_Data/FeatureServer/0/query",
+    "attribution": "Source: IMF PortWatch; underlying vessel data: UN Global Platform."
+  },
+  "latest_available_date": "2026-07-19",
+  "observed_lag_days": 4,
+  "data_status": "official_derived_daily_snapshot",
+  "baselines": {
+    "baseline_30d": {
+      "start": "2026-06-20",
+      "end": "2026-07-19",
+      "days": 30,
+      "median_total_transits": 18.5,
+      "mean_total_transits": 21.5,
+      "first_7d_median": 26,
+      "last_7d_median": 11,
+      "first_to_last_7d_change_pct": -57.69
+    },
+    "pre_crisis": {
+      "start": "2025-02-28",
+      "end": "2026-02-27",
+      "days": 365,
+      "median_total_transits": 88,
+      "mean_total_transits": 90.66
+    }
+  },
+  "latest_daily": {
+    "date": "2026-07-19",
+    "total_transits": 15,
+    "tanker": 4,
+    "cargo_total": 11,
+    "container": 4,
+    "dry_bulk": 2,
+    "general_cargo": 4,
+    "roro": 1,
+    "estimated_capacity_tonnes": 182620
+  },
+  "history_30d": [
+    {
+      "date": "2026-06-20",
+      "total_transits": 26,
+      "tanker": 12,
+      "cargo_total": 14,
+      "container": 2,
+      "dry_bulk": 7,
+      "general_cargo": 5,
+      "roro": 0,
+      "estimated_capacity_tonnes": 970444
+    },
+    {
+      "date": "2026-06-21",
+      "total_transits": 8,
+      "tanker": 1,
+      "cargo_total": 7,
+      "container": 1,
+      "dry_bulk": 3,
+      "general_cargo": 3,
+      "roro": 0,
+      "estimated_capacity_tonnes": 219625
+    },
+    {
+      "date": "2026-06-22",
+      "total_transits": 14,
+      "tanker": 9,
+      "cargo_total": 5,
+      "container": 0,
+      "dry_bulk": 4,
+      "general_cargo": 1,
+      "roro": 0,
+      "estimated_capacity_tonnes": 763211
+    },
+    {
+      "date": "2026-06-23",
+      "total_transits": 15,
+      "tanker": 5,
+      "cargo_total": 10,
+      "container": 2,
+      "dry_bulk": 5,
+      "general_cargo": 3,
+      "roro": 0,
+      "estimated_capacity_tonnes": 1061368
+    },
+    {
+      "date": "2026-06-24",
+      "total_transits": 51,
+      "tanker": 21,
+      "cargo_total": 30,
+      "container": 7,
+      "dry_bulk": 20,
+      "general_cargo": 2,
+      "roro": 1,
+      "estimated_capacity_tonnes": 2308874
+    },
+    {
+      "date": "2026-06-25",
+      "total_transits": 50,
+      "tanker": 23,
+      "cargo_total": 27,
+      "container": 9,
+      "dry_bulk": 14,
+      "general_cargo": 4,
+      "roro": 0,
+      "estimated_capacity_tonnes": 2072664
+    },
+    {
+      "date": "2026-06-26",
+      "total_transits": 37,
+      "tanker": 19,
+      "cargo_total": 18,
+      "container": 3,
+      "dry_bulk": 10,
+      "general_cargo": 5,
+      "roro": 0,
+      "estimated_capacity_tonnes": 1152988
+    },
+    {
+      "date": "2026-06-27",
+      "total_transits": 27,
+      "tanker": 9,
+      "cargo_total": 18,
+      "container": 5,
+      "dry_bulk": 7,
+      "general_cargo": 6,
+      "roro": 0,
+      "estimated_capacity_tonnes": 1047838
+    },
+    {
+      "date": "2026-06-28",
+      "total_transits": 20,
+      "tanker": 11,
+      "cargo_total": 9,
+      "container": 4,
+      "dry_bulk": 2,
+      "general_cargo": 3,
+      "roro": 0,
+      "estimated_capacity_tonnes": 733679
+    },
+    {
+      "date": "2026-06-29",
+      "total_transits": 31,
+      "tanker": 13,
+      "cargo_total": 18,
+      "container": 6,
+      "dry_bulk": 9,
+      "general_cargo": 3,
+      "roro": 0,
+      "estimated_capacity_tonnes": 1631862
+    },
+    {
+      "date": "2026-06-30",
+      "total_transits": 21,
+      "tanker": 6,
+      "cargo_total": 15,
+      "container": 2,
+      "dry_bulk": 10,
+      "general_cargo": 3,
+      "roro": 0,
+      "estimated_capacity_tonnes": 778482
+    },
+    {
+      "date": "2026-07-01",
+      "total_transits": 40,
+      "tanker": 23,
+      "cargo_total": 17,
+      "container": 5,
+      "dry_bulk": 8,
+      "general_cargo": 4,
+      "roro": 0,
+      "estimated_capacity_tonnes": 2053839
+    },
+    {
+      "date": "2026-07-02",
+      "total_transits": 34,
+      "tanker": 18,
+      "cargo_total": 16,
+      "container": 6,
+      "dry_bulk": 7,
+      "general_cargo": 3,
+      "roro": 0,
+      "estimated_capacity_tonnes": 948818
+    },
+    {
+      "date": "2026-07-03",
+      "total_transits": 31,
+      "tanker": 21,
+      "cargo_total": 10,
+      "container": 2,
+      "dry_bulk": 6,
+      "general_cargo": 2,
+      "roro": 0,
+      "estimated_capacity_tonnes": 1457632
+    },
+    {
+      "date": "2026-07-04",
+      "total_transits": 22,
+      "tanker": 11,
+      "cargo_total": 11,
+      "container": 4,
+      "dry_bulk": 4,
+      "general_cargo": 3,
+      "roro": 0,
+      "estimated_capacity_tonnes": 568802
+    },
+    {
+      "date": "2026-07-05",
+      "total_transits": 26,
+      "tanker": 16,
+      "cargo_total": 10,
+      "container": 4,
+      "dry_bulk": 5,
+      "general_cargo": 1,
+      "roro": 0,
+      "estimated_capacity_tonnes": 979733
+    },
+    {
+      "date": "2026-07-06",
+      "total_transits": 28,
+      "tanker": 14,
+      "cargo_total": 14,
+      "container": 4,
+      "dry_bulk": 5,
+      "general_cargo": 3,
+      "roro": 2,
+      "estimated_capacity_tonnes": 2311249
+    },
+    {
+      "date": "2026-07-07",
+      "total_transits": 28,
+      "tanker": 12,
+      "cargo_total": 16,
+      "container": 2,
+      "dry_bulk": 8,
+      "general_cargo": 2,
+      "roro": 4,
+      "estimated_capacity_tonnes": 1411625
+    },
+    {
+      "date": "2026-07-08",
+      "total_transits": 15,
+      "tanker": 5,
+      "cargo_total": 10,
+      "container": 2,
+      "dry_bulk": 5,
+      "general_cargo": 3,
+      "roro": 0,
+      "estimated_capacity_tonnes": 467835
+    },
+    {
+      "date": "2026-07-09",
+      "total_transits": 11,
+      "tanker": 4,
+      "cargo_total": 7,
+      "container": 2,
+      "dry_bulk": 2,
+      "general_cargo": 3,
+      "roro": 0,
+      "estimated_capacity_tonnes": 167271
+    },
+    {
+      "date": "2026-07-10",
+      "total_transits": 9,
+      "tanker": 4,
+      "cargo_total": 5,
+      "container": 1,
+      "dry_bulk": 2,
+      "general_cargo": 2,
+      "roro": 0,
+      "estimated_capacity_tonnes": 172300
+    },
+    {
+      "date": "2026-07-11",
+      "total_transits": 10,
+      "tanker": 4,
+      "cargo_total": 6,
+      "container": 2,
+      "dry_bulk": 3,
+      "general_cargo": 1,
+      "roro": 0,
+      "estimated_capacity_tonnes": 316847
+    },
+    {
+      "date": "2026-07-12",
+      "total_transits": 6,
+      "tanker": 1,
+      "cargo_total": 5,
+      "container": 2,
+      "dry_bulk": 0,
+      "general_cargo": 3,
+      "roro": 0,
+      "estimated_capacity_tonnes": 99325
+    },
+    {
+      "date": "2026-07-13",
+      "total_transits": 9,
+      "tanker": 2,
+      "cargo_total": 7,
+      "container": 3,
+      "dry_bulk": 1,
+      "general_cargo": 3,
+      "roro": 0,
+      "estimated_capacity_tonnes": 104036
+    },
+    {
+      "date": "2026-07-14",
+      "total_transits": 11,
+      "tanker": 5,
+      "cargo_total": 6,
+      "container": 3,
+      "dry_bulk": 2,
+      "general_cargo": 1,
+      "roro": 0,
+      "estimated_capacity_tonnes": 195076
+    },
+    {
+      "date": "2026-07-15",
+      "total_transits": 12,
+      "tanker": 5,
+      "cargo_total": 7,
+      "container": 3,
+      "dry_bulk": 3,
+      "general_cargo": 1,
+      "roro": 0,
+      "estimated_capacity_tonnes": 334612
+    },
+    {
+      "date": "2026-07-16",
+      "total_transits": 10,
+      "tanker": 2,
+      "cargo_total": 8,
+      "container": 4,
+      "dry_bulk": 2,
+      "general_cargo": 2,
+      "roro": 0,
+      "estimated_capacity_tonnes": 174039
+    },
+    {
+      "date": "2026-07-17",
+      "total_transits": 11,
+      "tanker": 3,
+      "cargo_total": 8,
+      "container": 2,
+      "dry_bulk": 3,
+      "general_cargo": 3,
+      "roro": 0,
+      "estimated_capacity_tonnes": 181608
+    },
+    {
+      "date": "2026-07-18",
+      "total_transits": 17,
+      "tanker": 6,
+      "cargo_total": 11,
+      "container": 3,
+      "dry_bulk": 5,
+      "general_cargo": 3,
+      "roro": 0,
+      "estimated_capacity_tonnes": 425110
+    },
+    {
+      "date": "2026-07-19",
+      "total_transits": 15,
+      "tanker": 4,
+      "cargo_total": 11,
+      "container": 4,
+      "dry_bulk": 2,
+      "general_cargo": 4,
+      "roro": 1,
+      "estimated_capacity_tonnes": 182620
+    }
+  ],
+  "derived_reading": {
+    "latest_vs_30d_median_pct": -18.92,
+    "baseline_30d_vs_pre_crisis_median_pct": 21.02,
+    "summary": "最新日过境量为15艘，过去30日中位数为18.5艘；最近7日中位数较最早7日变化-57.69%，过去30日中位数为战前一年中位数的21.02%。"
+  },
+  "caveats": [
+    "PortWatch is an AIS-derived estimate and can be revised when source coverage or methodology changes.",
+    "A daily transit count does not establish uninterrupted safe passage for every vessel.",
+    "Official security and navigational warnings must be reviewed separately."
+  ]
+}

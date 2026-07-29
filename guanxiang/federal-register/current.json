@@ -1,0 +1,78 @@
+{
+  "schema_version": "0.1",
+  "snapshot_id": "FR-BIS-SEMICONDUCTOR-2026-06-29-2026-07-28",
+  "collected_at": "2026-07-28T15:13:47.085Z",
+  "source": {
+    "source_id": "us_federal_register_api",
+    "publisher": "Office of the Federal Register / FederalRegister.gov",
+    "endpoint": "https://www.federalregister.gov/api/v1/documents.json",
+    "open_level": "O0",
+    "authentication": "none",
+    "legal_status": "FederalRegister.gov is a discovery and XML rendition service; legal verification must use the linked official GovInfo edition."
+  },
+  "query": {
+    "agency": "industry-and-security-bureau",
+    "terms": [
+      "semiconductor",
+      "advanced computing",
+      "semiconductor manufacturing equipment"
+    ],
+    "publication_date_from": "2026-06-29",
+    "publication_date_to": "2026-07-28",
+    "requests": [
+      {
+        "term": "semiconductor",
+        "url": "https://www.federalregister.gov/api/v1/documents.json?per_page=100&order=newest&conditions%5Bagencies%5D%5B%5D=industry-and-security-bureau&conditions%5Bpublication_date%5D%5Bgte%5D=2026-06-29&conditions%5Bpublication_date%5D%5Blte%5D=2026-07-28&conditions%5Bterm%5D=semiconductor",
+        "returned_count": 1,
+        "total_count": 1
+      },
+      {
+        "term": "advanced computing",
+        "url": "https://www.federalregister.gov/api/v1/documents.json?per_page=100&order=newest&conditions%5Bagencies%5D%5B%5D=industry-and-security-bureau&conditions%5Bpublication_date%5D%5Bgte%5D=2026-06-29&conditions%5Bpublication_date%5D%5Blte%5D=2026-07-28&conditions%5Bterm%5D=advanced+computing",
+        "returned_count": 1,
+        "total_count": 1
+      },
+      {
+        "term": "semiconductor manufacturing equipment",
+        "url": "https://www.federalregister.gov/api/v1/documents.json?per_page=100&order=newest&conditions%5Bagencies%5D%5B%5D=industry-and-security-bureau&conditions%5Bpublication_date%5D%5Bgte%5D=2026-06-29&conditions%5Bpublication_date%5D%5Blte%5D=2026-07-28&conditions%5Bterm%5D=semiconductor+manufacturing+equipment",
+        "returned_count": 0,
+        "total_count": 0
+      }
+    ]
+  },
+  "data_status": "snapshot",
+  "candidate_count": 1,
+  "documents": [
+    {
+      "document_number": "2026-14132",
+      "title": "Enhanced Favorable Treatment for the United Arab Emirates Under the Export Administration Regulations",
+      "document_type": "Rule",
+      "abstract": "In this final rule, the Bureau of Industry and Security (BIS) amends the Export Administration Regulations (EAR) to provide enhanced favorable treatment for the United Arab Emirates (UAE). Specifically, BIS is removing the UAE from Country Groups D:3 and D:4 and adding the UAE to Country Group A:5. More license exceptions will now be available, including Strategic Trade Authorization (STA) for the UAE Government and approved commercial entities in the UAE. STA will authorize the export, reexport, or transfer (in-country) of military items; certain commercial satellites and spacecraft; and dual-use items useful in, inter alia, oil and gas production, desalination, and civil nuclear power generation. The UAE Government and approved commercial entities will also have license-free access to advanced computing items, consistent with the May 2025 U.S.-UAE Artificial Intelligence Cooperation framework, without compromising U.S. digital infrastructure buildout.",
+      "publication_date": "2026-07-14",
+      "agencies": [
+        {
+          "name": "Commerce Department",
+          "slug": "commerce-department"
+        },
+        {
+          "name": "Industry and Security Bureau",
+          "slug": "industry-and-security-bureau"
+        }
+      ],
+      "federalregister_url": "https://www.federalregister.gov/documents/2026/07/14/2026-14132/enhanced-favorable-treatment-for-the-united-arab-emirates-under-the-export-administration",
+      "official_pdf_url": "https://www.govinfo.gov/content/pkg/FR-2026-07-14/pdf/2026-14132.pdf",
+      "public_inspection_pdf_url": "https://public-inspection.federalregister.gov/2026-14132.pdf?1783696508",
+      "matched_terms": [
+        "advanced computing",
+        "semiconductor"
+      ],
+      "match_excerpt": "States and the UAE have long worked together to develop the UAE's own technology protection measures. In May 2025, the United States and the UAE entered into a technology cooperation deal to ensure robust U.S.-UAE cooperation in critical technologies, including AI and semiconductors. Today, the UAE is a regional leader in its implementation of a strategic trade control system that ensures military equipment, chemical and biological items, missile technology, nuclear technology, and other sensitive items are imported, exported, and transshipped in",
+      "record_status": "discovery_candidate",
+      "legal_verification_status": "official_pdf_link_present"
+    }
+  ],
+  "review_gate": {
+    "status": "pending",
+    "rule": "Keyword matches are discovery candidates only. Human review must confirm event relevance and verify the linked official GovInfo document before entry into the event ledger."
+  }
+}

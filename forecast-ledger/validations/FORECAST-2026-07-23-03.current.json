@@ -1,0 +1,43 @@
+{
+  "schema_version": "0.1",
+  "validation_id": "VALIDATION-FORECAST-2026-07-23-03-CURRENT",
+  "forecast_id": "FORECAST-2026-07-23-03",
+  "forecast_version": "2026-07-23-analysis-v0.1",
+  "original_issued_at": "2026-07-23T15:30:00+08:00",
+  "original_conclusion": {
+    "supported_scenario_id": "SCENARIO-2026-07-23-03-A",
+    "label": "强事件增强，影响将呈区域分化",
+    "immutable": true
+  },
+  "updated_at": "2026-07-24T10:47:52+08:00",
+  "source_latest_available_date": "2026-07-20",
+  "current_support": "awaiting_official_update",
+  "settlement_state": "watching",
+  "decision_feedback": {
+    "status": "awaiting_new_evidence",
+    "label": "尚无新证据",
+    "original_headline": "强事件增强，影响将呈区域分化",
+    "current_headline": "强事件增强，影响将呈区域分化",
+    "latest_change": "NOAA 7月20日周度材料补全了发布前基线，但早于7月23日推演发布；截至7月24日尚无发布后正式更新，原结论保留但未被新增事实验证。",
+    "conclusion_action": "maintain_original",
+    "checked_at": "2026-07-24T10:47:52+08:00",
+    "source_latest_available_date": "2026-07-20",
+    "source_cadence": "检查NOAA周度诊断与WMO阶段性更新；区域影响按国家气象和灾害机构材料验证。"
+  },
+  "review_contract": {
+    "accepted_primary_source_ids": ["SRC-20260723-WMO-ENSO", "SRC-20260723-NOAA-ENSO"],
+    "next_evidence": ["Niño 3.4指数", "官方强度判断", "区域温度与降水异常", "跨系统压力确认"],
+    "revision_rule": "WMO与NOAA显著下调事件强度且主要区域异常持续弱于展望时，发布新的推演版本；不得覆盖原始结论。"
+  },
+  "observations": [
+    {
+      "checked_at": "2026-07-24T10:47:52+08:00",
+      "source_id": "SRC-20260723-NOAA-ENSO",
+      "source_url": "https://www.cpc.ncep.noaa.gov/products/analysis_monitoring/lanina/enso_evolution-status-fcsts-web.pdf",
+      "source_latest_available_date": "2026-07-20",
+      "post_issuance_evidence": false,
+      "finding": "NOAA周度材料记录最近一周Niño 3.4指数为+1.4°C并维持事件增强判断；该材料早于推演发布时间，只能补全基线，不能作为发布后验证。"
+    }
+  ],
+  "data_note": "2026年7月24日已复核WMO与NOAA正式来源；7月20日材料属于发布前基线，尚无发布后新增证据。"
+}

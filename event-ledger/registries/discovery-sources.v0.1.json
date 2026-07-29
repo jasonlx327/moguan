@@ -40,6 +40,45 @@
       "full_text_storage": false,
       "terms_url": "https://www.un.org/en/about-us/terms-of-use",
       "review_note": "可确认联合国自身声明与行动，但不能同时充当独立媒体核验。商业使用前复核具体材料条款。"
+    },
+    {
+      "publisher_id": "PUB-IMF-PORTWATCH",
+      "publisher": "IMF PortWatch",
+      "homepage": "https://portwatch.imf.org/",
+      "role": "official_derived_daily_transit_data",
+      "priority_pools": ["流通"],
+      "access_mode": "public_arcgis_query",
+      "automated_collection": "allowed_with_attribution_and_revision_checks",
+      "allowed_storage": ["daily_aggregate_fields", "source_metadata", "query_time", "derived_baselines"],
+      "full_text_storage": false,
+      "terms_url": "https://www.imf.org/en/about/copyright-and-terms",
+      "review_note": "P0用于关键航道日度聚合指标；必须标注AIS推导、数据截至日与可能修订。"
+    },
+    {
+      "publisher_id": "PUB-UKMTO",
+      "publisher": "UK Maritime Trade Operations / JMIC",
+      "homepage": "https://www.ukmto.org/",
+      "role": "official_maritime_security_evidence",
+      "priority_pools": ["天下", "流通"],
+      "access_mode": "manual_or_public_products",
+      "automated_collection": "review_specific_feed_before_use",
+      "allowed_storage": ["warning_id", "published_at", "url", "concise_factual_paraphrase"],
+      "full_text_storage": false,
+      "terms_url": "https://www.ukmto.org/",
+      "review_note": "只用于确认报告中的安全事件与警示，不用于推算总通行量。"
+    },
+    {
+      "publisher_id": "PUB-NAVAREA-IX",
+      "publisher": "NAVAREA IX Coordinator",
+      "homepage": "https://hydrography.paknavy.gov.pk/navarea-ix-warnings/",
+      "role": "official_navigational_warning_evidence",
+      "priority_pools": ["天下", "流通"],
+      "access_mode": "manual_or_public_warning_index",
+      "automated_collection": "review_warning_status_before_use",
+      "allowed_storage": ["warning_id", "published_at", "url", "concise_factual_paraphrase"],
+      "full_text_storage": false,
+      "terms_url": "https://hydrography.paknavy.gov.pk/",
+      "review_note": "必须核对警告是否已取消或被后续文件替代；不用于统计总流量。"
     }
   ]
 }

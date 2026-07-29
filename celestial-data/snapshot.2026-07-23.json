@@ -1,0 +1,69 @@
+{
+  "schema_version": "0.1",
+  "snapshot_id": "CELESTIAL-2026-07-23T0800-CST",
+  "observed_at": "2026-07-23T08:00:00+08:00",
+  "observer": {
+    "label": "上海",
+    "latitude": 31.2304,
+    "longitude": 121.4737,
+    "elevation_m": 4
+  },
+  "projection": {
+    "type": "north_polar_equidistant",
+    "coordinate_frame": "ICRS/J2000",
+    "center": "north_celestial_pole",
+    "outer_declination_degrees": -45
+  },
+  "moon": {
+    "phase_label": "盈凸月",
+    "illumination_pct": 64.9
+  },
+  "seven_luminaries": [
+    {"name": "日", "modern_name": "太阳", "body": "Sun", "ra_hours": 8.132767, "dec_degrees": 20.185586, "label_dx": 14, "label_dy": 20},
+    {"name": "月", "modern_name": "月亮", "body": "Moon", "ra_hours": 14.889945, "dec_degrees": -21.96208, "label_dx": -48, "label_dy": 22},
+    {"name": "辰星", "modern_name": "水星", "body": "Mercury", "ra_hours": 7.121057, "dec_degrees": 18.277709, "label_dx": 14, "label_dy": -12},
+    {"name": "太白", "modern_name": "金星", "body": "Venus", "ra_hours": 11.045776, "dec_degrees": 6.855835, "label_dx": 14, "label_dy": 18},
+    {"name": "荧惑", "modern_name": "火星", "body": "Mars", "ra_hours": 5.027361, "dec_degrees": 22.731137, "label_dx": 14, "label_dy": -10},
+    {"name": "岁星", "modern_name": "木星", "body": "Jupiter", "ra_hours": 8.47011, "dec_degrees": 19.561869, "label_dx": 18, "label_dy": -22},
+    {"name": "镇星", "modern_name": "土星", "body": "Saturn", "ra_hours": 0.945536, "dec_degrees": 3.370387, "label_dx": 14, "label_dy": -10}
+  ],
+  "lunar_mansions": [
+    {"name": "角宿", "quadrant": "东方青龙", "hip": 65474, "catalog_name": "α Virginis", "ra_degrees": 201.298247, "dec_degrees": -11.161319},
+    {"name": "亢宿", "quadrant": "东方青龙", "hip": 69427, "catalog_name": "κ Virginis", "ra_degrees": 213.223937, "dec_degrees": -10.273703},
+    {"name": "氐宿", "quadrant": "东方青龙", "hip": 72622, "catalog_name": "α² Librae", "ra_degrees": 222.719638, "dec_degrees": -16.041777},
+    {"name": "房宿", "quadrant": "东方青龙", "hip": 78265, "catalog_name": "π Scorpii", "ra_degrees": 239.712972, "dec_degrees": -26.114108},
+    {"name": "心宿", "quadrant": "东方青龙", "hip": 80763, "catalog_name": "α Scorpii", "ra_degrees": 247.351915, "dec_degrees": -26.432003},
+    {"name": "尾宿", "quadrant": "东方青龙", "hip": 82514, "catalog_name": "μ¹ Scorpii", "ra_degrees": 252.967618, "dec_degrees": -38.047399},
+    {"name": "箕宿", "quadrant": "东方青龙", "hip": 88635, "catalog_name": "γ² Sagittarii", "ra_degrees": 271.452034, "dec_degrees": -30.42409},
+    {"name": "斗宿", "quadrant": "北方玄武", "hip": 92041, "catalog_name": "φ Sagittarii", "ra_degrees": 281.414123, "dec_degrees": -26.990783},
+    {"name": "牛宿", "quadrant": "北方玄武", "hip": 100345, "catalog_name": "β¹ Capricorni", "ra_degrees": 305.252777, "dec_degrees": -14.781408},
+    {"name": "女宿", "quadrant": "北方玄武", "hip": 102618, "catalog_name": "ε Aquarii", "ra_degrees": 311.918957, "dec_degrees": -9.495777},
+    {"name": "虚宿", "quadrant": "北方玄武", "hip": 106278, "catalog_name": "β Aquarii", "ra_degrees": 322.889717, "dec_degrees": -5.571175},
+    {"name": "危宿", "quadrant": "北方玄武", "hip": 109074, "catalog_name": "α Aquarii", "ra_degrees": 331.445981, "dec_degrees": -0.319851},
+    {"name": "室宿", "quadrant": "北方玄武", "hip": 113963, "catalog_name": "α Pegasi", "ra_degrees": 346.190223, "dec_degrees": 15.205267},
+    {"name": "壁宿", "quadrant": "北方玄武", "hip": 1067, "catalog_name": "γ Pegasi", "ra_degrees": 3.308968, "dec_degrees": 15.183598},
+    {"name": "奎宿", "quadrant": "西方白虎", "hip": 4463, "catalog_name": "η Andromedae", "ra_degrees": 14.301668, "dec_degrees": 23.41765},
+    {"name": "娄宿", "quadrant": "西方白虎", "hip": 8903, "catalog_name": "β Arietis", "ra_degrees": 28.660046, "dec_degrees": 20.808031},
+    {"name": "胃宿", "quadrant": "西方白虎", "hip": 12719, "catalog_name": "35 Arietis", "ra_degrees": 40.862976, "dec_degrees": 27.707149},
+    {"name": "昴宿", "quadrant": "西方白虎", "hip": 17499, "catalog_name": "17 Tauri", "ra_degrees": 56.218905, "dec_degrees": 24.113338},
+    {"name": "毕宿", "quadrant": "西方白虎", "hip": 20889, "catalog_name": "ε Tauri", "ra_degrees": 67.154168, "dec_degrees": 19.180434},
+    {"name": "觜宿", "quadrant": "西方白虎", "hip": 26207, "catalog_name": "λ Orionis", "ra_degrees": 83.78449, "dec_degrees": 9.934156},
+    {"name": "参宿", "quadrant": "西方白虎", "hip": 26727, "catalog_name": "ζ Orionis", "ra_degrees": 85.189694, "dec_degrees": -1.942574},
+    {"name": "井宿", "quadrant": "南方朱雀", "hip": 30343, "catalog_name": "μ Geminorum", "ra_degrees": 95.740112, "dec_degrees": 22.513583},
+    {"name": "鬼宿", "quadrant": "南方朱雀", "hip": 41822, "catalog_name": "θ Cancri", "ra_degrees": 127.898875, "dec_degrees": 18.094418},
+    {"name": "柳宿", "quadrant": "南方朱雀", "hip": 42313, "catalog_name": "δ Hydrae", "ra_degrees": 129.414031, "dec_degrees": 5.703788},
+    {"name": "星宿", "quadrant": "南方朱雀", "hip": 46390, "catalog_name": "α Hydrae", "ra_degrees": 141.896845, "dec_degrees": -8.6586},
+    {"name": "张宿", "quadrant": "南方朱雀", "hip": 48356, "catalog_name": "υ¹ Hydrae", "ra_degrees": 147.869479, "dec_degrees": -14.846629},
+    {"name": "翼宿", "quadrant": "南方朱雀", "hip": 53740, "catalog_name": "α Crateris", "ra_degrees": 164.943605, "dec_degrees": -18.298786},
+    {"name": "轸宿", "quadrant": "南方朱雀", "hip": 59803, "catalog_name": "γ Corvi", "ra_degrees": 183.951545, "dec_degrees": -17.54193}
+  ],
+  "provenance": {
+    "planet_engine": "astronomy-engine 2.1.19",
+    "planet_method": "上海站心视位置；光行差开启；输出旋转至J2000赤道坐标",
+    "mansion_crosswalk": "Stellarium Chinese lunar-system defining star HIP sequence",
+    "star_coordinates": "SIMBAD TAP basic.ra/basic.dec; ICRS J2000",
+    "accessed_at": "2026-07-23",
+    "review_state": "working_reference",
+    "boundary": "七曜位置为现代星历计算结果；二十八宿距星对应为工作性映射，尚未完成古籍版本级证认，不用于占验结论。"
+  }
+}

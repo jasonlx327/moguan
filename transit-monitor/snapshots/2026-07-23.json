@@ -1,0 +1,59 @@
+{
+  "schema_version": "0.1",
+  "snapshot_id": "HORMUZ-PORTWATCH-2026-07-19",
+  "collected_at": "2026-07-23T14:55:01+08:00",
+  "source": {
+    "source_id": "SRC-20260723-IMF-PORTWATCH-HORMUZ",
+    "publisher": "IMF PortWatch",
+    "port_id": "chokepoint6",
+    "attribution": "Source: IMF PortWatch; underlying vessel data: UN Global Platform."
+  },
+  "latest_available_date": "2026-07-19",
+  "observed_lag_days": 4,
+  "data_status": "official_derived_daily_snapshot",
+  "baselines": {
+    "recent_7d": {
+      "start": "2026-07-13",
+      "end": "2026-07-19",
+      "median_total_transits": 11,
+      "mean_total_transits": 12.14
+    },
+    "pre_crisis": {
+      "start": "2025-02-28",
+      "end": "2026-02-27",
+      "days": 365,
+      "median_total_transits": 88,
+      "mean_total_transits": 90.66
+    }
+  },
+  "latest_daily": {
+    "date": "2026-07-19",
+    "total_transits": 15,
+    "tanker": 4,
+    "cargo_total": 11,
+    "container": 4,
+    "dry_bulk": 2,
+    "general_cargo": 4,
+    "roro": 1,
+    "estimated_capacity_tonnes": 182620
+  },
+  "recent_daily": [
+    {"date": "2026-07-13", "total_transits": 9, "tanker": 2, "cargo_total": 7},
+    {"date": "2026-07-14", "total_transits": 11, "tanker": 5, "cargo_total": 6},
+    {"date": "2026-07-15", "total_transits": 12, "tanker": 5, "cargo_total": 7},
+    {"date": "2026-07-16", "total_transits": 10, "tanker": 2, "cargo_total": 8},
+    {"date": "2026-07-17", "total_transits": 11, "tanker": 3, "cargo_total": 8},
+    {"date": "2026-07-18", "total_transits": 17, "tanker": 6, "cargo_total": 11},
+    {"date": "2026-07-19", "total_transits": 15, "tanker": 4, "cargo_total": 11}
+  ],
+  "derived_reading": {
+    "latest_vs_recent_median_pct": 36.36,
+    "recent_median_vs_pre_crisis_median_pct": 12.5,
+    "summary": "最近两日较近七日中位数改善，但近七日中位数仍仅为战前一年中位数的12.5%，不能称为恢复正常。"
+  },
+  "caveats": [
+    "PortWatch is an AIS-derived estimate and can be revised when source coverage or methodology changes.",
+    "A daily transit count does not establish uninterrupted safe passage for every vessel.",
+    "Official security and navigational warnings must be reviewed separately."
+  ]
+}

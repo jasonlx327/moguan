@@ -1,0 +1,105 @@
+{
+  "schema_version": "0.1",
+  "works": [
+    {
+      "work_id": "WORK-YIZHUAN-XICI-SHANG",
+      "canonical_title": "易传·系辞上",
+      "historical_layer": "theory_source",
+      "formation_note": "经传形成复杂，约在战国至汉初逐步定型；本批不采用单一作者说。",
+      "compilation_date": null,
+      "source_ids": ["SRC-WIKISOURCE-YIZHUAN-XICI-SHANG"],
+      "text_state": "selected_passages",
+      "review_status": "reviewed"
+    },
+    {
+      "work_id": "WORK-HUAINANZI-TIANWEN",
+      "canonical_title": "淮南子·天文训",
+      "historical_layer": "theory_source",
+      "formation_note": "西汉淮南王刘安门客集体编纂语境；天文、历法、方位与感应观念并存，须分型使用。",
+      "compilation_date": "约公元前2世纪",
+      "source_ids": ["SRC-WIKISOURCE-HUAINANZI-TIANWEN"],
+      "text_state": "selected_passages",
+      "review_status": "reviewed"
+    },
+    {
+      "work_id": "WORK-SHIJI-TIANGUAN",
+      "canonical_title": "史记·天官书",
+      "historical_layer": "institutional_synthesis",
+      "formation_note": "西汉司马迁撰；将星官、观测记录和占候汇于一篇，墨观只把可分辨的观测与方法论材料纳入检索。",
+      "compilation_date": "约公元前1世纪",
+      "source_ids": ["SRC-WIKISOURCE-SHIJI-027"],
+      "text_state": "selected_passages",
+      "review_status": "reviewed"
+    },
+    {
+      "work_id": "WORK-HANSHU-TIANWEN",
+      "canonical_title": "汉书·天文志",
+      "historical_layer": "institutional_synthesis",
+      "formation_note": "东汉班固等编纂；保留西汉及更早天文材料。本批区分星官目录、制度描述和灾异解释。",
+      "compilation_date": "1世纪",
+      "source_ids": ["SRC-WIKISOURCE-HANSHU-026"],
+      "text_state": "selected_passages",
+      "review_status": "reviewed"
+    },
+    {
+      "work_id": "WORK-KAIYUAN-ZHANJING-001",
+      "canonical_title": "开元占经·卷一",
+      "historical_layer": "institutional_synthesis",
+      "formation_note": "唐代瞿昙悉达等奉敕汇编；引用张衡、蔡邕等早期材料时，仅视为唐代传本所保存的引文。",
+      "compilation_date": "8世纪",
+      "source_ids": ["SRC-WIKISOURCE-KAIYUAN-001"],
+      "text_state": "selected_passages",
+      "review_status": "reviewed"
+    },
+    {
+      "work_id": "WORK-MENGXI-BITAN-07",
+      "canonical_title": "梦溪笔谈·象数一",
+      "historical_layer": "observation_refinement",
+      "formation_note": "北宋沈括撰；本批选取历法检验、图像考辨与对滥用爻辞的批评。",
+      "compilation_date": "11世纪",
+      "source_ids": ["SRC-WIKISOURCE-MENGXI-07"],
+      "text_state": "selected_passages",
+      "review_status": "reviewed"
+    },
+    {
+      "work_id": "WORK-XINYI-XIANG-FAYAO",
+      "canonical_title": "新仪象法要",
+      "historical_layer": "observation_refinement",
+      "formation_note": "北宋苏颂等撰；记录水运仪象台、渾仪、渾象与实际测验方法。",
+      "compilation_date": "11世纪",
+      "source_ids": ["SRC-WIKISOURCE-XINYI-SHANG"],
+      "text_state": "selected_passages",
+      "review_status": "reviewed"
+    },
+    {
+      "work_id": "WORK-MODERN-ASTRONOMY-ENGINE",
+      "canonical_title": "Astronomy Engine 2.1.19 计算方法记录",
+      "historical_layer": "modern_validation",
+      "formation_note": "现代开源星历计算软件；在墨观中只负责现代坐标计算，不解释古代象义。",
+      "compilation_date": "2026年固定版本",
+      "source_ids": ["SRC-GITHUB-ASTRONOMY-ENGINE"],
+      "text_state": "method_record",
+      "review_status": "reviewed"
+    },
+    {
+      "work_id": "WORK-MODERN-SIMBAD",
+      "canonical_title": "SIMBAD 亮星坐标快照方法记录",
+      "historical_layer": "modern_validation",
+      "formation_note": "现代天文数据库查询记录；负责亮星赤道坐标和星等底座。",
+      "compilation_date": "2026-07-23",
+      "source_ids": ["SRC-CDS-SIMBAD-TAP"],
+      "text_state": "method_record",
+      "review_status": "reviewed"
+    },
+    {
+      "work_id": "WORK-MODERN-STELLARIUM-CROSSWALK",
+      "canonical_title": "Stellarium 中国星空映射校验方法记录",
+      "historical_layer": "modern_validation",
+      "formation_note": "现代数字星图参考；只提供现代恒星标识交叉线索，不自动决定传统星官归属。",
+      "compilation_date": "持续版本化",
+      "source_ids": ["SRC-GITHUB-STELLARIUM"],
+      "text_state": "method_record",
+      "review_status": "reviewed"
+    }
+  ]
+}

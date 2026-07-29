@@ -1,0 +1,43 @@
+{
+  "schema_version": "0.1",
+  "validation_id": "VALIDATION-FORECAST-2026-07-23-01-CURRENT",
+  "forecast_id": "FORECAST-2026-07-23-01",
+  "forecast_version": "2026-07-23-analysis-v0.1",
+  "original_issued_at": "2026-07-23T15:30:00+08:00",
+  "original_conclusion": {
+    "supported_scenario_id": "SCENARIO-2026-07-23-01-B",
+    "label": "疫情压力仍向外扩张",
+    "immutable": true
+  },
+  "updated_at": "2026-07-24T10:47:52+08:00",
+  "source_latest_available_date": "2026-07-17",
+  "current_support": "awaiting_official_update",
+  "settlement_state": "watching",
+  "decision_feedback": {
+    "status": "awaiting_new_evidence",
+    "label": "尚无新证据",
+    "original_headline": "疫情压力仍向外扩张",
+    "current_headline": "疫情压力仍向外扩张",
+    "latest_change": "截至7月24日复核，WHO最新正式疫情通报仍为7月17日版本；推演发布后没有新增正式证据，原结论保留但尚未获得发布后事实支持。",
+    "conclusion_action": "maintain_original",
+    "checked_at": "2026-07-24T10:47:52+08:00",
+    "source_latest_available_date": "2026-07-17",
+    "source_cadence": "每日检查WHO Disease Outbreak News；仅在出现新正式通报时更新验证。"
+  },
+  "review_contract": {
+    "accepted_primary_source_ids": ["SRC-20260723-WHO-EBOLA"],
+    "next_evidence": ["病例与死亡更新", "新增传播地区", "接触者追踪变化", "跨境传播确认"],
+    "revision_rule": "连续两期传播范围不再扩大且至少一项响应指标改善时，发布新的推演版本；不得覆盖原始结论。"
+  },
+  "observations": [
+    {
+      "checked_at": "2026-07-24T10:47:52+08:00",
+      "source_id": "SRC-20260723-WHO-EBOLA",
+      "source_url": "https://www.who.int/emergencies/emergency-events/item/2026-DON613",
+      "source_latest_available_date": "2026-07-17",
+      "post_issuance_evidence": false,
+      "finding": "WHO疫情事件页及Disease Outbreak News目录未发现晚于7月17日的本次疫情正式更新。"
+    }
+  ],
+  "data_note": "2026年7月24日已复核WHO正式来源；没有发布后新增证据不等于原结论获得支持。"
+}

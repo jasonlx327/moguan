@@ -1,0 +1,79 @@
+{
+  "schema_version": "0.1",
+  "snapshot_id": "EU-CELLAR-EXPORT-CONTROLS-2026-06-29-2026-07-28",
+  "collected_at": "2026-07-28T15:21:50.166Z",
+  "source": {
+    "source_id": "eu_cellar_sparql",
+    "publisher": "Publications Office of the European Union",
+    "endpoint": "https://publications.europa.eu/webapi/rdf/sparql",
+    "cdm_ontology": "http://publications.europa.eu/ontology/cdm#",
+    "open_level": "O0",
+    "authentication": "none",
+    "legal_status": "Official EU metadata discovery service. Verify the document through its CELEX/ELI identifier or Cellar resource before event-ledger entry."
+  },
+  "query": {
+    "language": "ENG",
+    "terms": [
+      "semiconductor",
+      "export control",
+      "advanced computing",
+      "dual-use"
+    ],
+    "document_date_from": "2026-06-29",
+    "document_date_to": "2026-07-28",
+    "result_limit": 100,
+    "returned_count": 2,
+    "sparql": "PREFIX cdm: <http://publications.europa.eu/ontology/cdm#>\nPREFIX xsd: <http://www.w3.org/2001/XMLSchema#>\nSELECT ?work ?date ?title\n  (GROUP_CONCAT(DISTINCT STR(?id);separator=\"|\") AS ?identifiers)\nWHERE {\n  ?work cdm:work_date_document ?date .\n  ?expression cdm:expression_belongs_to_work ?work ;\n    cdm:expression_uses_language <http://publications.europa.eu/resource/authority/language/ENG> ;\n    cdm:expression_title ?title .\n  OPTIONAL { ?work cdm:work_id_document ?id . }\n  FILTER (?date >= \"2026-06-29\"^^xsd:date && ?date <= \"2026-07-28\"^^xsd:date)\n  FILTER (\n    CONTAINS(LCASE(STR(?title)), \"semiconductor\") ||\n    CONTAINS(LCASE(STR(?title)), \"export control\") ||\n    CONTAINS(LCASE(STR(?title)), \"advanced computing\") ||\n    CONTAINS(LCASE(STR(?title)), \"dual-use\")\n  )\n}\nGROUP BY ?work ?date ?title\nORDER BY DESC(?date)\nLIMIT 101"
+  },
+  "data_status": "snapshot",
+  "candidate_count": 2,
+  "documents": [
+    {
+      "cellar_id": "8b1c6705-874a-11f1-bf5e-01aa75ed71a1",
+      "cellar_work_uri": "https://publications.europa.eu/resource/cellar/8b1c6705-874a-11f1-bf5e-01aa75ed71a1",
+      "document_date": "2026-07-24",
+      "title": "REPORT FROM THE COMMISSION TO THE EUROPEAN PARLIAMENT AND THE COUNCIL on the delegation of power to adopt delegated acts conferred on the Commission pursuant to Regulation (EU) 2021/821 of the European Parliament and of the Council of 20 May 2021 setting up a Union regime for the control of exports, brokering, technical assistance, transit and transfer of dual-use items (recast)",
+      "identifiers": [
+        "celex:52026DC0395",
+        "comnat:COM_2026_0395_FIN",
+        "immc:COM(2026)395 final"
+      ],
+      "celex_id": "52026DC0395",
+      "eli_id": null,
+      "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52026DC0395",
+      "cellar_resource_url": "https://publications.europa.eu/resource/cellar/8b1c6705-874a-11f1-bf5e-01aa75ed71a1",
+      "official_document_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52026DC0395",
+      "matched_terms": [
+        "dual-use"
+      ],
+      "record_status": "discovery_candidate",
+      "legal_verification_status": "official_identifier_present"
+    },
+    {
+      "cellar_id": "80f5529d-7678-11f1-bf5e-01aa75ed71a1",
+      "cellar_work_uri": "https://publications.europa.eu/resource/cellar/80f5529d-7678-11f1-bf5e-01aa75ed71a1",
+      "document_date": "2026-07-03",
+      "title": "Compilation of national control lists under Article 9(4) of Regulation (EU) 2021/821 of the European Parliament and of the Council of 20 May 2021 setting up a Union regime for the control of exports, brokering, technical assistance, transit and transfer of dual-use items",
+      "identifiers": [
+        "celex:52026XC03577",
+        "eli:C/2026/3577/oj",
+        "immc:PUB(2026)614/4876409",
+        "oj:C_202603577"
+      ],
+      "celex_id": "52026XC03577",
+      "eli_id": "C/2026/3577/oj",
+      "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52026XC03577",
+      "cellar_resource_url": "https://publications.europa.eu/resource/cellar/80f5529d-7678-11f1-bf5e-01aa75ed71a1",
+      "official_document_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52026XC03577",
+      "matched_terms": [
+        "dual-use"
+      ],
+      "record_status": "discovery_candidate",
+      "legal_verification_status": "official_identifier_present"
+    }
+  ],
+  "review_gate": {
+    "status": "pending",
+    "rule": "Title matches are discovery candidates only. Human review must confirm relevance, inspect the official EU document, and separate enacted rules from proposals, reports, and notices before entry into the event ledger."
+  }
+}

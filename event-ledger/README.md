@@ -37,4 +37,4 @@ npm run events:validate:publish
 - 不保存付费新闻正文，不绕过付费墙，不对受限网页做自动抓取；
 - `classical_fit`、星象契合度、社交热度等字段禁止进入评分对象。
 
-每个候选事件仍须遵守 P0 统一数据外壳，单独保存 `record_type`、`observed_at`、`collected_at`、`cutoff_at`、`timezone`、`data_status`、`confidence`、`review_status` 和 `version`。不能只依赖账本顶层字段隐式继承。
+每个候选事件仍须遵守 P0 统一数据外壳，单独保存 `record_type`、`observed_at`、`collected_at`、`cutoff_at`、`timezone`、`data_status`、`evidence_status`、`review_status` 和 `version`。不能只依赖账本顶层字段隐式继承。

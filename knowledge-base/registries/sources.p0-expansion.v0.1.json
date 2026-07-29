@@ -1,0 +1,115 @@
+{
+  "schema_version": "0.1",
+  "sources": [
+    {
+      "source_id": "SRC-WIKISOURCE-YIZHUAN-XICI-SHANG",
+      "title": "维基文库：易传／系辞上",
+      "source_type": "digital_transcription",
+      "canonical_url": "https://zh.wikisource.org/w/index.php?title=易傳/繫辭上&oldid=2611140",
+      "acquisition_mode": "mediawiki_api_fixed_revision",
+      "license_review_status": "reviewed",
+      "full_text_storage_allowed": true,
+      "commercial_use_status": "allowed_with_attribution_share_alike",
+      "provenance_note": "固定修订号 2611140；本地仅保存经逐字核对的短段及定位信息。"
+    },
+    {
+      "source_id": "SRC-WIKISOURCE-HUAINANZI-TIANWEN",
+      "title": "维基文库：淮南子／天文训",
+      "source_type": "digital_transcription",
+      "canonical_url": "https://zh.wikisource.org/w/index.php?title=淮南子/天文訓&oldid=7909148",
+      "acquisition_mode": "mediawiki_api_fixed_revision",
+      "license_review_status": "reviewed",
+      "full_text_storage_allowed": true,
+      "commercial_use_status": "allowed_with_attribution_share_alike",
+      "provenance_note": "固定修订号 7909148；天文数值与感应说只按历史材料登记，不作现代科学结论。"
+    },
+    {
+      "source_id": "SRC-WIKISOURCE-SHIJI-027",
+      "title": "维基文库：史记／卷二十七·天官书",
+      "source_type": "digital_transcription",
+      "canonical_url": "https://zh.wikisource.org/w/index.php?title=史記/卷027&oldid=7904116",
+      "acquisition_mode": "mediawiki_api_fixed_revision",
+      "license_review_status": "reviewed",
+      "full_text_storage_allowed": true,
+      "commercial_use_status": "allowed_with_attribution_share_alike",
+      "provenance_note": "固定修订号 7904116；正文、集解、索隐与正义须分辨，不把注疏混作司马迁原文。"
+    },
+    {
+      "source_id": "SRC-WIKISOURCE-HANSHU-026",
+      "title": "维基文库：汉书／卷二十六·天文志",
+      "source_type": "digital_transcription",
+      "canonical_url": "https://zh.wikisource.org/w/index.php?title=漢書/卷026&oldid=1311247",
+      "acquisition_mode": "mediawiki_api_fixed_revision",
+      "license_review_status": "reviewed",
+      "full_text_storage_allowed": true,
+      "commercial_use_status": "allowed_with_attribution_share_alike",
+      "provenance_note": "固定修订号 1311247；只把星官目录和文献反思作为历史材料。"
+    },
+    {
+      "source_id": "SRC-WIKISOURCE-KAIYUAN-001",
+      "title": "维基文库：唐开元占经（四库全书本）／卷一",
+      "source_type": "digital_transcription",
+      "canonical_url": "https://zh.wikisource.org/w/index.php?title=唐開元占經_(四庫全書本)/卷001&oldid=655876",
+      "acquisition_mode": "mediawiki_api_fixed_revision",
+      "license_review_status": "reviewed_with_text_quality_warning",
+      "full_text_storage_allowed": true,
+      "commercial_use_status": "allowed_with_attribution_share_alike",
+      "provenance_note": "固定修订号 655876；唐代汇编保存更早材料，引文归属按汇编转述处理，不冒充早期原本。"
+    },
+    {
+      "source_id": "SRC-WIKISOURCE-MENGXI-07",
+      "title": "维基文库：梦溪笔谈（四库全书本）／卷七",
+      "source_type": "digital_transcription",
+      "canonical_url": "https://zh.wikisource.org/w/index.php?title=夢溪筆談_(四庫全書本)/卷07&oldid=773416",
+      "acquisition_mode": "mediawiki_api_fixed_revision",
+      "license_review_status": "reviewed_with_text_quality_warning",
+      "full_text_storage_allowed": true,
+      "commercial_use_status": "allowed_with_attribution_share_alike",
+      "provenance_note": "固定修订号 773416；四库转录含异体字标记，公开引用前仍需影印本复核。"
+    },
+    {
+      "source_id": "SRC-WIKISOURCE-XINYI-SHANG",
+      "title": "维基文库：新仪象法要（四库全书本）／卷上",
+      "source_type": "digital_transcription",
+      "canonical_url": "https://zh.wikisource.org/w/index.php?title=新儀象法要_(四庫全書本)/卷上&oldid=784066",
+      "acquisition_mode": "mediawiki_api_fixed_revision",
+      "license_review_status": "reviewed_with_text_quality_warning",
+      "full_text_storage_allowed": true,
+      "commercial_use_status": "allowed_with_attribution_share_alike",
+      "provenance_note": "固定修订号 784066；仪器结构与测验语句按宋代技术文献登记。"
+    },
+    {
+      "source_id": "SRC-GITHUB-ASTRONOMY-ENGINE",
+      "title": "Astronomy Engine 官方代码库",
+      "source_type": "software_documentation",
+      "canonical_url": "https://github.com/cosinekitty/astronomy",
+      "acquisition_mode": "package_and_repository_reference",
+      "license_review_status": "reviewed",
+      "full_text_storage_allowed": false,
+      "commercial_use_status": "allowed_under_mit",
+      "provenance_note": "墨观固定使用 npm astronomy-engine 2.1.19；只登记计算方法与版本，不复制文档正文。"
+    },
+    {
+      "source_id": "SRC-CDS-SIMBAD-TAP",
+      "title": "CDS SIMBAD TAP 服务",
+      "source_type": "astronomical_database",
+      "canonical_url": "https://simbad.cds.unistra.fr/simbad/sim-tap",
+      "acquisition_mode": "tap_query_snapshot",
+      "license_review_status": "reviewed",
+      "full_text_storage_allowed": false,
+      "commercial_use_status": "attribution_required",
+      "provenance_note": "亮星快照保存查询、获取时间、坐标历元和行数，不把查询结果解释为传统星官映射。"
+    },
+    {
+      "source_id": "SRC-GITHUB-STELLARIUM",
+      "title": "Stellarium 官方代码库与星空文化数据",
+      "source_type": "software_and_research_reference",
+      "canonical_url": "https://github.com/Stellarium/stellarium",
+      "acquisition_mode": "repository_reference",
+      "license_review_status": "reviewed",
+      "full_text_storage_allowed": false,
+      "commercial_use_status": "license_specific_review_required",
+      "provenance_note": "只用作传统星名与现代恒星标识交叉校验线索；映射须另行人工审核。"
+    }
+  ]
+}

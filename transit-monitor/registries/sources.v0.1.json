@@ -1,0 +1,79 @@
+{
+  "schema_version": "0.1",
+  "reviewed_at": "2026-07-23",
+  "sources": [
+    {
+      "source_id": "SRC-20260723-IMF-PORTWATCH-HORMUZ",
+      "publisher": "IMF PortWatch",
+      "role": "primary_daily_transit_series",
+      "access": "public_arcgis_query_without_account",
+      "update_pattern": "daily_series_with_revision_and_observed_lag",
+      "selected_for_p0": true,
+      "license_or_terms": "IMF data may be reproduced accurately with attribution under IMF data usage terms.",
+      "caveats": [
+        "AIS-derived estimate rather than an official customs or VTS count",
+        "Coverage and methodology revisions can change historical values",
+        "Does not identify waiting, rerouting or safe passage for individual vessels"
+      ]
+    },
+    {
+      "source_id": "SRC-20260723-UKMTO-HORMUZ",
+      "publisher": "UK Maritime Trade Operations / JMIC",
+      "role": "primary_security_incident_evidence",
+      "access": "public_products_and_advisories",
+      "update_pattern": "event_driven",
+      "selected_for_p0": true,
+      "license_or_terms": "Store metadata and concise factual paraphrases with source links.",
+      "caveats": [
+        "Incident reporting is event-driven rather than a continuous traffic series",
+        "Initial reports can be updated as investigations progress"
+      ]
+    },
+    {
+      "source_id": "SRC-20260723-NAVAREA-IX-HORMUZ",
+      "publisher": "NAVAREA IX Coordinator, National Hydrographic Office Pakistan",
+      "role": "primary_navigational_warning_evidence",
+      "access": "public_warning_index_and_documents",
+      "update_pattern": "event_driven",
+      "selected_for_p0": true,
+      "license_or_terms": "Store warning identifiers, dates and concise factual paraphrases with links.",
+      "caveats": [
+        "Warnings describe hazards and restrictions, not total daily transits",
+        "Cancelled or superseded warnings must not be presented as current"
+      ]
+    },
+    {
+      "source_id": "CANDIDATE-GFW-AIS-PRESENCE",
+      "publisher": "Global Fishing Watch",
+      "role": "delayed_ais_presence_cross_check",
+      "access": "account_and_api_token_required",
+      "update_pattern": "approximately_96_hours_lag",
+      "selected_for_p0": false,
+      "license_or_terms": "Non-commercial use only; attribution and API terms apply.",
+      "caveats": [
+        "Presence is not a vessel track or a direct chokepoint crossing count",
+        "Commercial product use requires separate review"
+      ]
+    },
+    {
+      "source_id": "CANDIDATE-AISSTREAM",
+      "publisher": "aisstream.io",
+      "role": "experimental_live_ais_fallback",
+      "access": "account_and_api_key_required",
+      "update_pattern": "websocket_stream",
+      "selected_for_p0": false,
+      "license_or_terms": "Beta service; terms and operational suitability require review before integration.",
+      "caveats": [
+        "No SLA",
+        "Coverage depends on upstream receivers",
+        "Requires backend secret handling and continuous collection"
+      ]
+    }
+  ],
+  "prohibited_collection": [
+    {
+      "targets": ["MarineTraffic", "MarineRadar", "VesselFinder"],
+      "rule": "Do not scrape commercial map pages or bypass access controls. Use licensed APIs only if later approved."
+    }
+  ]
+}

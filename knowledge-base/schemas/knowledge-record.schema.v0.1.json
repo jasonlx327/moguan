@@ -11,7 +11,13 @@
     },
     "review_status": {
       "enum": ["planned", "needs_revalidation", "pending_review", "reviewed", "public_citation", "rule_eligible", "disputed", "deprecated"]
+    },
+    "mapping_status": {
+      "enum": ["research_draft", "approved", "deprecated"]
+    },
+    "interpretation_status": {
+      "enum": ["draft", "analysis_reviewed", "published", "corrected", "withdrawn"]
     }
   },
-  "description": "Runtime validation is implemented by scripts/validate-knowledge-base.mjs. This file is the machine-readable enum authority."
+  "description": "Runtime validation is implemented by scripts/validate-knowledge-base.mjs. This file is the machine-readable enum authority for passages and event mappings."
 }
