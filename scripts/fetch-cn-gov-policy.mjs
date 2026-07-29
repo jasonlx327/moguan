@@ -15,6 +15,22 @@ export const defaultTerms = [
 ];
 export const resultLimit = 100;
 
+export class ResponseShapeError extends Error {
+  constructor(message, details) {
+    super(message);
+    this.name = "ResponseShapeError";
+    this.details = details;
+  }
+}
+
+export class ResponseQualityError extends Error {
+  constructor(message, details) {
+    super(message);
+    this.name = "ResponseQualityError";
+    this.details = details;
+  }
+}
+
 function isoDate(value) {
   const date = new Date(value);
   if (Number.isNaN(date.getTime())) throw new Error(`Invalid date: ${value}`);
@@ -148,19 +164,55 @@ export async function collectCnGovPolicy({
     }
 
     const rawResponse = await response.text();
+    const responseSha256 = createHash("sha256").update(rawResponse).digest("hex");
+    const responseDetails = {
+      term,
+      http_status: response.status,
+      content_type: response.headers.get("content-type"),
+      response_bytes: Buffer.byteLength(rawResponse),
+      response_sha256: responseSha256,
+    };
     let payload;
     try {
       payload = JSON.parse(rawResponse);
     } catch {
-      throw new Error(`China government policy response for "${term}" is not valid JSON`);
+      throw new ResponseShapeError(
+        `China government policy response for "${term}" is not valid JSON`,
+        responseDetails,
+      );
     }
-    const searchVO = payload?.searchVO;
+    const payloadObject = payload && typeof payload === "object" && !Array.isArray(payload);
+    const dataObject = payloadObject
+      && payload.data
+      && typeof payload.data === "object"
+      && !Array.isArray(payload.data);
+    const shapeDetails = {
+      ...responseDetails,
+      top_level_keys: payloadObject ? Object.keys(payload).slice(0, 20) : [],
+      data_type: Array.isArray(payload?.data) ? "array" : typeof payload?.data,
+      data_keys: dataObject ? Object.keys(payload.data).slice(0, 20) : [],
+    };
+    const searchVO = payload?.searchVO
+      ?? payload?.data?.searchVO
+      ?? (Array.isArray(payload?.data)
+        ? {
+          listVO: payload.data,
+          totalCount: payload.data.length,
+          totalpage: 1,
+        }
+        : null);
     if (!searchVO || typeof searchVO !== "object") {
-      throw new Error(`China government policy response for "${term}" has no searchVO`);
+      throw new ResponseShapeError(
+        `China government policy response for "${term}" has no searchVO`,
+        shapeDetails,
+      );
     }
     const items = extractItems(searchVO);
     if (!Array.isArray(items)) {
-      throw new Error(`China government policy response for "${term}" has no result list`);
+      throw new ResponseShapeError(
+        `China government policy response for "${term}" has no result list`,
+        shapeDetails,
+      );
     }
     const totalCount = Number(searchVO.totalCount ?? items.length);
     const totalPages = Number(searchVO.totalpage ?? 1);
@@ -175,7 +227,10 @@ export async function collectCnGovPolicy({
       url,
       returned_count: items.length,
       total_count: totalCount,
-      response_sha256: createHash("sha256").update(rawResponse).digest("hex"),
+      http_status: response.status,
+      content_type: response.headers.get("content-type"),
+      response_bytes: Buffer.byteLength(rawResponse),
+      response_sha256: responseSha256,
     });
 
     for (const item of items) {
@@ -187,6 +242,25 @@ export async function collectCnGovPolicy({
       if (existing) existing.terms.add(term);
       else matches.set(key, { item, terms: new Set([term]) });
     }
+  }
+
+  const allEmpty = requests.length > 1
+    && requests.every((request) => request.returned_count === 0);
+  const uniqueResponseHashes = new Set(
+    requests.map((request) => request.response_sha256),
+  );
+  if (allEmpty && uniqueResponseHashes.size === 1) {
+    throw new ResponseQualityError(
+      "Official policy searches returned one identical empty response for every term",
+      {
+        request_count: requests.length,
+        terms: requests.map((request) => request.term),
+        http_statuses: [...new Set(requests.map((request) => request.http_status))],
+        content_types: [...new Set(requests.map((request) => request.content_type))],
+        response_bytes: [...new Set(requests.map((request) => request.response_bytes))],
+        response_sha256: requests[0].response_sha256,
+      },
+    );
   }
 
   const documents = [...matches.values()]
@@ -234,7 +308,10 @@ export function validateSnapshot(snapshot) {
   const errors = [];
   const blocked = snapshot.data_status === "blocked";
   if (snapshot.schema_version !== "0.1") errors.push("unsupported schema_version");
-  if (snapshot.source?.source_id !== "cn_state_council_policy_search") {
+  if (![
+    "cn_state_council_policy_search",
+    "cn_mofcom_announcements",
+  ].includes(snapshot.source?.source_id)) {
     errors.push("unexpected source_id");
   }
   if (!["snapshot", "blocked"].includes(snapshot.data_status)) {
