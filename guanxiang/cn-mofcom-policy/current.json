@@ -1,0 +1,102 @@
+{
+  "schema_version": "0.1",
+  "snapshot_id": "CN-MOFCOM-ANNOUNCEMENTS-2026-06-30-2026-07-29",
+  "collected_at": "2026-07-29T02:03:36.432Z",
+  "source": {
+    "source_id": "cn_mofcom_announcements",
+    "publisher": "中华人民共和国商务部",
+    "endpoint": "https://www.mofcom.gov.cn/zcfb/blgg/gg/2026/index.html",
+    "homepage": "https://www.mofcom.gov.cn/zcfb/",
+    "open_level": "O0/O2",
+    "authentication": "none",
+    "interface_status": "Public official annual announcement list. HTML structure is not a documented machine contract.",
+    "legal_status": "List entries are discovery candidates. Event-ledger entry requires opening the official article and confirming issuing authority, document number, effective status and scope."
+  },
+  "query": {
+    "terms": [
+      "半导体",
+      "芯片",
+      "出口管制",
+      "先进计算",
+      "两用物项",
+      "战略矿产"
+    ],
+    "publication_date_from": "2026-06-30",
+    "publication_date_to": "2026-07-29",
+    "requests": [
+      {
+        "url": "https://www.mofcom.gov.cn/zcfb/blgg/gg/2026/index.html",
+        "http_status": 200,
+        "content_type": "text/html",
+        "response_bytes": 22338,
+        "response_sha256": "dff05363dd2fca20e11e3e0ebccda07ce8479425d2f263dabae1226d98874b2b",
+        "list_anchor_count": 53,
+        "topic_anchor_count": 7
+      },
+      {
+        "record_id": "商务部公告2026年第30号",
+        "url": "https://www.mofcom.gov.cn/zcfb/blgg/gg/2026/art/2026/art_452eed7fd22c431fbd3d7a8b9fad6d93.html",
+        "http_status": 200,
+        "content_type": "text/html",
+        "response_bytes": 17402,
+        "response_sha256": "b2a320a32ff71110eacb1e36526b7d5301f06b8ba8f10a058c15a5686fb5b7c8"
+      }
+    ]
+  },
+  "data_status": "snapshot",
+  "candidate_count": 1,
+  "documents": [
+    {
+      "record_id": "商务部公告2026年第30号",
+      "document_number": "商务部公告2026年第30号",
+      "title": "商务部公告2026年第30号 公布将14家欧盟实体列入出口管制管控名单",
+      "publication_date": "2026-07-24",
+      "publisher": "中华人民共和国商务部",
+      "summary": null,
+      "official_url": "https://www.mofcom.gov.cn/zcfb/blgg/gg/2026/art/2026/art_452eed7fd22c431fbd3d7a8b9fad6d93.html",
+      "matched_terms": [
+        "出口管制"
+      ],
+      "record_status": "discovery_candidate",
+      "legal_verification_status": "official_article_confirmed",
+      "detail_verification": {
+        "status": "official_article_confirmed",
+        "document_number_confirmed": true,
+        "publication_date_confirmed": true,
+        "verified_at": "2026-07-29T02:03:36.432Z"
+      }
+    }
+  ],
+  "review_gate": {
+    "status": "pending",
+    "rule": "MOFCOM list matches are discovery candidates only. Open the linked official article before event-ledger entry."
+  },
+  "fallback": {
+    "activated": true,
+    "primary_source_id": "cn_state_council_policy_search",
+    "primary_access_issue": {
+      "error_type": "ResponseQualityError",
+      "message": "Official policy searches returned one identical empty response for every term",
+      "response_diagnostics": {
+        "request_count": 5,
+        "terms": [
+          "半导体",
+          "芯片",
+          "出口管制",
+          "先进计算",
+          "两用物项"
+        ],
+        "http_statuses": [
+          200
+        ],
+        "content_types": [
+          "application/json"
+        ],
+        "response_bytes": [
+          97
+        ],
+        "response_sha256": "6ce85fba4b9588a39ecc1c33fd03a8208206d078fa9fb5bd90157538c0eeb0b0"
+      }
+    }
+  }
+}

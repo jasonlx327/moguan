@@ -18,15 +18,13 @@
 
 ## 当前状态
 
-2026-07-28 本地运行环境连接 `sousuo.www.gov.cn`、`www.mofcom.gov.cn`
-和 `exportcontrol.mofcom.gov.cn` 时，TLS 连接在获得响应前被关闭。curl、
-Node fetch、应用内浏览器和隔离安装的 Crawl4AI 0.9.2 均得到相同结果。
-Crawl4AI 能正常读取对照页 `example.com`，但三个政务入口均返回
-`net::ERR_CONNECTION_CLOSED` 和零字节HTML，因此问题发生在页面解析之前。
+2026-07-29 GitHub Actions 远端实测显示，中国政府网检索接口能够返回HTTP 200
+和JSON，但五个不同关键词均得到同一份空响应。该来源已标记为接口契约变化，
+不能把结果解释成“过去30日没有政策事件”。
 
-适配器及契约测试已经完成，但没有用搜索引擎结果或第三方镜像替代本次官方接口
-快照。`current.json` 因此明确保存为 `blocked`。完整探针结果见
-`crawl4ai-probe-2026-07-28.json`。
+系统现自动降级到商务部年度公告列表，并回到每条官方正文核对文号和发布日期。
+已核验快照保存在 `../cn-mofcom-policy/current.json`；原有 `current.json` 和
+`crawl4ai-probe-2026-07-28.json` 继续保留为历史访问失败证据。
 
 ## 使用
 
@@ -50,5 +48,5 @@ npm run cn-policy:validate
 - 失败文件明确标记 `blocked`，工作流同时失败，不把失败当作无事件；
 - 工作流只生成Artifact，不自动覆盖仓库中的 `current.json`。
 
-当前本地仓库没有Git远程地址。工作流文件已经创建，但尚未提交、推送或在
-GitHub上运行。
+工作流已经在公开仓库的 `main` 分支启用。2026-07-29 正式运行完成公告列表和
+官方正文核验，并继续保留中国政府网主检索入口的异常记录。

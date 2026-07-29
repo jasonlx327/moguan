@@ -50,3 +50,57 @@ test("modern validation records remain distinct from classical passages", () => 
   assert.ok(result.result_count >= 1);
   assert.ok(result.results.every((item) => item.source_function === "modern_validation"));
 });
+
+test("MOFCOM classical mapping is approved with one public passage", () => {
+  const registry = JSON.parse(
+    fs.readFileSync(
+      path.join(
+        root,
+        "knowledge-base/registries/event-mappings.2026-07-29.v0.2.json",
+      ),
+      "utf8",
+    ),
+  );
+  const mapping = registry.event_mappings[0];
+
+  assert.equal(mapping.event_id, "EVENT-2026-07-29-01");
+  assert.equal(mapping.mapping_status, "approved");
+  assert.equal(mapping.ui_publishable, true);
+  assert.equal(mapping.public_passage_id, "PASS-SHIJI-HUOZHI-0001");
+  assert.match(mapping.five_phase_position, /不分配固定五行/);
+  assert.ok(mapping.review_gate.forbidden_outputs.some((item) => item.includes("行业因果")));
+});
+
+test("MOFCOM interpretation matches the current versioned event facts", () => {
+  const interpretation = JSON.parse(
+    fs.readFileSync(
+      path.join(
+        root,
+        "knowledge-base/registries/interpretations.2026-07-29.v0.2.json",
+      ),
+      "utf8",
+    ),
+  ).interpretations[0];
+
+  assert.equal(interpretation.event_id, "EVENT-2026-07-29-01");
+  assert.equal(interpretation.fact_version, "2026-07-29-v0.2");
+  assert.equal(interpretation.review_status, "analysis_reviewed");
+  assert.match(interpretation.modern_bridge, /库存和替代供应可缓冲红外业务/);
+  assert.ok(
+    interpretation.limits_and_counterreadings.some((item) =>
+      item.includes("不能直接证明任何企业已经发生经济损失"),
+    ),
+  );
+});
+
+test("knowledge validator resolves events across daily ledger files", () => {
+  const output = execFileSync(
+    process.execPath,
+    ["scripts/validate-knowledge-base.mjs"],
+    { cwd: root, encoding: "utf8" },
+  );
+
+  assert.match(output, /"event_mappings": 4/);
+  assert.match(output, /"interpretations": 4/);
+  assert.match(output, /knowledge base validation passed/);
+});

@@ -31,6 +31,7 @@
     "cn-policy:fetch": "node scripts/fetch-cn-gov-policy.mjs --output guanxiang/cn-gov-policy/current.json",
     "cn-policy:validate": "node scripts/validate-cn-gov-policy-snapshot.mjs guanxiang/cn-gov-policy/current.json",
     "cn-policy:remote-probe": "node scripts/run-cn-policy-remote.mjs --output artifacts/cn-policy-current.json",
+    "event:watch": "node scripts/run-event-watch.mjs",
     "events:validate": "node scripts/validate-event-ledger.mjs event-ledger/daily/2026-07-23.json",
     "events:validate:publish": "node scripts/validate-event-ledger.mjs event-ledger/daily/2026-07-23.json --publish",
     "lint": "eslint . --ignore-pattern dist --ignore-pattern .next",

@@ -6,6 +6,9 @@ import { calculateTotal, validateLedger } from "../scripts/validate-event-ledger
 const dailyLedger = JSON.parse(
   fs.readFileSync(new URL("../event-ledger/daily/2026-07-23.json", import.meta.url), "utf8"),
 );
+const mofcomCandidateLedger = JSON.parse(
+  fs.readFileSync(new URL("../event-ledger/daily/2026-07-29.json", import.meta.url), "utf8"),
+);
 const ledger = {
   ...JSON.parse(
     fs.readFileSync(new URL("../event-ledger/templates/daily-ledger.template.json", import.meta.url), "utf8"),
@@ -21,6 +24,37 @@ test("empty collecting ledger passes draft validation", () => {
 
 test("daily candidate ledger passes draft validation", () => {
   assert.deepEqual(validateLedger(dailyLedger), []);
+});
+
+test("verified MOFCOM policy is selected with a versioned evidence update", () => {
+  assert.deepEqual(validateLedger(mofcomCandidateLedger), []);
+  assert.equal(mofcomCandidateLedger.candidates.length, 1);
+  assert.equal(mofcomCandidateLedger.status, "review_ready");
+  assert.equal(mofcomCandidateLedger.candidates[0].decision, "selected");
+  assert.equal(mofcomCandidateLedger.candidates[0].review_status, "approved");
+  assert.equal(
+    mofcomCandidateLedger.candidates[0].evidence_status,
+    "fact_checked",
+  );
+  assert.deepEqual(mofcomCandidateLedger.selection.selected_event_ids, [
+    "EVENT-2026-07-29-01",
+  ]);
+  assert.equal(
+    mofcomCandidateLedger.selection.publication_version,
+    "2026-07-29-v0.2",
+  );
+  assert.ok(
+    mofcomCandidateLedger.candidates[0].claims.some(
+      (claim) => claim.claim_id === "CLAIM-MOFCOM-30-05"
+        && claim.status === "confirmed",
+    ),
+  );
+  assert.ok(
+    mofcomCandidateLedger.candidates[0].claims.some(
+      (claim) => claim.claim_id === "CLAIM-MOFCOM-30-06"
+        && claim.status === "confirmed",
+    ),
+  );
 });
 
 test("empty collecting ledger cannot pass publication gate", () => {

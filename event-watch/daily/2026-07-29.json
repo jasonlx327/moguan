@@ -1,0 +1,72 @@
+{
+  "schema_version": "0.1",
+  "watch_id": "WATCH-EVENT-2026-07-29-01-2026-07-29",
+  "event_id": "EVENT-2026-07-29-01",
+  "operation_date": "2026-07-29",
+  "timezone": "Asia/Shanghai",
+  "checked_at": "2026-07-29T07:02:47.050Z",
+  "base_fact_version": "2026-07-29-v0.2",
+  "data_status": "partial",
+  "result_status": "not_determined",
+  "source_checks": [
+    {
+      "source_record_id": "SRC-20260729-MOFCOM-30-QA",
+      "publisher": "中华人民共和国商务部",
+      "baseline_url": "https://aqygzj.mofcom.gov.cn/zhxx/art/2026/art_90f295b25fce4401b72ddf1b9adac31f.html",
+      "index_url": "https://aqygzj.mofcom.gov.cn/index.html",
+      "baseline_status": "access_failed",
+      "index_status": "access_failed",
+      "baseline_access_issue": {
+        "error_type": "TypeError",
+        "message": "fetch failed"
+      },
+      "index_access_issue": {
+        "error_type": "TypeError",
+        "message": "fetch failed"
+      }
+    },
+    {
+      "source_record_id": "SRC-20260729-VIGO-35",
+      "publisher": "VIGO Photonics",
+      "baseline_url": "https://vigophotonics.com/reports/analysis-of-the-impact-of-placing-vigo-photonics-on-the-chinese-dual-use-export-restriction-list/",
+      "index_url": "https://vigophotonics.com/investor-relations/reports/current-reports/",
+      "baseline_status": "confirmed",
+      "index_status": "checked",
+      "baseline_markers": {
+        "required": [
+          "Current Report No. 35/2026",
+          "approximately 8.8%",
+          "export licenses"
+        ],
+        "matched": [
+          "Current Report No. 35/2026",
+          "approximately 8.8%",
+          "export licenses"
+        ]
+      },
+      "baseline_request": {
+        "http_status": 200,
+        "content_type": "text/html; charset=UTF-8",
+        "response_bytes": 116895,
+        "response_sha256": "a2b2d9f6903666bdde07f485a2c40fc84ae0884bdf6742b5a867c1b36b9d5d7f"
+      },
+      "index_request": {
+        "http_status": 200,
+        "content_type": "text/html; charset=UTF-8",
+        "response_bytes": 165147,
+        "response_sha256": "412cc5c1332bbbe6de335bd0099aae944eb2cbdec0fd9f41c88076297e1742b8"
+      },
+      "discovery_candidate_count": 0
+    }
+  ],
+  "new_evidence_count": 0,
+  "new_evidence_candidates": [],
+  "conclusion": {
+    "direction": "blocked",
+    "text": "至少一个公开索引未完成检查，不能得出暂无新增证据的结论。"
+  },
+  "review_gate": {
+    "status": "not_required",
+    "rule": "候验器只发现候选证据；任何事实、解释或推演变化都必须经人工核验并发布新版本。"
+  }
+}

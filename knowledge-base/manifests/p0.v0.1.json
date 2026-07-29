@@ -14,8 +14,8 @@
     "public_citation_passages": 3,
     "rule_eligible_passages": 0,
     "rules": 0,
-    "event_mappings": 3,
-    "interpretations": 3
+    "event_mappings": 4,
+    "interpretations": 4
   },
   "next_collection": [
     {"layer": "theory_source", "candidate": "为高频引用片段补充第二文本见证与影印页"},
