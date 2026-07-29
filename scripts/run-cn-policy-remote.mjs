@@ -10,6 +10,7 @@ import {
   endpoint,
   validateSnapshot,
 } from "./fetch-cn-gov-policy.mjs";
+import { collectCnMofcomPolicy } from "./fetch-cn-mofcom-policy.mjs";
 
 function argument(name) {
   const index = process.argv.indexOf(name);
@@ -44,6 +45,14 @@ function writeJson(filePath, value) {
   return sha256;
 }
 
+function errorRecord(error) {
+  return {
+    error_type: error?.constructor?.name ?? "Error",
+    message: String(error?.message ?? error).slice(0, 500),
+    response_diagnostics: error?.details ?? null,
+  };
+}
+
 export async function runRemoteProbe({
   to = beijingDate(),
   from = daysBefore(to, 29),
@@ -51,6 +60,7 @@ export async function runRemoteProbe({
   fetchImpl = fetch,
   attemptedAt = new Date(),
 }) {
+  let primaryError;
   try {
     const snapshot = await collectCnGovPolicy({
       from,
@@ -68,6 +78,31 @@ export async function runRemoteProbe({
       snapshot_sha256: snapshotSha256,
     };
   } catch (error) {
+    primaryError = error;
+  }
+
+  try {
+    const snapshot = await collectCnMofcomPolicy({
+      from,
+      to,
+      fetchImpl,
+      collectedAt: attemptedAt,
+    });
+    snapshot.fallback = {
+      activated: true,
+      primary_source_id: "cn_state_council_policy_search",
+      primary_access_issue: errorRecord(primaryError),
+    };
+    const errors = validateSnapshot(snapshot);
+    if (errors.length) throw new Error(errors.join("\n"));
+    const snapshotSha256 = writeJson(output, snapshot);
+    return {
+      status: "snapshot",
+      output,
+      candidate_count: snapshot.candidate_count,
+      snapshot_sha256: snapshotSha256,
+    };
+  } catch (fallbackError) {
     const blocked = {
       schema_version: "0.1",
       snapshot_id: `CN-GOV-MOFCOM-SEMICONDUCTOR-${from}-${to}`,
@@ -89,9 +124,8 @@ export async function runRemoteProbe({
       candidate_count: 0,
       documents: [],
       access_issue: {
-        error_type: error?.constructor?.name ?? "Error",
-        message: String(error?.message ?? error).slice(0, 500),
-        response_diagnostics: error?.details ?? null,
+        primary_source: errorRecord(primaryError),
+        fallback_source: errorRecord(fallbackError),
       },
       review_gate: {
         status: "pending",
@@ -100,7 +134,7 @@ export async function runRemoteProbe({
     };
     const blockedSha256 = writeJson(output, blocked);
     const failure = new Error(`Official-source probe failed; blocked artifact=${output}`);
-    failure.cause = error;
+    failure.cause = fallbackError;
     failure.artifact = {
       status: "blocked",
       output,

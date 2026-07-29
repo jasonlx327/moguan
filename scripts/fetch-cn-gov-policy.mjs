@@ -308,7 +308,10 @@ export function validateSnapshot(snapshot) {
   const errors = [];
   const blocked = snapshot.data_status === "blocked";
   if (snapshot.schema_version !== "0.1") errors.push("unsupported schema_version");
-  if (snapshot.source?.source_id !== "cn_state_council_policy_search") {
+  if (![
+    "cn_state_council_policy_search",
+    "cn_mofcom_announcements",
+  ].includes(snapshot.source?.source_id)) {
     errors.push("unexpected source_id");
   }
   if (!["snapshot", "blocked"].includes(snapshot.data_status)) {
