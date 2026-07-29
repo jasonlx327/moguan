@@ -23,6 +23,22 @@
       "reliability_note": "商务部官方公告可确认措施内容；实际贸易和企业影响仍需独立证据验证。",
       "document_id": "商务部公告2026年第30号",
       "archived_copy": false
+    },
+    {
+      "source_record_id": "SRC-20260729-EU-21-SANCTIONS",
+      "publisher_id": "PUB-EU-COUNCIL",
+      "source_type": "official",
+      "primary_or_secondary": "primary",
+      "title_or_paraphrase": "欧盟理事会宣布第21轮对俄制裁，将51家实体纳入更严格的两用物项和技术出口限制，其中部分实体位于中国（含香港）。",
+      "url": "https://www.consilium.europa.eu/en/press/press-releases/2026/07/23/21st-package-of-sanctions-eu-hits-russian-energy-financial-services-and-crypto-hard/",
+      "published_at": "2026-07-23",
+      "accessed_at": "2026-07-29T10:11:23+08:00",
+      "language": "en",
+      "evidence_chain_id": "CHAIN-EU-COUNCIL-21-SANCTIONS",
+      "license_note": "仅保存官方发布元数据和简要事实转述，不保存新闻稿全文。",
+      "reliability_note": "欧盟理事会官方来源可确认欧盟措施；该文件不能证明中国商务部公告与欧盟措施存在因果关系。",
+      "document_id": "EU-21ST-SANCTIONS-PACKAGE-2026",
+      "archived_copy": false
     }
   ],
   "candidates": [
@@ -31,7 +47,7 @@
       "record_type": "event",
       "event_pool": "流通",
       "headline": "商务部将14家欧盟实体列入出口管制管控名单",
-      "summary": "商务部于2026年7月24日发布第30号公告，将14家欧盟实体列入出口管制管控名单，禁止向其出口两用物项，并禁止境外组织和个人转移或提供原产于中国的相关物项；公告自公布之日起实施。",
+      "summary": "商务部于2026年7月24日发布第30号公告，将14家欧盟实体列入出口管制管控名单，禁止向其出口两用物项，并禁止境外组织和个人转移或提供原产于中国的相关物项；公告自公布之日起实施。欧盟理事会前一日另行宣布第21轮对俄制裁，其中对51家实体施加更严格的两用物项和技术出口限制；现有一手文件不能确认两项措施之间存在因果关系。",
       "observed_at": "2026-07-24T16:00:00+08:00",
       "start_time": "2026-07-24T16:00:00+08:00",
       "latest_change_time": "2026-07-24T16:00:00+08:00",
@@ -49,7 +65,9 @@
       ],
       "actors": [
         "中华人民共和国商务部",
+        "欧盟理事会",
         "公告列明的14家欧盟实体",
+        "欧盟第21轮制裁所列的相关在华实体",
         "中国出口经营者",
         "涉及原产于中国两用物项转移的境外组织和个人"
       ],
@@ -80,23 +98,35 @@
             "SRC-20260729-MOFCOM-30"
           ],
           "contradicting_source_record_ids": []
+        },
+        {
+          "claim_id": "CLAIM-MOFCOM-30-04",
+          "text": "欧盟理事会于2026年7月23日宣布第21轮对俄制裁，将51家实体纳入更严格的两用物项和技术出口限制，其中部分实体位于中国（含香港）。",
+          "status": "confirmed",
+          "supporting_source_record_ids": [
+            "SRC-20260729-EU-21-SANCTIONS"
+          ],
+          "contradicting_source_record_ids": []
         }
       ],
       "discovery_source_record_ids": [
         "SRC-20260729-MOFCOM-30"
       ],
       "verification_source_record_ids": [
-        "SRC-20260729-MOFCOM-30"
+        "SRC-20260729-MOFCOM-30",
+        "SRC-20260729-EU-21-SANCTIONS"
       ],
       "unknowns": [
         "14家实体涉及中国两用物项的实际采购、库存和合同规模",
         "是否已经出现许可证申请、暂停交付或第三方转移安排变化",
         "欧盟机构、成员国政府和相关实体的正式回应",
+        "中国商务部公告与欧盟第21轮制裁之间是否存在直接因果关系",
         "该措施对半导体、光电、材料及其他具体产品链的实际影响范围"
       ],
       "next_signals": [
         "商务部后续解释、许可信息或名单调整",
         "欧盟委员会及相关成员国政府的正式回应",
+        "中欧官方文件是否明确说明两项措施之间的关系",
         "名单内实体发布的公告、供应链调整或财务披露",
         "未来15日内可验证的交付暂停、许可证变化或贸易数据线索"
       ],
