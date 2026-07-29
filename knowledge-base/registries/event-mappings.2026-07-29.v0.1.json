@@ -1,0 +1,39 @@
+{
+  "schema_version": "0.1",
+  "event_mappings": [
+    {
+      "mapping_id": "MAP-EVENT-2026-07-29-01",
+      "event_id": "EVENT-2026-07-29-01",
+      "theme": "流通条件、禁限与后续应变",
+      "passage_ids": [
+        "PASS-SHIJI-HUOZHI-0001",
+        "PASS-YIZHUAN-XICI-XIA-0001",
+        "PASS-YIZHUAN-XICI-SHANG-0005"
+      ],
+      "public_passage_id": null,
+      "interpretive_frame": "古典材料只用于说明“通”依赖持续往来、交易角色与制度条件；本事件中的禁止、许可和实际影响仍必须由现代法规、许可证、交付、合同与企业披露确认。",
+      "modern_evidence_priority": [
+        "中国与欧盟官方政策文件",
+        "许可证、交付、合同与企业披露",
+        "古典材料"
+      ],
+      "five_phase_position": "不分配固定五行；国家、机构、行业和管制措施均不得获得永久五行标签",
+      "mapping_status": "research_draft",
+      "ui_publishable": false,
+      "review_gate": {
+        "status": "pending",
+        "pending_requirements": [
+          "事件通过人工入选并冻结事实版本",
+          "候选古籍完成公开引文级复核",
+          "取得许可证、交付、合同或企业披露等实际影响证据"
+        ],
+        "forbidden_outputs": [
+          "用古籍判断政策正当性或政策效果",
+          "把欧盟措施与商务部公告写成已确认因果",
+          "仅凭古籍预测供应链、价格或外交回应",
+          "为中国、欧盟、企业或产品分配固定五行"
+        ]
+      }
+    }
+  ]
+}

@@ -58,9 +58,15 @@ const rules = loadRegistryShards("rules", "rules");
 const eventMappings = loadRegistryShards("event-mappings", "event_mappings");
 const interpretations = loadRegistryShards("interpretations", "interpretations");
 const manifest = load("manifests/p0.v0.1.json");
-const eventLedger = JSON.parse(
-  fs.readFileSync(path.join(root, "event-ledger/daily/2026-07-23.json"), "utf8"),
-);
+const eventLedgers = fs
+  .readdirSync(path.join(root, "event-ledger", "daily"))
+  .filter((file) => file.endsWith(".json"))
+  .sort()
+  .map((file) =>
+    JSON.parse(
+      fs.readFileSync(path.join(root, "event-ledger", "daily", file), "utf8"),
+    ),
+  );
 
 function index(records, key, label) {
   const result = new Map();
@@ -78,7 +84,16 @@ const passageById = index(passages, "passage_id", "passages");
 index(rules, "rule_id", "rules");
 index(eventMappings, "mapping_id", "event mappings");
 index(interpretations, "analysis_id", "interpretations");
-const eventById = index(eventLedger.candidates ?? [], "event_id", "event ledger");
+const eventById = index(
+  eventLedgers.flatMap((ledger) => ledger.candidates ?? []),
+  "event_id",
+  "event ledger",
+);
+const ledgerByEventId = new Map(
+  eventLedgers.flatMap((ledger) =>
+    (ledger.candidates ?? []).map((event) => [event.event_id, ledger]),
+  ),
+);
 
 for (const work of works) {
   if (!validLayers.has(work.historical_layer)) errors.push(`${work.work_id}: invalid historical_layer`);
@@ -164,13 +179,14 @@ for (const mapping of eventMappings) {
 }
 
 for (const interpretation of interpretations) {
+  const sourceLedger = ledgerByEventId.get(interpretation.event_id);
   if (!eventById.has(interpretation.event_id)) {
     errors.push(`${interpretation.analysis_id}: unknown event ${interpretation.event_id}`);
   }
-  if (!(eventLedger.selection?.selected_event_ids ?? []).includes(interpretation.event_id)) {
+  if (!(sourceLedger?.selection?.selected_event_ids ?? []).includes(interpretation.event_id)) {
     errors.push(`${interpretation.analysis_id}: event is not selected for publication`);
   }
-  if (interpretation.fact_version !== eventLedger.selection?.publication_version) {
+  if (interpretation.fact_version !== sourceLedger?.selection?.publication_version) {
     errors.push(`${interpretation.analysis_id}: fact_version does not match published ledger`);
   }
   if (!["draft", "analysis_reviewed", "published", "corrected", "withdrawn"].includes(interpretation.review_status)) {

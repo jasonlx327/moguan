@@ -57,6 +57,12 @@ test("server-renders the Moguan P0 shell", async () => {
   assert.match(html, /商务部将14家欧盟实体列入出口管制管控名单/);
   assert.match(html, /欧盟第21轮对俄制裁/);
   assert.match(html, /许可证、交付和合同执行变化/);
+  assert.match(html, /知典 · 待审/);
+  assert.match(html, /流通条件、禁限与后续应变/);
+  assert.match(html, /尚未进入古籍公开解释/);
+  assert.match(html, /已命中 (?:<!-- -->)?3(?:<!-- -->)? 条候选古籍/);
+  assert.match(html, /国家、机构、行业和管制措施均不得获得永久五行标签/);
+  assert.doesNotMatch(html, /一闔一闢謂之變|日中为市，致天下之民/);
   assert.doesNotMatch(html, /事件评分|筛选得分|总分 76/);
   assert.match(html, /3(?:<!-- -->)? 项已检查，暂无发布后新增正式证据/);
   assert.doesNotMatch(html, /全球天气视觉占位|当前为视觉占位/);

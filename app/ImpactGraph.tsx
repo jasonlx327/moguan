@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import impactGraph from "../chashi/graphs/EVENT-2026-07-29-01.json";
 import eventLedger from "../event-ledger/daily/2026-07-29.json";
+import eventMappings from "../knowledge-base/registries/event-mappings.2026-07-29.v0.1.json";
 
 type GraphNode = (typeof impactGraph.nodes)[number];
 type GraphEdge = (typeof impactGraph.edges)[number] & {
@@ -40,6 +41,7 @@ const relationLabels: Record<GraphEdge["relation_type"], string> = {
 const sourcesById = Object.fromEntries(
   eventLedger.source_records.map((source) => [source.source_record_id, source]),
 ) as Record<string, (typeof eventLedger.source_records)[number]>;
+const researchMapping = eventMappings.event_mappings[0];
 
 export default function ImpactGraph() {
   const graphScrollRef = useRef<HTMLDivElement>(null);
@@ -258,6 +260,33 @@ export default function ImpactGraph() {
           </div>
         </aside>
       </div>
+
+      <section className="impact-classics-gate" aria-labelledby="impact-classics-title">
+        <header>
+          <div>
+            <span>知典 · 待审</span>
+            <h4 id="impact-classics-title">{researchMapping.theme}</h4>
+          </div>
+          <strong>尚未进入古籍公开解释</strong>
+        </header>
+        <div>
+          <article>
+            <small>候选角度</small>
+            <p>{researchMapping.interpretive_frame}</p>
+          </article>
+          <article>
+            <small>当前进度</small>
+            <p>
+              已命中 {researchMapping.passage_ids.length} 条候选古籍；仍须完成事件入选、
+              引文复核与现实影响证据补充。
+            </p>
+          </article>
+          <article>
+            <small>五行边界</small>
+            <p>{researchMapping.five_phase_position}</p>
+          </article>
+        </div>
+      </section>
     </section>
   );
 }

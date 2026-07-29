@@ -50,3 +50,34 @@ test("modern validation records remain distinct from classical passages", () => 
   assert.ok(result.result_count >= 1);
   assert.ok(result.results.every((item) => item.source_function === "modern_validation"));
 });
+
+test("MOFCOM classical mapping remains a non-public research draft", () => {
+  const registry = JSON.parse(
+    fs.readFileSync(
+      path.join(
+        root,
+        "knowledge-base/registries/event-mappings.2026-07-29.v0.1.json",
+      ),
+      "utf8",
+    ),
+  );
+  const mapping = registry.event_mappings[0];
+
+  assert.equal(mapping.event_id, "EVENT-2026-07-29-01");
+  assert.equal(mapping.mapping_status, "research_draft");
+  assert.equal(mapping.ui_publishable, false);
+  assert.equal(mapping.public_passage_id, null);
+  assert.match(mapping.five_phase_position, /不分配固定五行/);
+  assert.ok(mapping.review_gate.forbidden_outputs.some((item) => item.includes("因果")));
+});
+
+test("knowledge validator resolves events across daily ledger files", () => {
+  const output = execFileSync(
+    process.execPath,
+    ["scripts/validate-knowledge-base.mjs"],
+    { cwd: root, encoding: "utf8" },
+  );
+
+  assert.match(output, /"event_mappings": 4/);
+  assert.match(output, /knowledge base validation passed/);
+});
